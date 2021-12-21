@@ -1,4 +1,4 @@
-#include "Dé.h"
+#include "Dé_Gobelet.h"
 #include <iostream>
 #include <string>
 using namespace std;

@@ -3,7 +3,11 @@
 
 #include <string>
 
+class Gobelet{};
+
 class Dé {
+
+    friend class Gobelet;
 
     private:
 
@@ -19,6 +23,13 @@ class Dé {
     int* setValeurs();
 
 };
+
+class Gobelet{
+    public:
+    int getValeursDés();
+    bool doubleValeurs();
+};
+
 
 
 #endif 
