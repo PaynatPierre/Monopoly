@@ -1,8 +1,6 @@
 #ifndef Dé_h
 #define Dé_h
 
-#include <string>
-
 class Gobelet{};
 
 class Dé {
