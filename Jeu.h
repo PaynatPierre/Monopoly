@@ -13,11 +13,11 @@ private:
     static int nbrdejoueur;
     Plateau plateau;
     Joueur *liste[nbrdejoueur];
-    De des[2];
+    Dé des[2];
     Goblet goblet;
 protected:
 public:
-    Jeu(int nbrplayer, Joeur **players);
+    Jeu(int nbrplayer, Joueur **players);
 
     int gettourdejeu();
     void settourdejeu(int i);
@@ -36,8 +36,8 @@ public:
     void setgoblet(Goblet g);
 
     De getde(int i);
-    void setde(De d,int i);
+    void setde(Dé d,int i);
 };
 
 
-#endif //CODEPROJET4_JEU_H
+#endif CODEPROJET4_JEU_H
