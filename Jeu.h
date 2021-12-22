@@ -14,7 +14,7 @@ private:
     Plateau plateau;
     Joueur *liste[nbrdejoueur];
     Dé des[2];
-    Goblet goblet;
+    Gobelet goblet;
 protected:
 public:
     Jeu(int nbrplayer, Joueur **players);

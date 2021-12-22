@@ -1,15 +1,13 @@
-
-#include <string>
-#include "Case.h"
-using namespace std;
-
 #ifndef PROPRIETE_H
 #define PROPRIETE_H
 
+#include <string>
+#include "Case.h"
 
-class Propriété : public Case {
+
+class PropriÃ©tÃ© : public Case {
 public:
-	Joueur* propriétaire;
+	Joueur* propriÃ©taire;
 	int prixAchat;
 	int loyer[5];
 };
