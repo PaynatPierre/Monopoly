@@ -8,15 +8,18 @@ using namespace std;
 
 class Case {
 private:
-	string name;
-	Case* ptsuivante;
+	string m_name;
+	Case* m_ptsuivante;
+	Jeu* m_jeuEnCours;
 public:
-	Jeu* jeuEnCours;
+	Case(string m_name, Case* m_ptsuivante);
 	virtual void arreterSur() = 0;
 	string getName();
-	Case getSuivante();
-	string setName(string n);
-	string SetSuivante();
+	Case* getSuivante();
+	void setName(string n);
+	void SetSuivante(Case* ptsuivante);
+	Jeu* getJeuEnCours();
+	void setJeuEnCours(Jeu* jeuEnCours);
 
 };
 
