@@ -4,6 +4,7 @@
 #include <string>
 #include "Propriété.h"
 #include "Case.h"
+#include "Joueur_Pion.h"
 
 
 class Joueur;
@@ -42,10 +43,11 @@ class Joueur{
     Pion *pion; //allocation dynalique de l'objet Pion
     int nbPropriété;
     Propriété* *liste_acquisitions; // tableau dynamique de pointeurs, pointant sur les propriétés du joueur
-    
+    int nbDouble;
+
     public:
 
-    Joueur(const bool, const std::string &, const int, const Pion&,const int, const Propriété**);
+    Joueur(const bool, const std::string &, const int, const Pion&,const int, const Propriété**,int);
 
     bool getStatus();
     std::string getNom();
@@ -53,12 +55,14 @@ class Joueur{
     Pion* getPion();
     int getNbPropriete();
     Propriété** getListe_acquisitions();
+    int getNbDouble();
 
     void setStatus(const bool);
     void setNom(const std::string&);
     void setSolde(int);
     void setNbPropriete(int);
     void setPion(const Pion&);
+    void setNbDouble(int);
 
     void ajouterAcquisition(Propriété*);
     void crediter(int);

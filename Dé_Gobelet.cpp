@@ -1,4 +1,5 @@
 #include "Dé_Gobelet.h"
+#include "Joueur_Pion.h"
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -54,7 +55,7 @@ bool Gobelet :: doubleValeurs(const int val1, const int val2){
 }
 
 
-int Gobelet :: getValeursDés(const Dé& d1,const Dé& d2){
+int Gobelet :: getValeursDés(Joueur &J, const Dé& d1,const Dé& d2){
     int val1;
     int val2;
     int rst;
@@ -64,7 +65,17 @@ int Gobelet :: getValeursDés(const Dé& d1,const Dé& d2){
     val2 = d1.valeurs[indice2];
     rst = val1 + val2;
     if (doubleValeurs(val1,val2)){
-        int val3;
+        int OldNbDouble = J.getNbDouble();
+        J.setNbDouble(OldNbDouble +1);
+        return rst;
+    }
+    else{
+        return rst;
+    }
+}
+
+/*
+    int val3;
         int val4;
         int indice3 = rand() % (d1.nbFaces -1)  + 0;
         int indice4 = rand() % (d2.nbFaces -1)  + 0;
@@ -90,9 +101,5 @@ int Gobelet :: getValeursDés(const Dé& d1,const Dé& d2){
             return rst;
         }
     }
-    else{
-        return rst;
-    }
-}
 
-
+*/

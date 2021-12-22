@@ -24,7 +24,7 @@ class Dé {
 
 class Gobelet{
     public:
-    int getValeursDés(const Dé&,const Dé&);
+    int getValeursDés(Joueur&,const Dé&,const Dé&);
     bool doubleValeurs(const int, const int);
 };
 

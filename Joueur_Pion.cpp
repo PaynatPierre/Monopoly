@@ -4,12 +4,13 @@
 #include <cstdlib>
 using namespace std;
 
-Joueur :: Joueur(const bool Status = true, const std::string & Nom, const int Solde = 0, const Pion& P, const int NbPropriete = 0, const Propriété** Liste_de_proprietes){
+Joueur :: Joueur(const bool Status = true, const std::string & Nom, const int Solde = 0, const Pion& P, const int NbPropriete = 0, const Propriété** Liste_de_proprietes, int NbDouble = 0){
     status =  Status;
     nom = Nom;
     solde = Solde;
     pion = new Pion(P);
     liste_acquisitions =  new Propriété*[10];
+    nbDouble = NbDouble;
 
 }
 
@@ -39,6 +40,10 @@ Propriété** Joueur :: getListe_acquisitions(){
     return liste_acquisitions;
 }
 
+int Joueur :: getNbDouble(){
+    return nbDouble;
+}
+
 void Joueur :: setStatus(const bool Status){
     status = Status;
 }
@@ -51,14 +56,18 @@ void Joueur :: setSolde(int Solde){
     solde = Solde;    
 }
 
+void Joueur :: setNbPropriete(int NbPropriete){
+    nbPropriété = NbPropriete;
+}
+
 void Joueur :: setPion(const Pion& P){
     delete pion;
     pion = new Pion(P);
 
 } 
 
-void Joueur :: setNbPropriete(int NbPropriete){
-    nbPropriété = NbPropriete;
+void Joueur :: setNbDouble(int NbDouble){
+    nbDouble = NbDouble;
 }
 
 void Joueur :: ajouterAcquisition(Propriété* Propriete){
