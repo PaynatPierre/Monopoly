@@ -5,44 +5,11 @@
 #include "Propriété.h"
 #include "Case.h"
 
-class Pion;
 
-class Joueur{
-    
-    private:
+class Joueur;
 
-    bool status;
-    std::string Nom;
-    int solde;
-    Pion pion;
-    Propriété* *liste_acquisitions; // tableau dynamique de pointeurs, pointant sur les propriétés du joueur
-    
-    public:
-
-    Joueur(const bool, const std::string &, const int, const Pion&, const Propriété**);
-
-    bool getStatus();
-    std::string getNom();
-    int getSolde();
-    Pion getPion();
-    Propriété** getListe_acquisitions();
-
-    void setStatus(const bool);
-    void setNom(const std::string&);
-    void setSolde(int);
-    void setPion(const Pion &);
-    void setListe_acquisitions(const Propriété**);
-
-    void crediter(int);
-    void debbiter(int);
-    void jouer(Joueur*);
-    void perdre();
-    
-};
 
 class Pion{
-
-    friend class Joueur;
 
     private :
 
@@ -51,15 +18,54 @@ class Pion{
 
     public:
 
-    Pion(const Joueur* ,const Case*); 
+    Pion(Joueur* ,Case*); 
+    Pion(const Pion&);
+
     Joueur* getPtJoueur();
     Case* getPtCase();
 
-    void setPtJoueur(const Joueur*);
-    void setPtCase(const Case*);
+    void setPtJoueur(Joueur*);
+    void setPtCase(Case*);
 
     void deplacer();
 
+};
+
+class Joueur{
+
+    friend class Pion;
+    private:
+
+    bool status;
+    std::string nom;
+    int solde;
+    Pion *pion; //allocation dynalique de l'objet Pion
+    int nbPropriété;
+    Propriété* *liste_acquisitions; // tableau dynamique de pointeurs, pointant sur les propriétés du joueur
+    
+    public:
+
+    Joueur(const bool, const std::string &, const int, const Pion&,const int, const Propriété**);
+
+    bool getStatus();
+    std::string getNom();
+    int getSolde();
+    Pion* getPion();
+    int getNbPropriete();
+    Propriété** getListe_acquisitions();
+
+    void setStatus(const bool);
+    void setNom(const std::string&);
+    void setSolde(int);
+    void setNbPropriete(int);
+    void setPion(const Pion&);
+
+    void ajouterAcquisition(Propriété*);
+    void crediter(int);
+    void debiter(int);
+    void jouer(Joueur*);
+    void perdre();
+    
 };
 
 #endif
