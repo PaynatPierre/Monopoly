@@ -7,9 +7,10 @@ using namespace std;
 
 
 class Case {
-public:
+private:
 	string name;
 	Case* ptsuivante;
+public:
 	Jeu* jeuEnCours;
 	virtual void arreterSur() = 0;
 	string getName();

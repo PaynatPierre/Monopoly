@@ -6,10 +6,12 @@
 
 
 class Propriété : public Case {
+private: 
+	int m_prixAchat;
+	int m_loyer[5];
 public:
-	Joueur* propriétaire;
-	int prixAchat;
-	int loyer[5];
+	Propriété(int prixAchat, int loyer[5]);
+	Joueur* getPropriétaire;
 };
 
 #endif
