@@ -3,6 +3,7 @@
 //
 
 #include "Plateau.h"
+#include "Case.h"
 
 Plateau::Plateau() {
 
