@@ -10,7 +10,7 @@ class Case {
 private:
 	string m_name;
 	Case* m_ptsuivante;
-	Jeu* m_jeuEnCours;
+	Jeu *m_jeuEnCours;
 public:
 	Case(string m_name, Case* m_ptsuivante);
 	virtual void arreterSur() = 0;

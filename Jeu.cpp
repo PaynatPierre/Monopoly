@@ -53,9 +53,9 @@ void Jeu::setgobelet(Gobelet g){
     this->goblet = g
 }
 
-De Jeu::getde(int i){
+Dé Jeu::getde(int i){
     return des[i];
 }
-void Jeu::setde(De d, int i){
+void Jeu::setde(Dé d, int i){
     this->des[i] = d;
 }

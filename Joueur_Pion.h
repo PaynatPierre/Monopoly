@@ -7,8 +7,6 @@
 #include "Joueur_Pion.h"
 
 
-class Joueur;
-
 
 class Pion{
 
@@ -42,19 +40,19 @@ class Joueur{
     int solde;
     Pion *pion; //allocation dynalique de l'objet Pion
     int nbPropriété;
-    Propriété* *liste_acquisitions; // tableau dynamique de pointeurs, pointant sur les propriétés du joueur
+    Propriete* *liste_acquisitions; // tableau dynamique de pointeurs, pointant sur les propriétés du joueur
     int nbDouble;
 
     public:
 
-    Joueur(const bool, const std::string &, const int, const Pion&,const int, const Propriété**,int);
+    Joueur(const bool, const std::string &, const int, const Pion&,const int, const Propriete**,int);
 
     bool getStatus();
     std::string getNom();
     int getSolde();
     Pion* getPion();
     int getNbPropriete();
-    Propriété** getListe_acquisitions();
+    Propriete** getListe_acquisitions();
     int getNbDouble();
 
     void setStatus(const bool);
@@ -64,7 +62,7 @@ class Joueur{
     void setPion(const Pion&);
     void setNbDouble(int);
 
-    void ajouterAcquisition(Propriété*);
+    void ajouterAcquisition(Propriete*);
     void crediter(int);
     void debiter(int);
     void jouer(Joueur*);
