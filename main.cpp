@@ -1,5 +1,7 @@
 #include "Jeu.h"
 #include <iostream>
+#include "Joueur_Pion.h"
+#include "Propriété.h"
 using namespace std;
 
 void startgame();
@@ -64,9 +66,10 @@ void startgame(){
     }
 
 //    appel du constructeur de jeu
-    Player *liste[nbr_player];
+    Joueur *liste[nbr_player];
     for(int i = 0; i < nbr_player; i++){
-        Joueur j = new Joeur(player[i], pion[i]);
+        const Propriete* p[40];
+        Joueur j = new Joueur(true, player[i], 1500, pion[i],0, p,0);
         liste[i]= &j;
     }
 
