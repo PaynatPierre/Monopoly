@@ -5,13 +5,21 @@
 #include <cstdlib>
 using namespace std;
 
-Joueur :: Joueur(const bool Status = true, const std::string & Nom,const Propriete** Liste_de_proprietes, const Pion& P, int NbPropriete = 0, int NbDouble = 0, int Solde = 0){
+Joueur :: Joueur(const bool Status = true, const std::string & Nom, const Pion& P,Propriete** Liste_de_proprietes = NULL, int NbPropriete = 0, int NbDouble = 0, int Solde = 0){
     status =  Status;
     nom = Nom;
     solde = Solde;
     nbPropriete = NbPropriete;
     pion = new Pion(P);
-    liste_acquisitions =  new Propriete*[10];
+    if (nbPropriete != 0){
+        const int init = 2*nbPropriete;
+        liste_acquisitions =  new Propriete*[init];
+        for (int i=0; i<nbPropriete;i++)
+            liste_acquisitions[i] = Liste_de_proprietes[i];
+    }
+    else{
+        liste_acquisitions =  new Propriete*[10];
+    }
     nbDouble = NbDouble;
 
 }
