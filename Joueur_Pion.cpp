@@ -5,7 +5,7 @@
 #include <cstdlib>
 using namespace std;
 
-Joueur :: Joueur(const bool Status = true, const std::string & Nom, const Pion& P,Propriete** Liste_de_proprietes = NULL, int NbPropriete = 0, int NbDouble = 0, int Solde = 0){
+Joueur :: Joueur(const std::string & Nom, const Pion& P, const bool Status = true,Propriete** Liste_de_proprietes = NULL, int NbPropriete = 0, int NbDouble = 0, int Solde = 0){
     status =  Status;
     nom = Nom;
     solde = Solde;

@@ -1,6 +1,7 @@
 #include "Jeu.h"
 #include <iostream>
 #include "Joueur_Pion.h"
+#include "Joueur_Pion.cpp"
 #include "Propriété.h"
 using namespace std;
 
@@ -69,7 +70,8 @@ void startgame(){
     Joueur *liste[nbr_player];
     for(int i = 0; i < nbr_player; i++){
         const Propriete* p[40];
-        Joueur j = new Joueur(true, player[i], 1500, pion[i],0, p,0);
+        const Pion(NULL,NULL);
+        Joueur j = new Joueur(player[i], 1500,true, pion[i],0, p,0);
         liste[i]= &j;
     }
 
