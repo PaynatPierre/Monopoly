@@ -6,6 +6,8 @@
 #define CODEPROJET4_JEU_H
 
 #include "Plateau.h"
+#include "Joueur_Pion.h"
+#include "Dé_Gobelet.h"
 
 class Jeu {
 private:
@@ -13,7 +15,7 @@ private:
     static int nbrdejoueur;
     Plateau plateau;
     Joueur *liste[nbrdejoueur];
-    Dé des[2];
+    Dé des[2]; /*A modifier les des sont pas de cette forme*/
     Gobelet goblet;
 protected:
 public:
@@ -32,10 +34,10 @@ public:
     Joueur* getjoueur(int i);
     void setjoueur(Joueur* j, int i);
 
-    Goblet getgoblet();
-    void setgoblet(Goblet g);
+    Gobelet getgobelet();
+    void setgobelet(Gobelet g);
 
-    De getde(int i);
+    Dé getde(int i);
     void setde(Dé d,int i);
 };
 

@@ -3,12 +3,13 @@
 //
 
 #include "Jeu.h"
-#include "Plateau.h"
+
+
 
 Jeu::Jeu(int nbrplayer, Joueur **players) : plateau(), des[0](), des[1](), goblet(){
     this->nbrdejoueur = nbrplayer;
 //    this->liste = players
-    this->plateau.creercase()
+    this->plateau.creercase();
     this->tourdejeu = 1;
 //  TODO shuffle la liste avant de commencer
     this->liste[0].jouer();
@@ -45,16 +46,16 @@ void Jeu::setjoueur(Joueur* j, int i){
     this->liste[i] = j;
 }
 
-Goblet Jeu::getgoblet(){
+Gobelet Jeu::getgobelet(){
     return this->goblet;
 }
-void Jeu::setgoblet(Goblet g){
+void Jeu::setgobelet(Gobelet g){
     this->goblet = g
 }
 
-De Jeu::getde(int i){
+Dé Jeu::getde(int i){
     return des[i];
 }
-void Jeu::setde(De d, int i){
+void Jeu::setde(Dé d, int i){
     this->des[i] = d;
 }

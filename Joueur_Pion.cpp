@@ -5,12 +5,17 @@
 #include <cstdlib>
 using namespace std;
 
+<<<<<<< HEAD
 Joueur :: Joueur(const bool Status = true, const std::string & Nom,const Propriété** Liste_de_proprietes, const Pion& P, int NbPropriete = 0, int NbDouble = 0, int Solde = 0){
+=======
+Joueur :: Joueur(const bool Status = true, const std::string & Nom,
+ const int Solde = 0, const Pion& P, const int NbPropriete = 0, const Propriete** Liste_de_proprietes, int NbDouble = 0){
+>>>>>>> de8b616b0b1b01776b063842936093711edd0151
     status =  Status;
     nom = Nom;
     solde = Solde;
     pion = new Pion(P);
-    liste_acquisitions =  new Propriété*[10];
+    liste_acquisitions =  new Propriete*[10];
     nbDouble = NbDouble;
 
 }
@@ -37,7 +42,7 @@ int Joueur :: getNbPropriete(){
     return nbPropriété;
 }
 
-Propriété** Joueur :: getListe_acquisitions(){
+Propriete** Joueur :: getListe_acquisitions(){
     return liste_acquisitions;
 }
 
@@ -71,18 +76,18 @@ void Joueur :: setNbDouble(int NbDouble){
     nbDouble = NbDouble;
 }
 
-void Joueur :: ajouterAcquisition(Propriété* Propriete){
+void Joueur :: ajouterAcquisition(Propriete* Propriete){
     if (liste_acquisitions[nbPropriété-1] == NULL){
         liste_acquisitions[nbPropriété] = Propriete;
         nbPropriété +=1;
     }
     else{
         const int ancienNb = nbPropriété;
-        Propriété* tab_cop[ancienNb];
+        Propriete* tab_cop[ancienNb];
         for (int i=0; i < ancienNb; i++)
             tab_cop[i]= liste_acquisitions[i];
         delete liste_acquisitions;
-        liste_acquisitions = new Propriété*[ancienNb * 2];
+        liste_acquisitions = new Propriete*[ancienNb * 2];
         for (int i=0; i < ancienNb; i++)
             liste_acquisitions[i]= tab_cop[i];
         liste_acquisitions[nbPropriété] = Propriete;

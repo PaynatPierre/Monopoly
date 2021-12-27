@@ -1,7 +1,8 @@
 #ifndef Dé_h
 #define Dé_h
 
-class Gobelet{};
+
+
 
 class Dé {
 
