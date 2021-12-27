@@ -47,7 +47,7 @@ class Joueur{
 
     public:
 
-    Joueur(const bool, const std::string &, const int, const Pion&,const int, const Propriété**,int);
+    Joueur(const bool, const std::string &,const Propriété**, const Pion&,int,int,int);
 
     bool getStatus();
     std::string getNom();

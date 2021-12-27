@@ -1,10 +1,11 @@
 #include "Joueur_Pion.h"
+#include "Propriété.h"
 #include <iostream>
 #include <string>
 #include <cstdlib>
 using namespace std;
 
-Joueur :: Joueur(const bool Status = true, const std::string & Nom, const int Solde = 0, const Pion& P, const int NbPropriete = 0, const Propriété** Liste_de_proprietes, int NbDouble = 0){
+Joueur :: Joueur(const bool Status = true, const std::string & Nom,const Propriété** Liste_de_proprietes, const Pion& P, int NbPropriete = 0, int NbDouble = 0, int Solde = 0){
     status =  Status;
     nom = Nom;
     solde = Solde;
