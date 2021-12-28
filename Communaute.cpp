@@ -1,7 +1,10 @@
 #include "Communaute.h"
 #include "jeu.h"
+#include <iostream>
 using namespace std;
 
+Communaute::Communaute(string nom, Case* ptsuivante) : Case(nom, ptsuivante){
+}
 
 void Communaute::jouerCommunaute(){
     int indice;

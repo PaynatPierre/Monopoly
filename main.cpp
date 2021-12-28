@@ -1,8 +1,8 @@
 #include "Jeu.h"
-#include <iostream>
 #include "Joueur_Pion.h"
 #include "Joueur_Pion.cpp"
 #include "Propriété.h"
+#include <iostream>
 using namespace std;
 
 void startgame();

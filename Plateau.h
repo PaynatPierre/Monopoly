@@ -4,16 +4,17 @@
 
 #ifndef CODEPROJET4_PLATEAU_H
 #define CODEPROJET4_PLATEAU_H
+#include "Case.h"
 
 
 class Plateau {
 private:
-    Case cases[40];
+    Case* cases[40];
 protected:
 public:
     Plateau();
-    Case getcase(int i);
-    void setcase(Case c, int i);
+    Case* getcase(int i);
+    void setcase(Case* c, int i);
     void creercase();
 };
 
