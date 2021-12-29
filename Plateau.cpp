@@ -8,6 +8,8 @@
 #include "Communaute.h"
 #include "ParckGratuit.h"
 #include "Prison.h"
+#include "Terrain.h"
+#include "Impot.h"
 #include <iostream>
 using namespace std;
 
@@ -21,7 +23,6 @@ void Plateau::setcase(Case* c, int i) {
     this->cases[i] = c;
 }
 void Plateau::creercase() {
-    //TODO creer toutes les cases
 
     Depart dp(20000, NULL);
     this->setcase(&dp,0);
