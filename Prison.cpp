@@ -2,6 +2,8 @@
 #include "jeu.h"
 using namespace std;
 
+Prison::Prison(Case *ptsuivante) : Case("prison", ptsuivante){
+}
 
 void Prison::jouerPrison(){
 

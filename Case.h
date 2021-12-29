@@ -17,7 +17,7 @@ public:
 	string getName();
 	Case* getSuivante();
 	void setName(string n);
-	void SetSuivante(Case* ptsuivante);
+	void setSuivante(Case* ptsuivante);
 	Jeu* getJeuEnCours();
 	void setJeuEnCours(Jeu* jeuEnCours);
 

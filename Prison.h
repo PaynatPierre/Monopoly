@@ -10,6 +10,7 @@ class Prison: public Case {
 private: 
 
 public:
+    Prison(Case* ptsuivante)
     void jouerPrison();
 
 };

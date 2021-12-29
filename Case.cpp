@@ -23,7 +23,7 @@ Case* Case::getSuivante() {
 	return m_ptsuivante;
 }
 
-void Case::SetSuivante(Case* ptsuivante) {
+void Case::setSuivante(Case* ptsuivante) {
 	m_ptsuivante = ptsuivante;	
 }
 
