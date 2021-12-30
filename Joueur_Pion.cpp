@@ -1,5 +1,6 @@
 #include "Joueur_Pion.h"
-#include "Propriété.h"
+#include "Propriete.h"
+#include "Case.h"
 #include <iostream>
 #include <string>
 #include <cstdlib>

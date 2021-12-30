@@ -1,17 +1,14 @@
-//
-// Created by pierr on 28/12/2021.
-//
-
 #include "Impot.h"
 #include <iostream>
+#include <string>
 using namespace std;
 
-Impot::Impot(string nom, Case *ptsuivante, int taxe) : Case(nom, ptsuivante){
-    this->taxe=taxe;
+Impot::Impot(string Nom, Case *Ptsuivante, int Taxe) : Case(Nom, Ptsuivante){
+    taxe=Taxe;
 }
 
 void Impot::settaxe(int i) {
-    this->taxe = i;
+    taxe = i;
 }
 
 int Impot::gettaxe() {

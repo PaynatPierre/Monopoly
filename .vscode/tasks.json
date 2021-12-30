@@ -1,0 +1,28 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: g++.exe générer le fichier actif",
+			"command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"${file}","${fileDirname}/Case.cpp","${fileDirname}/Communaute.cpp","${fileDirname}/Dé_Gobelet.cpp","${fileDirname}/Depart.cpp","${fileDirname}/GoPrison.cpp","${fileDirname}/Impot.cpp","${fileDirname}/Jeu.cpp","${fileDirname}/Joueur_Pion.cpp","${fileDirname}/ParckGratuit.cpp","${fileDirname}/Plateau.cpp","${fileDirname}/Prison.cpp","${fileDirname}/Propriété.cpp","${fileDirname}/Terrain.cpp",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe,"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compilateur : C:\\msys64\\mingw64\\bin\\g++.exe"
+		}
+	]
+}

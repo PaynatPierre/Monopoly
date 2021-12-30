@@ -12,7 +12,7 @@ void Depart::setprime(int i) {
 }
 
 int Depart::getprime() {
-    return prime
+    return prime;
 }
 
 void Depart::jouerDepart(){

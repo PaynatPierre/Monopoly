@@ -1,9 +1,5 @@
-//
-// Created by emma on 24/12/2021.
-//
-
 #include "Terrain.h"
-#include "Propriété.h"
+#include "Propriete.h"
 #include <iostream>
 using namespace std;
 

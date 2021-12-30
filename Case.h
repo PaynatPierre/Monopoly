@@ -1,26 +1,29 @@
 #ifndef CASE_H
 #define CASE_H
 
+class Case;
+class Jeu;
+class Joueur;
+class Plateau;
+
 #include <string>
 #include "Jeu.h"
-using namespace std;
 
 
-class Case {
+class Case{
 private:
-	string m_name;
+	std::string m_name;
 	Case* m_ptsuivante;
-	Jeu *m_jeuEnCours;
+	Jeu* m_jeuEnCours;
 public:
-	Case(string m_name, Case* m_ptsuivante);
+	Case(std::string, Case*);
 	virtual void arreterSur() = 0;
-	string getName();
+	std::string getName();
 	Case* getSuivante();
-	void setName(string n);
-	void setSuivante(Case* ptsuivante);
+	void setName(std::string);
+	void setSuivante(Case*);
 	Jeu* getJeuEnCours();
-	void setJeuEnCours(Jeu* jeuEnCours);
-
+	void setJeuEnCours(Jeu*);
 };
 
 #endif

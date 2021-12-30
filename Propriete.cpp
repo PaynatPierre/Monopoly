@@ -1,6 +1,6 @@
-
+#include <iostream>
 #include <string>
-#include "Propriété.h"
+#include "Propriete.h"
 using namespace std;
 
 Propriete::Propriete(string name, Case* ptsuivante, int prixAchat, int loyer[5]) : Case(name, ptsuivante), m_prixAchat(prixAchat) {

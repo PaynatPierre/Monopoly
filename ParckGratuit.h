@@ -1,23 +1,26 @@
-//
-// Created by pierr on 29/12/2021.
-//
-
 #ifndef CODEPROJET5_PARCKGRATUIT_H
 #define CODEPROJET5_PARCKGRATUIT_H
+
+class Case;
+class Jeu;
+class Joueur;
+class Plateau;
+
+
+
 #include "Case.h"
-#include <iostream>
-using namespace std;
+#include <string>
 
 
 class ParckGratuit : public Case{
 private:
     int cagnotte;
 public:
-    ParckGratuit(Case* ptsuivante, int cagnotte);
-    void setcagnotte(int i);
+    ParckGratuit(Case*, int);
+    void setcagnotte(int);
     int getcagnotte();
     void jouerparckgratuit();
 };
 
 
-#endif //CODEPROJET5_PARCKGRATUIT_H
+#endif

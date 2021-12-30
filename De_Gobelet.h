@@ -1,10 +1,15 @@
-#ifndef Dé_h
-#define Dé_h
+#ifndef De_h
+#define De_h
+
+class Case;
+class Jeu;
+class Joueur;
+class Plateau;
+
+#include "Joueur_Pion.h"
 
 
-
-
-class Dé {
+class De {
 
     friend class Gobelet;
 
@@ -14,8 +19,8 @@ class Dé {
     int *valeurs; /* tableau dynamique */
 
     public:
-    Dé();
-    Dé(const int, const int*);
+    De();
+    De(const int, const int*);
     void setNbFaces(const int);
     void setValeurs(const int*);
     int getNbFaces();
@@ -25,7 +30,7 @@ class Dé {
 
 class Gobelet{
     public:
-    int getValeursDés(Joueur&,const Dé&,const Dé&);
+    int getValeursDes(Joueur &,const De&,const De&);
     bool doubleValeurs(const int, const int);
 };
 

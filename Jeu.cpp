@@ -3,20 +3,22 @@
 //
 
 #include "Jeu.h"
-
+#include "Plateau.h"
+#include "Joueur_Pion.h"
+#include "De_Gobelet.h"
 
 
 Jeu::Jeu(int nbrplayer, Joueur **players) : plateau(), des[0](), des[1](), goblet(){
-    this->nbrdejoueur = nbrplayer;
+    nbrdejoueur = nbrplayer;
 //    this->liste = players
-    this->plateau.creercase();
-    this->tourdejeu = 1;
+    plateau.creercase();
+    tourdejeu = 1;
 //  TODO shuffle la liste avant de commencer
-    this->liste[0].jouer();
+    (*liste[0]).jouer();
 }
 
 int Jeu::gettourdejeu(){
-    return this->tourdejeu;
+    return tourdejeu;
 }
 void Jeu::settourdejeu(int i){
     this->tourdejeu = i;
@@ -50,12 +52,12 @@ Gobelet Jeu::getgobelet(){
     return this->goblet;
 }
 void Jeu::setgobelet(Gobelet g){
-    this->goblet = g
+    this->goblet = g;
 }
 
-Dé Jeu::getde(int i){
+De Jeu::getde(int i){
     return des[i];
 }
-void Jeu::setde(Dé d, int i){
+void Jeu::setde(De d, int i){
     this->des[i] = d;
 }

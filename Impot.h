@@ -1,23 +1,26 @@
-//
-// Created by pierr on 28/12/2021.
-//
-
 #ifndef CODEPROJET5_IMPOT_H
 #define CODEPROJET5_IMPOT_H
+
+class Case;
+class Jeu;
+class Joueur;
+class Plateau;
+
+
 #include "Case.h"
-#include <iostream>
-using namespace std;
+#include <string>
+
 
 class Impot : public Case{
 private:
     int taxe;
 public:
-    Impot(string nom, Case* ptsuivante, int taxe);
-    void settaxe(int i);
+    Impot(std::string, Case*, int);
+    void settaxe(int);
     int gettaxe();
-    void jouerimpot()
+    void jouerimpot();
 
 };
 
 
-#endif //CODEPROJET5_IMPOT_H
+#endif

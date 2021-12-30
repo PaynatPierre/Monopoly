@@ -1,6 +1,13 @@
 #ifndef PROPRIETE_H
 #define PROPRIETE_H
 
+
+class Case;
+class Jeu;
+class Joueur;
+class Plateau;
+
+
 #include <string>
 #include "Case.h"
 #include "Joueur_Pion.h"
@@ -12,7 +19,7 @@ private:
 	int m_loyer[5];
     Joueur* m_proprietaire;
 public:
-	Propriete(string name,  Case* ptsuivante, int prixAchat, int loyer[5]);
+	Propriete(std::string name,  Case* ptsuivante, int prixAchat, int loyer[5]);
 	int getPrixAchat();
 	int getLoyer(int i);
 	Joueur* getProprietaire();

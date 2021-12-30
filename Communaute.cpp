@@ -1,5 +1,6 @@
 #include "Communaute.h"
-#include "jeu.h"
+#include "Jeu.h"
+#include <string>
 #include <iostream>
 using namespace std;
 

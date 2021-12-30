@@ -1,7 +1,7 @@
 #include "Jeu.h"
 #include "Joueur_Pion.h"
 #include "Joueur_Pion.cpp"
-#include "Propriété.h"
+#include "Propriete.h"
 #include <iostream>
 using namespace std;
 
@@ -13,22 +13,22 @@ int main() {
 }
 //  TODO print le list de pion disponible
 bool goodpion(string pion, string tab[], int nbr_pion){
-    string goodpion[8] = {"cheval", "chapeau", "tour eiffel", "tour de pise", "colisé", "sagrada famillia", "clef", "voiture"};
+    string goodpion[8] = {"cheval", "chapeau", "tour eiffel", "tour de pise", "colise", "sagrada famillia", "clef", "voiture"};
 
 //  verification que le pion choisi soit valide
     for(int i = 0; i<8; i++){
         if(pion == goodpion[i]){
-//          verification que le pion ne soit pas deja utilisé
+//          verification que le pion ne soit pas deja utilise
             for(int j = 0; i<nbr_pion; i++){
                 if(pion == tab[j]){
-                    cout << "désolé ce pion a deja été choisi par un autre joueur\n\n";
+                    cout << "desole ce pion a deja ete choisi par un autre joueur\n\n";
                     return false;
                 }
             }
             return true;
         }
     }
-    cout << "désolé ce pion n'existe pas, les pion possible sont : cheval, chapeau, tour eiffel, tour de pise, sagrada famillia, clef et voiture\n\n";
+    cout << "desole ce pion n'existe pas, les pion possible sont : cheval, chapeau, tour eiffel, tour de pise, sagrada famillia, clef et voiture\n\n";
     return false;
 }
 
@@ -42,7 +42,7 @@ void startgame(){
     cout << "Bienvenue dans le jeu Monopoly\n";
 
 //  choix du nombre de joueur
-//  TODO levé d'erreur si l'utilisateur entre un string
+//  TODO leve d'erreur si l'utilisateur entre un string
     cout << "combien y aura-t-il de joueur :\n";
     cin >> nbr_player;
     while(nbr_player > 8){
@@ -52,7 +52,7 @@ void startgame(){
     }
     cout << "nous jouerons donc une partie avec " << nbr_player << " joueurs\n\n";
 
-//  choix du nom de chaque joueur et du pion qui lui sera associé
+//  choix du nom de chaque joueur et du pion qui lui sera associe
     for(int i = 0; i < nbr_player; i++){
         cout << "qui sera le joueur " << i << " :\n";
         cin >> player[i];

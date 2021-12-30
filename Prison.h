@@ -1,16 +1,19 @@
 #ifndef PRISON_H
 #define PRISON_H
 
-#include <string>
+class Case;
+class Jeu;
+class Joueur;
+class Plateau;
+
 #include "Case.h"
-using namespace std;
 
 
 class Prison: public Case {
 private: 
 
 public:
-    Prison(Case* ptsuivante)
+    Prison(Case* ptsuivante);
     void jouerPrison();
 
 };

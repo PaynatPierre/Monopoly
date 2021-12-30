@@ -1,15 +1,12 @@
-//
-// Created by pierr on 28/12/2021.
-//
-
+#include <iostream>
 #include "GoPrison.h"
 
-GoPrison::GoPrison(Case *ptsuivante) {
-    this->ptsuivante=ptsuivante;
+GoPrison::GoPrison(Case *Ptsuivante) {
+    ptsuivante=Ptsuivante;
 }
 
 void GoPrison::setptsuivante(Case *pt) {
-    this->ptsuivante = pt;
+    ptsuivante = pt;
 }
 Case* GoPrison::getptsuivante() {
     return ptsuivante;

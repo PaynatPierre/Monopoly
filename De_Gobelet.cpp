@@ -1,18 +1,18 @@
-#include "Dé_Gobelet.h"
+#include "De_Gobelet.h"
 #include "Joueur_Pion.h"
 #include <iostream>
 #include <string>
 #include <cstdlib>
 using namespace std;
 
-Dé :: Dé(){
+De :: De(){
     nbFaces = 6;
     valeurs = new int[6];
     for (int i =0; i<nbFaces;i++)
         valeurs[i] = i+1;
 }
 
-Dé :: Dé(const int NbFaces, const int* tab_val){
+De :: De(const int NbFaces, const int* tab_val){
     nbFaces = NbFaces;
     valeurs = new int[NbFaces];
     try{
@@ -20,30 +20,30 @@ Dé :: Dé(const int NbFaces, const int* tab_val){
             valeurs[i] = tab_val[i];
     }
     catch(...){
-        cout << "Erreur dans les valeurs renseignées veuillez réessayer" << endl;
+        cout << "Erreur dans les valeurs renseignees veuillez reessayer" << endl;
     }
 
 }
 
-void Dé :: setNbFaces(const int NbFaces){
+void De :: setNbFaces(const int NbFaces){
     nbFaces = NbFaces;
 }
 
-void Dé :: setValeurs(const int* tab_val){
+void De :: setValeurs(const int* tab_val){
     try{
         for (int i =0; i<nbFaces;i++)
             valeurs[i] = tab_val[i];
     }
     catch(...){
-        cout << "Erreur dans les valeurs renseignées veuillez réessayer" << endl;
+        cout << "Erreur dans les valeurs renseignees veuillez reessayer" << endl;
     }
 }
 
-int Dé :: getNbFaces(){
+int De :: getNbFaces(){
     return nbFaces;
 }
 
-int* Dé :: setValeurs(){
+int* De :: setValeurs(){
     return valeurs;
 }
 
@@ -55,7 +55,7 @@ bool Gobelet :: doubleValeurs(const int val1, const int val2){
 }
 
 
-int Gobelet :: getValeursDés(Joueur &J, const Dé& d1,const Dé& d2){
+int Gobelet :: getValeursDes(Joueur &J, const De& d1,const De& d2){
     int val1;
     int val2;
     int rst;
