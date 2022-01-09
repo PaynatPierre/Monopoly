@@ -11,3 +11,7 @@ void Prison::jouerPrison(){
     jeuEnCours = getJeuEnCours();
     (*jeuEnCours).toursuivant();
 }
+
+void Prison::arreterSur(){
+    
+}
