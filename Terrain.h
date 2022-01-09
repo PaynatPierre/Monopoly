@@ -30,6 +30,7 @@ public:
     int getprixhotel();
     void setprixmaison(int i);
     void setprixhotel(int i);
+    void arreterSur();
 };
 
 

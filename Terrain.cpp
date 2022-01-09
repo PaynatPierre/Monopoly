@@ -56,3 +56,7 @@ void Terrain::jouerTerrain()
         Joueur::m_proprietaire::crediter(loyer[0])  ;   //à modifier, le propriétaire reçoit l'argent du loyer
 
 }
+
+void arreterSur(){
+    
+}
