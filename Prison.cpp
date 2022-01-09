@@ -1,5 +1,5 @@
 #include "Prison.h"
-#include "jeu.h"
+#include "Jeu.h"
 using namespace std;
 
 Prison::Prison(Case *ptsuivante) : Case("prison", ptsuivante){
@@ -7,9 +7,9 @@ Prison::Prison(Case *ptsuivante) : Case("prison", ptsuivante){
 
 void Prison::jouerPrison(){
 
-    Jeu *jeuEnCours(0);
+    /*Jeu *jeuEnCours(0);
     jeuEnCours = getJeuEnCours();
-    (*jeuEnCours).toursuivant();
+    (*jeuEnCours).toursuivant();*/
 }
 
 void Prison::arreterSur(){

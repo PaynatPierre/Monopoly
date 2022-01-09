@@ -16,11 +16,12 @@ private:
     int nbrdejoueur;
     Plateau plateau;
     Joueur *liste[6];
-    De des[2]; /*A modifier les des sont pas de cette forme*/
-    Gobelet goblet;
-protected:
+    De de1;
+    De de2;
+    Gobelet gobelet;
+
 public:
-    Jeu(int,Joueur **);
+    Jeu(int,int,Joueur **,De&, De&);
 
     int gettourdejeu();
     void settourdejeu(int);
@@ -38,8 +39,10 @@ public:
     Gobelet getgobelet();
     void setgobelet(Gobelet);
 
-    De getde(int i);
-    void setde(De d,int i);
+    De getde1();
+    De getde2();
+    void setde1(De&);
+    void setde2(De&);
 };
 
 

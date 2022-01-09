@@ -8,56 +8,59 @@
 #include "De_Gobelet.h"
 
 
-Jeu::Jeu(int nbrplayer, Joueur **players) : plateau(), des[0](), des[1](), goblet(){
-    nbrdejoueur = nbrplayer;
-//    this->liste = players
-    plateau.creercase();
-    tourdejeu = 1;
-//  TODO shuffle la liste avant de commencer
-    (*liste[0]).jouer();
+Jeu :: Jeu(int t,int n, Joueur **l, De&d1, De&d2): plateau(), gobelet(), de1(d1), de2(d2){
+    tourdejeu = t;
+    nbrdejoueur = n;
+    for (int i=0; i<6 ; i++)
+        liste[i] = l[i];
 }
 
 int Jeu::gettourdejeu(){
     return tourdejeu;
 }
 void Jeu::settourdejeu(int i){
-    this->tourdejeu = i;
+    tourdejeu = i;
 }
 void Jeu::toursuivant(){
-    this->tourdejeu = this->tourdejeu +1;
+    tourdejeu = tourdejeu +1;
 }
 
 int Jeu::getnbrjoueur(){
     return this->nbrdejoueur;
 }
 void Jeu::setnbrjoueur(int i){
-   this->nbrdejoueur = i;
+   nbrdejoueur = i;
 }
 
 Plateau Jeu::getplateau(){
-    return this->plateau;
+    return plateau;
 }
 void Jeu::setplateau(Plateau pl){
-    this->plateau = pl;
+    plateau = pl;
 }
 
 Joueur* Jeu::getjoueur(int i){
-    return this->liste[i];
+    return liste[i];
 }
 void Jeu::setjoueur(Joueur* j, int i){
-    this->liste[i] = j;
+    liste[i] = j;
 }
 
 Gobelet Jeu::getgobelet(){
-    return this->goblet;
+    return gobelet;
 }
 void Jeu::setgobelet(Gobelet g){
-    this->goblet = g;
+    gobelet = g;
 }
+De Jeu:: getde1(){
 
-De Jeu::getde(int i){
-    return des[i];
 }
-void Jeu::setde(De d, int i){
-    this->des[i] = d;
+De Jeu:: getde2(){
+
+}
+void Jeu:: setde1(De&){
+
+}
+void Jeu:: setde2(De&){
+
 }

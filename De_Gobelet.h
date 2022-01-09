@@ -21,6 +21,7 @@ class De {
     public:
     De();
     De(const int, const int*);
+    De(const De&);
     void setNbFaces(const int);
     void setValeurs(const int*);
     int getNbFaces();
@@ -30,6 +31,7 @@ class De {
 
 class Gobelet{
     public:
+    Gobelet();
     int getValeursDes(Joueur &,const De&,const De&);
     bool doubleValeurs(const int, const int);
 };

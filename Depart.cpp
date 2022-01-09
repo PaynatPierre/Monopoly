@@ -16,9 +16,9 @@ int Depart::getprime() {
 }
 
 void Depart::jouerDepart(){
-    Jeu *jeuEnCours(0);
+    /*Jeu *jeuEnCours(0);
     jeuEnCours = getJeuEnCours();
-    (*jeuEnCours).toursuivant();
+    (*jeuEnCours).toursuivant();*/
 }
 
 void Depart::arreterSur(){

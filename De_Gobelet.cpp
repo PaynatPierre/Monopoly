@@ -24,6 +24,10 @@ De :: De(const int NbFaces, const int* tab_val){
     }
 
 }
+De :: De(const De& d){
+    nbFaces = d.nbFaces;
+    valeurs = d.valeurs;
+}
 
 void De :: setNbFaces(const int NbFaces){
     nbFaces = NbFaces;

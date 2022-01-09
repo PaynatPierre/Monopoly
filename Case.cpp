@@ -9,6 +9,11 @@ Case::Case(string name, Case* ptsuivante): m_name(name) {
 	m_ptsuivante = ptsuivante;
 }
 
+Case :: Case(const Case& c){
+	m_name = c.m_name;
+	m_ptsuivante = c.m_ptsuivante;
+}
+
 
 string Case::getName() {
 	return m_name;

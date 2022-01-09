@@ -34,7 +34,7 @@ void Terrain::setcouleur(string color){
 
 void Terrain::jouerTerrain()
 {
-    if (Propriete::getproprietaire() == none) :  //à modifier, comment écrire condition "si il n'y a pas de propriétaire" ? 
+    /*if (Propriete::getproprietaire() == none) :  //à modifier, comment écrire condition "si il n'y a pas de propriétaire" ? 
         bool yesno(False);
         cin >> "Voulez-vous acheter ce Terrain ?" >> yesno >> endl; //le joueur rentre son choix
         // est-ce que le code va attendre que la personne rentre sa commande pour lancer la suite ?
@@ -46,7 +46,7 @@ void Terrain::jouerTerrain()
     else :
         Joueur::debiter(loyer[0]) ;  //à modifier, le joueur paie le loyer je mets loyer[0] au pif .. est ce que loyer compte le loyer du terrain sans maison ? Et si le proprio a tous les terrains de cette couleur ? 
         Joueur::m_proprietaire::crediter(loyer[0])  ;   //à modifier, le propriétaire reçoit l'argent du loyer
-
+    */
 }
 
 void arreterSur(){

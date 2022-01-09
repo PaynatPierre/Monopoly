@@ -1,18 +1,15 @@
 #ifndef Joueur_Pion_h
 #define Joueur_Pion_h
 
+#include <string>
+
 
 class Case;
 class Jeu;
 class Joueur;
 class Plateau;
 class Pion;
-
-#include "Propriete.h"
-#include "Case.h"
-
-#include <string>
-
+class Propriete;
 
 
 class Joueur{
@@ -30,7 +27,7 @@ class Joueur{
 
     public:
 
-    Joueur(const std::string &, const Pion&, const bool,Propriete**,int,int,int);
+    Joueur(const std::string &, const Pion&, const bool, Propriete**,int,int,int);
     
     bool getStatus();
     std::string getNom();

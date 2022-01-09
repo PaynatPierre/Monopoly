@@ -16,9 +16,9 @@ void Communaute::jouerCommunaute(){
     string carteTire;
     indice = rand() % 16;
     carteTire = m_carteCommunaute[indice];
-    Jeu *jeuEnCours(0);
+    /*Jeu *jeuEnCours(0);
     jeuEnCours = getJeuEnCours();
-    (*jeuEnCours).toursuivant();
+    (*jeuEnCours).toursuivant();*/
 }
 
 string Communaute::getCarteCommunaute(int i){
