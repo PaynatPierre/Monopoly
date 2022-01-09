@@ -4,7 +4,7 @@
 using namespace std;
 
 
-Compagnie :: Compagnie(const string& name,  Case* ptsuivante, int prixAchat, int loyer[6], int nbcomp) : Propriete(name, ptsuivante, prixAchat, loyer){
+Compagnie :: Compagnie(const string& name,  Case* ptsuivante,int nbcomp, int prixAchat, int loyer[6]) : Propriete(name, ptsuivante, prixAchat, loyer){
     nbcompagnies =  nbcomp;
 }
 

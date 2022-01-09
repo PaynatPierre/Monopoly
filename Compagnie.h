@@ -19,7 +19,7 @@ private:
 protected:
 
 public:
-    Compagnie(const std::string&,  Case*, int, int*, int);
+    Compagnie(const std::string&,  Case*,int, int, int*);
     void jouerCompagnie();
     int getnb_compagnie();
     void setnb_compagnie(int);

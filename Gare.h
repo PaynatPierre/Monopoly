@@ -6,14 +6,15 @@
 #define CODEPROJET5_GARE_H
 #include "propriete.h"
 #include "Case.h"
+#include <string>
 
 
-class Gare : public propriete{
+class Gare : public Propriete{
 private:
 public:
-    Gare(string, Case*, int, int *loyer);
+    Gare(std::string, Case*, int, int *loyer);
     void jouergare();
-    void arriverSur();
+    void arreterSur();
 };
 
 
