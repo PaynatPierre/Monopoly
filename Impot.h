@@ -15,6 +15,7 @@ class Impot : public Case{
 private:
     int taxe;
 public:
+    void arreterSur();
     Impot(std::string, Case*, int);
     void settaxe(int);
     int gettaxe();

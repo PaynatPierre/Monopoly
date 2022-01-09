@@ -16,6 +16,7 @@ class ParckGratuit : public Case{
 private:
     int cagnotte;
 public:
+    void arreterSur();
     ParckGratuit(Case*, int);
     void setcagnotte(int);
     int getcagnotte();

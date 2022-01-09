@@ -15,6 +15,7 @@ public:
     void setptsuivante(Case*);
     Case* getptsuivante();
     void jouergoprison();
+    void arreterSur();
 private:
     Case* ptsuivante;
 };

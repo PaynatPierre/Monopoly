@@ -15,6 +15,7 @@ class Communaute: public Case {
 private: 
 	std::string m_carteCommunaute[16];
 public:
+    void arreterSur();
     Communaute(std::string, Case*);
     void jouerCommunaute();
     std::string getCarteCommunaute(int);
