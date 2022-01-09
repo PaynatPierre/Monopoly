@@ -14,3 +14,8 @@ Case* GoPrison::getptsuivante() {
 void GoPrison::jouergoprison() {
 //    TODO aller en prison
 }
+
+
+void GoPrison::arreterSur(){
+    
+}
