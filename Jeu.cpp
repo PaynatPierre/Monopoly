@@ -53,14 +53,14 @@ void Jeu::setgobelet(Gobelet g){
     gobelet = g;
 }
 De Jeu:: getde1(){
-
+    return de1;
 }
 De Jeu:: getde2(){
-
+    return de2;
 }
 void Jeu:: setde1(De&){
-
+    de1 = De;
 }
 void Jeu:: setde2(De&){
-
+    de2 = De;
 }

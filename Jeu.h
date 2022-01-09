@@ -41,6 +41,7 @@ public:
 
     De getde1();
     De getde2();
+
     void setde1(De&);
     void setde2(De&);
 };
