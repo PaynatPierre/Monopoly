@@ -118,31 +118,37 @@ void Plateau::creercase() {
     Prison p1(&t17);
     this->setcase(&p1,10);
 
-    Terrain t18("bleu clair", "avenue de la république", &p1, 12000, {800,4000,10000,30000,45000,60000}, {5000,5000});
+    int loyer_t18[6] = {800,4000,10000,30000,45000,60000};
+    Terrain t18("bleu clair", "avenue de la république", &p1, 12000, loyer_t18, 5000);
     this->setcase(&t18,9);
 
-    Terrain t19("bleu clair", "rue de courcelles", &t18, 10000, {600,3000,9000,27000,40000,55000}, {5000,5000});
+    int loyer_t19[6] = {600,3000,9000,27000,40000,55000};
+    Terrain t19("bleu clair", "rue de courcelles", &t18, 10000, {600,3000,9000,27000,40000,55000}, 5000);
     this->setcase(&t19,8);
 
     chance c3(&t19);
     this->setcase(&c3,7);
 
-    Terrain t20("bleu clair", "rue de vaugirard", &c3, 10000, {600,3000,9000,27000,40000,55000}, {5000,5000});
+    int loyer_t20[6] = {600,3000,9000,27000,40000,55000};
+    Terrain t20("bleu clair", "rue de vaugirard", &c3, 10000, loyer_t20, 5000);
     this->setcase(&t20,6);
 
-    Gare g4("gare montparnasse", &t20, 20000, {2500,5000,10000,20000});
+    int loyer_g4[6] = {2500,5000,10000,20000,0,0};
+    Gare g4("gare montparnasse", &t20, 20000, loyer_g4);
     this->setcase(&g4,5);
 
     Impot i2("impot sur le revenu",20000, &g4);
     this->setcase(&i2,4);
 
-    Terrain t21("maron", "rue lecourbe", &i2, 6000, {400,2000,6000,18000,32000,45000}, {5000,5000});
+    int loyer_t21[6] = {400,2000,6000,18000,32000,45000};
+    Terrain t21("maron", "rue lecourbe", &i2, 6000, loyer_t21, 5000);
     this->setcase(&t21,3);
 
     Communaute co3(&t21);
     this->setcase(&co3, 2);
 
-    Terrain t22("maron", "boulevard de belleville", &co3, 6000, {200,1000,3000,9000,16000,25000}, {5000,5000});
+    int loyer_t21[6] = {200,1000,3000,9000,16000,25000};
+    Terrain t22("maron", "boulevard de belleville", &co3, 6000, loyer_t21, 5000);
     this->setcase(&t21,1);
 
     dp.setSuivante(&t22);
