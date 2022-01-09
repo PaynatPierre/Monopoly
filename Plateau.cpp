@@ -74,82 +74,98 @@ void Plateau::creercase() {
     Terrain t7("jaune", "place de la bourse", &comp1, 26000, loyer_t7, 15000);
     this->setcase(&t7,27);
 
-    Terrain t8("jaune", "faubourg saint-honoré", &t7, 26000, {2200,11000,33000,80000,97500,115000}, {15000,15000});
+   int loyer_t8[6] = {2200,11000,33000,80000,97500,115000};
+    Terrain t8("jaune", "faubourg saint-honoré", &t7, 26000, loyer_t8, 15000);
     this->setcase(&t8,26);
 
-    Gare g2("gare du nord", &t8, 20000, {2500,5000,10000,20000});
+    int loyer_g2[6] = {2500,5000,10000,20000, 0, 0};
+    Gare g2("gare du nord", &t8, 20000, loyer_g2);
     this->setcase(&g2,25);
 
-    Terrain t9("rouge", "avenue henri-martin", &g2, 24000, {2000,10000,30000,75000,92500,110000}, {15000,15000});
+    int loyer_t9[6] = {2000,10000,30000,75000,92500,110000};
+    Terrain t9("rouge", "avenue henri-martin", &g2, 24000, loyer_t9, 15000);
     this->setcase(&t9,24);
 
-    Terrain t10("rouge", "boulevard malesgerbes", &t9, 22000, {1800,9000,25000,70000,87500,105000}, {15000,15000});
+    int loyer_t10[6] = {1800,9000,25000,70000,87500,105000};
+    Terrain t10("rouge", "boulevard malesgerbes", &t9, 22000, loyer_t10, 15000);
     this->setcase(&t10,23);
 
     chance c2(&t10);
     this->setcase(&c2,22);
 
-    Terrain t11("rouge", "avenue matignon", &c2, 22000, {1800,9000,25000,70000,87500,105000}, {15000,15000});
+    int loyer_t11[6] = {1800,9000,25000,70000,87500,105000};
+    Terrain t11("rouge", "avenue matignon", &c2, 22000, loyer_t11, 15000);
     this->setcase(&t11,21)
 
     ParckGratuit pg(&t11, 0);
     this->setcase(&pg,20);
 
-    Terrain t12("orange", "place pigalle", &pg, 20000, {1600,8000,22000,60000,80000,100000}, {10000,10000});
+    int loyer_t12[6] = {1600,8000,22000,60000,80000,100000};
+    Terrain t12("orange", "place pigalle", &pg, 20000, loyer_t12, 10000);
     this->setcase(&t12,19);
 
-    Terrain t13("orange", "boulevard saint-michel", &t12, 18000, {1400,7000,20000,55000,75000,95000}, {10000,10000});
+    int loyer_t13[6] = {1400,7000,20000,55000,75000,95000};
+    Terrain t13("orange", "boulevard saint-michel", &t12, 18000, loyer_t12, 10000);
     this->setcase(&t13,18);
 
     Communaute co2(&t13);
     this->setcase(&co2, 17);
 
-    Terrain t14("orange", "avenue mozart", &co2, 18000, {1400,7000,20000,55000,75000,95000}, {10000,10000});
+
+    int loyer_t14[6] = {1400,7000,20000,55000,75000,95000};
+    Terrain t14("orange", "avenue mozart", &co2, 18000, loyer_t14, 10000);
     this->setcase(&t14,16);
 
-    Gare g3("gare de lyon", &t14, 20000, {2500,5000,10000,20000});
+    int loyer_t14[6] = {2500,5000,10000,20000, 0, 0};
+    Gare g3("gare de lyon", &t14, 20000, loyer_t14);
     this->setcase(&g3,15);
 
-    Terrain t15("violet", "rue de paradis", &g3, 16000, {1200,6000,18000,50000,70000,90000}, {10000,10000});
+    int loyer_t15[6] = {1200,6000,18000,50000,70000,90000};
+    Terrain t15("violet", "rue de paradis", &g3, 16000, loyer_t15, 10000);
     this->setcase(&t15,14);
 
-    Terrain t16("violet", "avenue de neuilly", &t15, 14000, {1000,5000,15000,45000,62000,75000}, {10000,10000});
+    int loyer_t16[6] = {1000,5000,15000,45000,62000,75000};
+    Terrain t16("violet", "avenue de neuilly", &t15, 14000, loyer_t16, 10000);
     this->setcase(&t16,13);
 
     Companie comp2("compagnie d'electricité", &t16);
     this->setcase(&comp2,12);
 
-    Terrain t17("violet", "boulevard de la villette", &comp2, 14000, {1000,5000,15000,45000,62000,75000}, {10000,10000});
+    int loyer_t17[6] = {1000,5000,15000,45000,62000,75000};
+    Terrain t17("violet", "boulevard de la villette", &comp2, 14000, loyer_t17, 10000);
     this->setcase(&t17,11);
 
-    Prison p1(&t17);
-    this->setcase(&p1,10);
-
-    Terrain t18("bleu clair", "avenue de la république", &p1, 12000, {800,4000,10000,30000,45000,60000}, {5000,5000});
+    int loyer_t18[6] = {800,4000,10000,30000,45000,60000};
+    Terrain t18("bleu clair", "avenue de la république", &p1, 12000, loyer_t18, 5000);
     this->setcase(&t18,9);
 
-    Terrain t19("bleu clair", "rue de courcelles", &t18, 10000, {600,3000,9000,27000,40000,55000}, {5000,5000});
+    int loyer_t19[6] = {600,3000,9000,27000,40000,55000};
+    Terrain t19("bleu clair", "rue de courcelles", &t18, 10000, loyer_t19, 5000);
     this->setcase(&t19,8);
 
     chance c3(&t19);
     this->setcase(&c3,7);
 
-    Terrain t20("bleu clair", "rue de vaugirard", &c3, 10000, {600,3000,9000,27000,40000,55000}, {5000,5000});
+    int loyer_t20[6] = {600,3000,9000,27000,40000,55000};
+    Terrain t20("bleu clair", "rue de vaugirard", &c3, 10000, loyer_t20, 5000);
     this->setcase(&t20,6);
 
-    Gare g4("gare montparnasse", &t20, 20000, {2500,5000,10000,20000});
+    int loyer_g4[6] = {2500,5000,10000,20000,0,0};
+    Gare g4("gare montparnasse", &t20, 20000, loyer_g4);
     this->setcase(&g4,5);
 
     Impot i2("impot sur le revenu",20000, &g4);
     this->setcase(&i2,4);
 
-    Terrain t21("maron", "rue lecourbe", &i2, 6000, {400,2000,6000,18000,32000,45000}, {5000,5000});
+    int loyer_t21[6] = {400,2000,6000,18000,32000,45000};
+    Terrain t21("maron", "rue lecourbe", &i2, 6000, loyer_t21, 5000);
     this->setcase(&t21,3);
 
     Communaute co3(&t21);
     this->setcase(&co3, 2);
 
-    Terrain t22("maron", "boulevard de belleville", &co3, 6000, {200,1000,3000,9000,16000,25000}, {5000,5000});
+    int loyer_t21[6] = {200,1000,3000,9000,16000,25000};
+    Terrain t22("maron", "boulevard de belleville", &co3, 6000, loyer_t21, 5000);
     this->setcase(&t21,1);
 
     dp.setSuivante(&t22);
