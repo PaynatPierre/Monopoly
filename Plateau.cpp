@@ -7,6 +7,7 @@
 #include "Depart.h"
 #include "Communaute.h"
 #include "ParckGratuit.h"
+#include "GoPrison.h"
 #include "Prison.h"
 #include "Terrain.h"
 #include "Impot.h"
@@ -27,7 +28,7 @@ void Plateau::creercase() {
     Depart dp(20000, NULL);
     this->setcase(&dp,0);
 
-    Terrain t1("bleu foncé", "rue de la paix", &dp, 40000, {5000,20000,60000,140000,170000,200000}, {20000,20000});
+    Terrain t1("bleu fonce", "rue de la paix", &dp, 40000, {5000,20000,60000,140000,170000,200000}, 20000);
     this->setcase(&t1,39);
 
     Impot i1("taxe de luxe",10000, &t1);

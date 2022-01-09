@@ -26,10 +26,10 @@ void Case::setSuivante(Case* ptsuivante) {
 	m_ptsuivante = ptsuivante;	
 }
 
-Jeu* Case::getJeuEnCours() {
+/*Jeu* Case::getJeuEnCours() {
 	return m_jeuEnCours;
 }
 
 void Case::setJeuEnCours(Jeu* jeuEnCours) {
 	m_jeuEnCours = jeuEnCours;	
-}
+}*/

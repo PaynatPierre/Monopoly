@@ -10,26 +10,25 @@ class Plateau;
 
 #include <string>
 #include "Case.h"
+#include "Propriete.h"
 
-class Terrain {
+class Terrain: public Propriete{
 
 private:
     std::string couleur;
     int nbrmaison;
-    int prixmaison[2];
+    int prixmaison;
 protected:
 
 public:
-    Terrain(const std::string& color, const std::string& name,  Case* ptsuivante, const int prixAchat, const int loyer[5], const int prixm[2]);
+    Terrain(const std::string&, const std::string&,  Case*, int, int*, int prixm);
     std::string getcouleur();
-    void setcouleur(std::string color);
+    void setcouleur(std::string);
     void jouerTerrain();
-    void setnbrmaison(int i);
+    void setnbrmaison(int);
     int getnbrmaison();
-    int getprixmaison();
-    int getprixhotel();
-    void setprixmaison(int i);
-    void setprixhotel(int i);
+    int getprixm_h();
+    void setprixm_h(int);
     void arreterSur();
 };
 

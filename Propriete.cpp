@@ -3,8 +3,10 @@
 #include "Propriete.h"
 using namespace std;
 
-Propriete::Propriete(string name, Case* ptsuivante, int prixAchat, int loyer[5]) : Case(name, ptsuivante), m_prixAchat(prixAchat) {
-    m_loyer[5] = loyer[5];
+Propriete::Propriete(string name, Case* ptsuivante, int prixAchat, int *loyer) : Case(name, ptsuivante), m_prixAchat(prixAchat) {
+    for (int i =0; i<6;i++)
+        m_loyer[i] = loyer[i];
+
 }
 
 int Propriete::getPrixAchat(){

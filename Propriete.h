@@ -2,7 +2,6 @@
 #define PROPRIETE_H
 
 
-class Case;
 class Jeu;
 class Joueur;
 class Plateau;
@@ -16,16 +15,16 @@ class Plateau;
 class Propriete : public Case {
 private: 
 	int m_prixAchat;
-	int m_loyer[5];
+	int m_loyer[6];
     Joueur* m_proprietaire;
 public:
-	Propriete(std::string name,  Case* ptsuivante, int prixAchat, int loyer[5]);
+	Propriete(std::string,  Case*, int, int *);
 	int getPrixAchat();
 	int getLoyer(int i);
 	Joueur* getProprietaire();
-	void setPrixAchat(int prixAchat);
-	void setLoyer(int i, int loyer);
-	void setProprietaire(Joueur* proprietaire);
+	void setPrixAchat(int);
+	void setLoyer(int, int);
+	void setProprietaire(Joueur*);
 };
 
 #endif
