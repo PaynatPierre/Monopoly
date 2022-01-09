@@ -16,8 +16,8 @@ private:
     int nbrdejoueur;
     Plateau plateau;
     Joueur *liste[6];
-    De de1;
-    De de2;
+    De *de1;
+    De *de2;
     Gobelet gobelet;
 
 public:

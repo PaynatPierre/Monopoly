@@ -8,9 +8,11 @@
 #include "De_Gobelet.h"
 
 
-Jeu :: Jeu(int t,int n, Joueur **l, De&d1, De&d2): plateau(), gobelet(), de1(d1), de2(d2){
+Jeu :: Jeu(int t,int n, Joueur **l, De&d1, De&d2): plateau(), gobelet(){
     tourdejeu = t;
     nbrdejoueur = n;
+    de1 = new De(d1);
+    de2 = new De(d2);
     for (int i=0; i<6 ; i++)
         liste[i] = l[i];
 }
@@ -52,15 +54,19 @@ Gobelet Jeu::getgobelet(){
 void Jeu::setgobelet(Gobelet g){
     gobelet = g;
 }
-De Jeu:: getde1(){
-    return de1;
+De Jeu :: getde1(){
+    return *de1;
 }
-De Jeu:: getde2(){
-    return de2;
+
+De Jeu :: getde2(){
+    return *de2;
 }
-void Jeu:: setde1(De&){
-    de1 = De;
+
+void Jeu :: setde1(De& d1){
+    delete[] de1;
+    de1 = new De(d1);
 }
-void Jeu:: setde2(De&){
-    de2 = De;
+void Jeu:: setde2(De& d2){
+    delete[] de2;
+    de2 = new De(d2);
 }

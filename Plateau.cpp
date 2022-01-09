@@ -1,7 +1,3 @@
-//
-// Created by pierr on 15/12/2021.
-//
-
 #include "Plateau.h"
 #include "Case.h"
 #include "Depart.h"
@@ -11,12 +7,15 @@
 #include "Prison.h"
 #include "Terrain.h"
 #include "Impot.h"
+#include "Gare.h"
+#include "Compagnie.h"
 #include <iostream>
 using namespace std;
 
 Plateau::Plateau() {
 
 }
+
 Case* Plateau::getcase(int i) {
     return this->cases[i];
 }
@@ -27,44 +26,52 @@ void Plateau::creercase() {
 
     Depart dp(20000, NULL);
     this->setcase(&dp,0);
-
-    Terrain t1("bleu fonce", "rue de la paix", &dp, 40000, {5000,20000,60000,140000,170000,200000}, 20000);
+    int loyer_t1[6]= {5000,20000,60000,140000,170000,200000};
+    Terrain t1("bleu fonce", "rue de la paix", &dp, 40000, loyer_t1, 20000);
     this->setcase(&t1,39);
 
-    Impot i1("taxe de luxe",10000, &t1);
+    Impot i1("taxe de luxe",&t1, 10000);
     this->setcase(&i1,38);
 
-    Terrain t2("bleu foncé", "avenue des champs élysées", &i1, 35000, {3500,17500,50000,110000,130000,150000}, {20000,20000});
+    int loyer_t2[6]= {3500,17500,50000,110000,130000,150000};
+    Terrain t2("bleu foncé", "avenue des champs élysées", &i1, 35000, loyer_t2, 20000);
     this->setcase(&t2,37);
 
     Chance c1(&t2);
     this->setcase(&c1,36);
 
-    Gare g1 = new Gare("gare saint lazare", &c1, 20000, {2500,5000,10000,20000});
+    int loyer_g1[6]= {2500,5000,10000,20000,0,0};
+    Gare *g1;
+    g1 = new Gare("gare saint lazare", &c1, 20000, loyer_g1);
     this->setcase(&g1,35);
 
-    Terrain t3("vert", "boulevard des capucines", &g1, 32000, {2800,15000,45000,100000,120000,140000}, {20000,20000});
+    int loyer_t3[6]= {2800,15000,45000,100000,120000,140000};
+    Terrain t3("vert", "boulevard des capucines", &g1, 32000,loyer_t3, 20000);
     this->setcase(&t3,34);
 
     Communaute co1(&t3);
     this->setcase(&co1, 33);
 
-    Terrain t4("vert", "avenue foch", &co1, 30000, {2600,13000,39000,90000,110000,127500}, {20000,20000});
+    int loyer_t4[6]= {2600,13000,39000,90000,110000,127500};
+    Terrain t4("vert", "avenue foch", &co1, 30000, loyer_t4, 20000);
     this->setcase(&t4,32);
 
-    Terrain t5("vert", "avenue de breuteuil", &t4, 30000, {2600,13000,39000,90000,110000,127500}, {20000,20000});
+    int loyer_t5[6]= {2600,13000,39000,90000,110000,127500};
+    Terrain t5("vert", "avenue de breuteuil", &t4, 30000, loyer_t5, 20000);
     this->setcase(&t5,31);
 
     GoPrison gp(&t5);
-    this->setcase(gp,30);
+    this->setcase(&gp,30);
 
-    Terrain t6("jaune", "rue lafayette", &gp, 28000, {2400,12000,36000,85000,102000,120000}, {15000,15000});
+    int loyer_t6[6]= {2400,12000,36000,85000,102000,120000};
+    Terrain t6("jaune", "rue lafayette", &gp, 28000, loyer_t6, 15000);
     this->setcase(&t6,29);
 
-    Companie comp1("companie des eaux",&t6);
+    Compagnie comp1("companie des eaux",&t6);
     this->setcase(&comp1,28);
 
-    Terrain t7("jaune", "place de la bourse", &comp1, 26000, {2200,11000,33000,80000,97500,115000}, {15000,15000});
+    int loyer_t7[6]= {2200,11000,33000,80000,97500,115000};
+    Terrain t7("jaune", "place de la bourse", &comp1, 26000, loyer_t7, 15000);
     this->setcase(&t7,27);
 
     Terrain t8("jaune", "faubourg saint-honoré", &t7, 26000, {2200,11000,33000,80000,97500,115000}, {15000,15000});
