@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-Depart::Depart(int prime, string nom, Case* ptsuivante) : Case(nom, ptsuivante){
+Depart::Depart(int prime, Case* ptsuivante) : Case("Case Depart", ptsuivante){
     this->prime = prime;
 }
 
@@ -19,4 +19,8 @@ void Depart::jouerDepart(){
     Jeu *jeuEnCours(0);
     jeuEnCours = getJeuEnCours();
     (*jeuEnCours).toursuivant();
+}
+
+void Depart::arreterSur(){
+    
 }

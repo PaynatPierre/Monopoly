@@ -14,7 +14,8 @@ class Depart: public Case {
 private: 
     int prime;
 public:
-    Depart(int, std::string, Case*);
+    Depart(int, Case*);
+    void arreterSur();
     void jouerDepart();
     void setprime(int);
     int getprime();
