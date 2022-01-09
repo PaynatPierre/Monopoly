@@ -7,6 +7,10 @@ using namespace std;
 Communaute::Communaute(string nom, Case* ptsuivante) : Case(nom, ptsuivante){
 }
 
+void arreterSur(){
+
+}
+
 void Communaute::jouerCommunaute(){
     int indice;
     string carteTire;
