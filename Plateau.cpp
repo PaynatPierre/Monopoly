@@ -9,6 +9,7 @@
 #include "Impot.h"
 #include "Gare.h"
 #include "Compagnie.h"
+#include "Chance.h"
 #include <iostream>
 using namespace std;
 
@@ -37,7 +38,7 @@ void Plateau::creercase() {
     Terrain t2("bleu foncé", "avenue des champs élysées", &i1, 35000, loyer_t2, 20000);
     this->setcase(&t2,37);
 
-    Chance c1(&t2);
+    Chance c1("chance 1", &t2);
     this->setcase(&c1,36);
 
     int loyer_g1[6]= {2500,5000,10000,20000,0,0};
@@ -90,7 +91,7 @@ void Plateau::creercase() {
     Terrain t10("rouge", "boulevard malesgerbes", &t9, 22000, loyer_t10, 15000);
     this->setcase(&t10,23);
 
-    Chance c2(&t10);
+    Chance c2("Chance 2", &t10);
     this->setcase(&c2,22);
 
     int loyer_t11[6] = {1800,9000,25000,70000,87500,105000};
@@ -144,7 +145,7 @@ void Plateau::creercase() {
     Terrain t19("bleu clair", "rue de courcelles", &t18, 10000, loyer_t19, 5000);
     this->setcase(&t19,8);
 
-    Chance c3(&t19);
+    Chance c3("Chance 3", &t19);
     this->setcase(&c3,7);
 
     int loyer_t20[6] = {600,3000,9000,27000,40000,55000};
