@@ -6,7 +6,7 @@
 #include <cstdlib>
 using namespace std;
 
-Joueur :: Joueur(const std::string & Nom, const Pion& P, const bool Status = true,Propriete** Liste_de_proprietes = NULL, int NbPropriete = 0, int NbDouble = 0, int Solde = 0){
+Joueur :: Joueur(const std::string &Nom, Pion& P, const bool Status = true,Propriete** Liste_de_proprietes = NULL, int NbPropriete = 0, int NbDouble = 0, int Solde = 0){
     status =  Status;
     nom = Nom;
     solde = Solde;
@@ -91,7 +91,7 @@ void Joueur :: ajouterAcquisition(Propriete* Prop){
         Propriete* tab_cop[ancienNb];
         for (int i=0; i < ancienNb; i++)
             tab_cop[i]= liste_acquisitions[i];
-        delete liste_acquisitions;
+        delete[] liste_acquisitions;
         liste_acquisitions = new Propriete* [ancienNb * 2];
         for (int i=0; i < ancienNb; i++)
             liste_acquisitions[i]= tab_cop[i];
@@ -121,8 +121,12 @@ void Joueur :: perdre(){
 }
 
 
+string Pion::getNom(){
+    return nom;
+}
 
-Pion :: Pion(Joueur* ptJ,Case* ptC){
+Pion :: Pion(string &Nom, Joueur* ptJ,Case* ptC){
+    nom = Nom;
     ptJoueur = ptJ;
     ptCase = ptC;
 } 
@@ -146,6 +150,10 @@ void Pion :: setPtJoueur(Joueur* ptJ){
 
 void Pion :: setPtCase(Case* ptC){
     ptCase = ptC;
+}
+
+void Pion :: setNom(string& Nom){
+    nom = Nom;
 }
 
 void Pion :: deplacer(){

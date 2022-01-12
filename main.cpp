@@ -48,10 +48,11 @@ void startgame(){
     while(nbr_player > 8){
         cout << "Impossible, le nombre maximum de joueur est de 8.\n";
         cout << "combien y aura-t-il de joueur :\n";
-        cin >> nbr_player;
+        cin >> nbr_player
+
+;
     }
     cout << "nous jouerons donc une partie avec " << nbr_player << " joueurs\n\n";
-
 //  choix du nom de chaque joueur et du pion qui lui sera associe
     for(int i = 0; i < nbr_player; i++){
         cout << "qui sera le joueur " << i << " :\n";
@@ -59,7 +60,7 @@ void startgame(){
         cout << "Bonjour " << player[i] << ". Avec quel pion souhaites tu jouer ?\n";
         string trypion;
         cin >> trypion;
-        while(not(goodpion(trypion, pion, i))){
+        while (!(goodpion(trypion, pion, i))){
             cout << "Avec quel pion souhaites tu jouer " << player[i] << " ?\n";
             cin >> trypion;
         }
@@ -67,14 +68,18 @@ void startgame(){
     }
 
 //    appel du constructeur de jeu
-    Joueur *liste[nbr_player];
+    Joueur **liste;
+    liste = new Joueur*[8];
     for(int i = 0; i < nbr_player; i++){
         const Propriete* p[40];
-        const Pion(NULL,NULL);
-        Joueur j = new Joueur(player[i], 1500,true, pion[i],0, p,0);
+        Pion p_i(pion[i],NULL,NULL);
+        Joueur j(player[i],p_i);
         liste[i]= &j;
     }
+    De d1;
+    De d2;
+    
 
-    Jeu Jeu(nbr_player, liste);
+    Jeu J(&d1, &d2, liste,0,nbr_player);
 }
 

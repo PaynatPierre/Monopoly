@@ -12,8 +12,8 @@ class Plateau;
 
 class Jeu {
 private:
-    int tourdejeu;
     int nbrdejoueur;
+    int tourdejeu;
     Plateau plateau;
     Joueur *liste[6];
     De *de1;
@@ -21,7 +21,8 @@ private:
     Gobelet gobelet;
 
 public:
-    Jeu(int,int,Joueur **,De&, De&);
+
+    Jeu(const De&, const De&, Joueur**, int, int);
 
     int gettourdejeu();
     void settourdejeu(int);

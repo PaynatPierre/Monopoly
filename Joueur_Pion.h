@@ -20,14 +20,14 @@ class Joueur{
     bool status;
     std::string nom;
     int solde;
-    Pion *pion; //allocation dynalique de l'objet Pion
+    Pion *pion; //allocation dynamique de l'objet Pion
     int nbPropriete;
     Propriete* *liste_acquisitions; // tableau dynamique de pointeurs, pointant sur les proprietes du joueur
     int nbDouble;
 
     public:
 
-    Joueur(const std::string &, const Pion&, const bool, Propriete**,int,int,int);
+    Joueur(const std::string &, Pion&, const bool, Propriete**,int,int,int);
     
     bool getStatus();
     std::string getNom();
@@ -56,17 +56,20 @@ class Pion{
 
     private :
 
+    std::string nom;
     Joueur* ptJoueur;
     Case* ptCase;
 
     public:
 
-    Pion(Joueur* ,Case*); 
+    Pion(std::string&, Joueur* ,Case*); 
     Pion(const Pion&);
 
+    std::string getNom();
     Joueur* getPtJoueur();
     Case* getPtCase();
 
+    void  setNom(std::string&);
     void setPtJoueur(Joueur*);
     void setPtCase(Case*);
 

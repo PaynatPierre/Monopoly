@@ -8,13 +8,13 @@
 #include "De_Gobelet.h"
 
 
-Jeu :: Jeu(int t,int n, Joueur **l, De&d1, De&d2): plateau(), gobelet(){
+Jeu :: Jeu (const De& d1, const De& d2, Joueur ** liste_de_joueurs, int t = 0, int bonjour = 8){
+    nbrdejoueur = bonjour;
     tourdejeu = t;
-    nbrdejoueur = n;
     de1 = new De(d1);
     de2 = new De(d2);
     for (int i=0; i<6 ; i++)
-        liste[i] = l[i];
+        liste[i] = liste_de_joueurs[i];
 }
 
 int Jeu::gettourdejeu(){
