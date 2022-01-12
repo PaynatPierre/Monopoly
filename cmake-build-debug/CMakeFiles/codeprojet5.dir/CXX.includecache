@@ -1,0 +1,72 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/Case.h
+string
+-
+Jeu.h
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/Jeu.h
+
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/De_Gobelet.h
+Joueur_Pion.h
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/Joueur_Pion.h
+
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/Jeu.h
+Plateau.h
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/Plateau.h
+Joueur_Pion.h
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/Joueur_Pion.h
+De_Gobelet.h
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/De_Gobelet.h
+
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/Joueur_Pion.cpp
+Joueur_Pion.h
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/Joueur_Pion.h
+Propriete.h
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/Propriete.h
+Case.h
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/Case.h
+iostream
+-
+string
+-
+cstdlib
+-
+
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/Joueur_Pion.h
+Propriete.h
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/Propriete.h
+Case.h
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/Case.h
+string
+-
+
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/Plateau.h
+Case.h
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/Case.h
+
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/Propriete.h
+string
+-
+Case.h
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/Case.h
+Joueur_Pion.h
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/Joueur_Pion.h
+
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/main.cpp
+Jeu.h
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/Jeu.h
+Joueur_Pion.h
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/Joueur_Pion.h
+Joueur_Pion.cpp
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/Joueur_Pion.cpp
+Propriete.h
+C:/Users/pierr/Desktop/pierre/cour/centrale 2a/POO c++/projet/codeprojet5/Propriete.h
+iostream
+-
+
