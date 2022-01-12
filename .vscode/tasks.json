@@ -10,10 +10,10 @@
 				"-g",
 				"${file}","${fileDirname}/Case.cpp","${fileDirname}/Communaute.cpp","${fileDirname}/De_Gobelet.cpp","${fileDirname}/Depart.cpp","${fileDirname}/GoPrison.cpp","${fileDirname}/Impot.cpp","${fileDirname}/Jeu.cpp","${fileDirname}/Joueur_Pion.cpp","${fileDirname}/ParckGratuit.cpp","${fileDirname}/Plateau.cpp","${fileDirname}/Prison.cpp","${fileDirname}/Propriete.cpp","${fileDirname}/Terrain.cpp",
 				"-o",
-				"${fileDirname}\\${fileBasenameNoExtension}.exe,"
+				"${fileDirname}\\${fileBasenameNoExtension}.exe"
 			],
 			"options": {
-				"cwd": "${fileDirname}"
+				"cwd": "C:\\msys64\\mingw64\\bin"
 			},
 			"problemMatcher": [
 				"$gcc"
