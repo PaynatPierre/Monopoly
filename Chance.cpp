@@ -1,25 +1,33 @@
-#ifndef CHANCE_H
-#define CHANCE_H
-
-class Case;
-class Jeu;
-class Joueur;
-class Plateau;
-
+#include "Chance.h"
+#include "Jeu.h"
 #include <string>
-#include "Case.h"
+#include <iostream>
+using namespace std;
 
-class Chance: public Case {
-private: 
-    std::string m_carteChance[16];
-public:
-    void arreterSur();
-    Chance(std::string, Case*);
-    void jouerChance();
-    std::string getCarteChance(int);
-    void setCarteChance(int, std::string);
+Chance::Chance(string nom, Case* ptsuivante) : Case(nom, ptsuivante){
+}
 
-};
+void arreterSur(){
+
+}
+
+void Chance::jouerChance(){
+    int indice;
+    string carteTire;
+    indice = rand() % 16;
+    carteTire = m_carteChance[indice];
+    /*Jeu *jeuEnCours(0);
+    jeuEnCours = getJeuEnCours();
+    (*jeuEnCours).toursuivant();*/
+}
+
+string Chance::getCarteChance(int i){
+    return m_carteChance[i];
+}
+
+void Chance::setCarteChance(int i, string name){
+    m_carteChance[i] = name;
+}
 
 
 
