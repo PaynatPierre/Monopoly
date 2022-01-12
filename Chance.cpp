@@ -32,4 +32,3 @@ void Chance::setCarteChance(int i, string name){
 
 
 
-#endif
