@@ -51,6 +51,9 @@ int* De :: setValeurs(){
     return valeurs;
 }
 
+Gobelet::Gobelet(){
+    
+}
 
 bool Gobelet :: doubleValeurs(const int val1, const int val2){
     bool Double;

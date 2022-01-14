@@ -13,7 +13,7 @@ void ParckGratuit::setcagnotte(int i){
     this->cagnotte=i;
 }
 
-void arreterSur(){
+void ParckGratuit::arreterSur(){
 
 }
 

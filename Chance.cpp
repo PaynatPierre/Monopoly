@@ -7,7 +7,7 @@ using namespace std;
 Chance::Chance(string nom, Case* ptsuivante) : Case(nom, ptsuivante){
 }
 
-void arreterSur(){
+void Chance::arreterSur(){
 
 }
 

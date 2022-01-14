@@ -48,10 +48,9 @@ void startgame(){
     while(nbr_player > 8){
         cout << "Impossible, le nombre maximum de joueur est de 8.\n";
         cout << "combien y aura-t-il de joueur :\n";
-        cin >> nbr_player
-
-;
+        cin >> nbr_player;
     }
+
     cout << "nous jouerons donc une partie avec " << nbr_player << " joueurs\n\n";
 //  choix du nom de chaque joueur et du pion qui lui sera associe
     for(int i = 0; i < nbr_player; i++){
@@ -76,10 +75,6 @@ void startgame(){
         Joueur j(player[i],p_i);
         liste[i]= &j;
     }
-    De d1;
-    De d2;
-    
-
-    Jeu J(&d1, &d2, liste,0,nbr_player);
+    Jeu J(liste,0,nbr_player);
 }
 

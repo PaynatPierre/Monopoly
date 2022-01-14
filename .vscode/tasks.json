@@ -8,7 +8,7 @@
 			"args": [
 				"-fdiagnostics-color=always",
 				"-g",
-				"${file}","${fileDirname}/Case.cpp","${fileDirname}/Communaute.cpp","${fileDirname}/Chance.cpp","${fileDirname}/De_Gobelet.cpp","${fileDirname}/Depart.cpp","${fileDirname}/GoPrison.cpp","${fileDirname}/Impot.cpp","${fileDirname}/Jeu.cpp","${fileDirname}/Joueur_Pion.cpp","${fileDirname}/ParckGratuit.cpp","${fileDirname}/Plateau.cpp","${fileDirname}/Prison.cpp","${fileDirname}/Propriete.cpp","${fileDirname}/Terrain.cpp",
+				"${file}","${fileDirname}/Case.cpp","${fileDirname}/Communaute.cpp","${fileDirname}/Chance.cpp","${fileDirname}/De_Gobelet.cpp","${fileDirname}/Depart.cpp","${fileDirname}/GoPrison.cpp","${fileDirname}/Impot.cpp","${fileDirname}/Joueur_Pion.cpp","${fileDirname}/ParckGratuit.cpp","${fileDirname}/Plateau.cpp","${fileDirname}/Prison.cpp","${fileDirname}/Propriete.cpp","${fileDirname}/Terrain.cpp","${fileDirname}/Jeu.cpp","${fileDirname}/Gare.cpp","${fileDirname}/Compagnie.cpp",
 				"-o",
 				"${fileDirname}\\${fileBasenameNoExtension}.exe"
 			],

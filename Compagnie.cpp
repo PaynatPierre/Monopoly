@@ -23,6 +23,6 @@ void Compagnie::jouerCompagnie()
 
 }
 
-void arreterSur(){
+void Compagnie::arreterSur(){
     
 }

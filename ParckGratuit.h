@@ -6,11 +6,8 @@ class Jeu;
 class Joueur;
 class Plateau;
 
-
-
 #include "Case.h"
 #include <string>
-
 
 class ParckGratuit : public Case{
 private:

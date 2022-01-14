@@ -8,6 +8,6 @@ Gare::Gare(std::string nom, Case* ptsuivant, int prixachat, int loyer[]) : Propr
 
 }
 
-void arreterSur(){
+void Gare::arreterSur(){
 
 }

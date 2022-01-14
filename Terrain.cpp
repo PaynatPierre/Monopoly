@@ -49,6 +49,6 @@ void Terrain::jouerTerrain()
     */
 }
 
-void arreterSur(){
+void Terrain::arreterSur(){
     
 }

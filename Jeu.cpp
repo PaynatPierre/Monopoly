@@ -6,13 +6,15 @@
 #include "Plateau.h"
 #include "Joueur_Pion.h"
 #include "De_Gobelet.h"
+#include <iostream>
+using namespace std;
 
 
-Jeu :: Jeu (const De& d1, const De& d2, Joueur ** liste_de_joueurs, int t = 0, int bonjour = 8){
+Jeu :: Jeu ( Joueur ** liste_de_joueurs, int t = 0, int bonjour = 8) : de1(), de2(){
     nbrdejoueur = bonjour;
     tourdejeu = t;
-    de1 = new De(d1);
-    de2 = new De(d2);
+    /* de1 = new De(d1);
+    de2 = new De(d2); */
     for (int i=0; i<6 ; i++)
         liste[i] = liste_de_joueurs[i];
 }
@@ -55,18 +57,9 @@ void Jeu::setgobelet(Gobelet g){
     gobelet = g;
 }
 De Jeu :: getde1(){
-    return *de1;
+    return de1;
 }
 
 De Jeu :: getde2(){
-    return *de2;
-}
-
-void Jeu :: setde1(De& d1){
-    delete[] de1;
-    de1 = new De(d1);
-}
-void Jeu:: setde2(De& d2){
-    delete[] de2;
-    de2 = new De(d2);
+    return de2;
 }

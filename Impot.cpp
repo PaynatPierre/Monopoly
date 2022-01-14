@@ -7,7 +7,7 @@ Impot::Impot(string Nom, Case *Ptsuivante, int Taxe) : Case(Nom, Ptsuivante){
     taxe=Taxe;
 }
 
-void arreterSur(){
+void Impot::arreterSur(){
 
 }
 

@@ -16,13 +16,13 @@ private:
     int tourdejeu;
     Plateau plateau;
     Joueur *liste[6];
-    De *de1;
-    De *de2;
+    De de1;
+    De de2;
     Gobelet gobelet;
 
 public:
 
-    Jeu(const De&, const De&, Joueur**, int, int);
+    Jeu(Joueur**, int, int);
 
     int gettourdejeu();
     void settourdejeu(int);
@@ -42,9 +42,6 @@ public:
 
     De getde1();
     De getde2();
-
-    void setde1(De&);
-    void setde2(De&);
 };
 
 
