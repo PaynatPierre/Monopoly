@@ -32,21 +32,41 @@ void Terrain::setcouleur(string color){
     this->couleur = color;
 }
 
-void Terrain::jouerTerrain()
-{
-    /*if (Propriete::getproprietaire() == none) :  //à modifier, comment écrire condition "si il n'y a pas de propriétaire" ? 
-        bool yesno(False);
-        cin >> "Voulez-vous acheter ce Terrain ?" >> yesno >> endl; //le joueur rentre son choix
-        // est-ce que le code va attendre que la personne rentre sa commande pour lancer la suite ?
-        if yesno :
-            Joueur::debiter(prixachat) ; // le joueur paye pour acheter 
-            Joueur::ajouterAcquisition(Propriete*); //à modifier : le joueur devient propriétaire
-        else : 
-        cout << "Tu as choisi de ne pas acheter" << endl;
-    else :
-        Joueur::debiter(loyer[0]) ;  //à modifier, le joueur paie le loyer je mets loyer[0] au pif .. est ce que loyer compte le loyer du terrain sans maison ? Et si le proprio a tous les terrains de cette couleur ? 
-        Joueur::m_proprietaire::crediter(loyer[0])  ;   //à modifier, le propriétaire reçoit l'argent du loyer
-    */
+void Terrain::jouerTerrain(Joueur* player){
+
+    if(this->getProprietaire() == NULL){
+        cout << player->getNom() << " s'est arreter sur " << this->getName() << " qui n'appartient à personne";
+        cout << "son prix d'achat est de " << this->getPrixAchat();
+
+        if(this->getPrixAchat() < player->getSolde()){
+            cout << player->getNom() << " souhaitez vous l'acheter ? (entrez oui ou non)";
+            string reponse = "init";
+            while(reponse != "oui" || reponse != "non"){
+                cin >> reponse;
+                if(reponse == "oui"){
+                    player->debiter(this->getPrixAchat());
+                    player->ajouterAcquisition(this);
+                    cout << player->getNom() << " a acheté " << this->getName() << " pour " << this->getPrixAchat() << " francs";
+                }else if(reponse == "non"){
+                    cout << player->getNom() << " n'a pas acheté " << this->getName();
+                }else{
+                    cout << "voyez repondre pas oui ou par non";
+                }
+            }
+        }else{
+            cout << player->getNom() << " n'a pas assez d'argent pour l'acheter";
+        }
+    }else{
+        cout << player->getNom() << " s'est arreter sur " << this->getName() << " qui appartient à " << this->getProprietaire()->getNom();
+        cout << "le loyer est de " << this->getLoyer(this->getnbrmaison()) << " francs";
+
+        //TODO ajouter le cas du loyer nu double
+        int payement = min(player->getSolde(),this->getLoyer(this->getnbrmaison()));
+        player->debiter(payement);
+        this->getProprietaire()->crediter(payement);
+
+        cout << player->getNom() << " paie " << payement << " francs à " << this->getProprietaire()->getNom();
+    }
 }
 
 void Terrain::arreterSur(){

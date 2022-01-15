@@ -6,7 +6,7 @@ using namespace std;
 Propriete::Propriete(string name, Case* ptsuivante, int prixAchat, int *loyer) : Case(name, ptsuivante), m_prixAchat(prixAchat) {
     for (int i =0; i<6;i++)
         m_loyer[i] = loyer[i];
-
+	m_proprietaire = NULL;
 }
 
 int Propriete::getPrixAchat(){

@@ -24,7 +24,7 @@ public:
     Terrain(const std::string&, const std::string&,  Case*, int, int*, int prixm);
     std::string getcouleur();
     void setcouleur(std::string);
-    void jouerTerrain();
+    void jouerTerrain(Joueur*);
     void setnbrmaison(int);
     int getnbrmaison();
     int getprixm_h();

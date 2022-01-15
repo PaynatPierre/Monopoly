@@ -12,7 +12,7 @@ int main() {
 }
 //  TODO print le list de pion disponible
 bool goodpion(string pion, string tab[], int nbr_pion){
-    string goodpion[8] = {"cheval", "chapeau", "tour eiffel", "tour de pise", "colise", "sagrada famillia", "clef", "voiture"};
+    string goodpion[8] = {"cheval", "chapeau", "toure eiffel", "tour de pise", "colise", "sagrada famillia", "clef", "voiture"};
 
 //  verification que le pion choisi soit valide
     for(int i = 0; i<8; i++){
@@ -27,7 +27,7 @@ bool goodpion(string pion, string tab[], int nbr_pion){
             return true;
         }
     }
-    cout << "desole ce pion n'existe pas, les pion possible sont : cheval, chapeau, tour eiffel, tour de pise, sagrada famillia, clef et voiture\n\n";
+    cout << "desole ce pion n'existe pas, les pion possible sont : cheval, chapeau, toure eiffel, tour de pise, sagrada famillia, clef et voiture\n\n";
     return false;
 }
 
@@ -53,7 +53,7 @@ void startgame(){
     cout << "nous jouerons donc une partie avec " << nbr_player << " joueurs\n\n";
 //  choix du nom de chaque joueur et du pion qui lui sera associe
     for(int i = 0; i < nbr_player; i++){
-        cout << "qui sera le joueur " << i << " :\n";
+        cout << "qui sera le joueur " << i + 1 << " :\n";
         cin >> player[i];
         cout << "Bonjour " << player[i] << ". Avec quel pion souhaites tu jouer ?\n";
         string trypion;
@@ -72,6 +72,7 @@ void startgame(){
         const Propriete* p[40];
         Pion p_i(pion[i],NULL,NULL);
         Joueur j(player[i],p_i, true, NULL,0,0,0);
+        p_i.setPtJoueur(&j);
         liste[i]= &j;
     }
     Jeu J(liste,0,nbr_player);
