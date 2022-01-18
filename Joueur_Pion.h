@@ -43,7 +43,7 @@ class Joueur{
         void setNom(const std::string&);
         void setSolde(int);
         void setNbPropriete(int);
-        void addCompagnie(int);
+        void addCompagnie();
         void setPion(const Pion&);
         void setNbDouble(int);
 

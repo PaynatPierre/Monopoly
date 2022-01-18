@@ -76,8 +76,8 @@ void Joueur :: setNbPropriete(int NbPropriete){
     nbPropriete = NbPropriete;
 }
 
-void Joueur :: addCompagnie(int NbCompagnie){
-    nbCompagnie = NbCompagnie;
+void Joueur :: addCompagnie(){
+    nbCompagnie += 1;
 }
 
 void Joueur :: setPion(const Pion& P){
