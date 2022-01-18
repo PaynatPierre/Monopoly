@@ -15,8 +15,7 @@ private:
     int prime;
 public:
     Depart(int, Case*);
-    void arreterSur();
-    void jouerDepart(Joueur* player);
+    void arreterSur(Joueur* player);
     void setprime(int);
     int getprime();
 };

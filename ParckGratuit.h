@@ -13,12 +13,11 @@ class ParckGratuit : public Case{
 private:
     int cagnotte;
 public:
-    void arreterSur();
+    void arreterSur(Joueur*);
     void addcagnotte(int);
     ParckGratuit(Case*, int);
     void setcagnotte(int);
     int getcagnotte();
-    void jouerparckgratuit(Joueur*);
 };
 
 

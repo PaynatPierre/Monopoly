@@ -8,11 +8,7 @@ using namespace std;
 Chance::Chance(string nom, Case* ptsuivante) : Case(nom, ptsuivante){
 }
 
-void Chance::arreterSur(){
-
-}
-
-void Chance::jouerChance(Joueur* player){
+void Chance::arreterSur(Joueur* player){
     cout << player->getNom() << " s'est arreter sur " << this->getName();
     int i = rand()%2;
     if(i == 0){

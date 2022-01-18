@@ -8,19 +8,7 @@ Impot::Impot(string Nom, Case *Ptsuivante, int Taxe) : Case(Nom, Ptsuivante){
     taxe=Taxe;
 }
 
-void Impot::arreterSur(){
-
-}
-
-void Impot::settaxe(int i) {
-    taxe = i;
-}
-
-int Impot::gettaxe() {
-    return taxe;
-}
-
-void Impot::jouerimpot(Joueur* player) {
+void Impot::arreterSur(Joueur* player){
     if(this->getName() == "taxe de luxe"){
         int taxe = 10000;
     }else{
@@ -39,4 +27,12 @@ void Impot::jouerimpot(Joueur* player) {
 
     ParckGratuit* p = (ParckGratuit*)c;
     p->addcagnotte(payement);
+}
+
+void Impot::settaxe(int i) {
+    taxe = i;
+}
+
+int Impot::gettaxe() {
+    return taxe;
 }

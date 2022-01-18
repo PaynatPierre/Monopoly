@@ -20,8 +20,7 @@ protected:
 
 public:
     Compagnie(const std::string&,  Case*, int, int*);
-    void jouerCompagnie(Joueur* player);
-    void arreterSur();
+    void arreterSur(Joueur* player);
 };
 
 

@@ -32,8 +32,7 @@ void Terrain::setcouleur(string color){
     this->couleur = color;
 }
 
-void Terrain::jouerTerrain(Joueur* player){
-
+void Terrain::arreterSur(Joueur* player){
     if(this->getProprietaire() == NULL){
         cout << player->getNom() << " s'est arreter sur " << this->getName() << " qui n'appartient à personne";
         cout << "son prix d'achat est de " << this->getPrixAchat();
@@ -67,8 +66,4 @@ void Terrain::jouerTerrain(Joueur* player){
 
         cout << player->getNom() << " paie " << payement << " francs à " << this->getProprietaire()->getNom();
     }
-}
-
-void Terrain::arreterSur(){
-    
 }

@@ -7,12 +7,8 @@ using namespace std;
 Compagnie :: Compagnie(const string& name,  Case* ptsuivante, int prixAchat, int loyer[6]) : Propriete(name, ptsuivante, prixAchat, loyer){
 }
 
-
-
-
-
-void Compagnie::jouerCompagnie(Joueur* player){
-
+void Compagnie::arreterSur(Joueur* player){
+     
    if(this->getProprietaire() == NULL){
         cout << player->getNom() << " s'est arreter sur " << this->getName() << " dont personne ne possède la carte";
         cout << "son prix d'achat est de " << this->getPrixAchat();
@@ -55,8 +51,4 @@ void Compagnie::jouerCompagnie(Joueur* player){
         }
 
     }
-}
-
-void Compagnie::arreterSur(){
-    
 }

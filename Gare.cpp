@@ -1,6 +1,3 @@
-
-
-
 #include "Gare.h"
 #include "Jeu.h"
 #include <iostream>
@@ -10,9 +7,8 @@ Gare::Gare(std::string nom, Case* ptsuivant, int prixachat, int loyer[]) : Propr
 
 }
 
-
-void Gare::jouergare(Joueur* player){
-
+void Gare::arreterSur(Joueur* player){
+    
     if(this->getProprietaire() == NULL){
         cout << player->getNom() << " s'est arreter sur " << this->getName() << " qui n'appartient à personne";
         cout << "son prix d'achat est de " << this->getPrixAchat();
@@ -45,15 +41,4 @@ void Gare::jouergare(Joueur* player){
 
         cout << player->getNom() << " paie " << payement << " francs à " << this->getProprietaire()->getNom();
     }
-}
-
-
-
-
-
-
-
-
-void Gare::arreterSur(){
-
 }

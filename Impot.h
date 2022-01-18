@@ -15,11 +15,10 @@ class Impot : public Case{
 private:
     int taxe;
 public:
-    void arreterSur();
+    void arreterSur(Joueur*);
     Impot(std::string, Case*, int);
     void settaxe(int);
     int gettaxe();
-    void jouerimpot(Joueur*);
 
 };
 

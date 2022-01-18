@@ -6,7 +6,7 @@ using namespace std;
 GoPrison :: GoPrison(Case *pt): Case ("Aller en Prison", pt){
 }
 
-void GoPrison::jouergoprison(Joueur* player) {
+void GoPrison::arreterSur(Joueur* player){
     cout << player->getNom() << " s'est arreter sur " << this->getName();
     player->setinprison(true);
     player->settourinprison(0);
@@ -16,9 +16,4 @@ void GoPrison::jouergoprison(Joueur* player) {
     }
 
     cout <<   player->getNom() << " est a donc été emmené en prison, il/elle ne passe pas par la case départ et ne reçoit pas 20 000 francs";
-}
-
-
-void GoPrison::arreterSur(){
-    
 }

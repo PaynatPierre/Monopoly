@@ -8,11 +8,7 @@ using namespace std;
 Communaute::Communaute(string nom, Case* ptsuivante) : Case(nom, ptsuivante){
 }
 
-void Communaute::arreterSur(){
-
-}
-
-void Communaute::jouerCommunaute(Joueur* player){
+void Communaute::arreterSur(Joueur* player){
     cout << player->getNom() << " s'est arreter sur " << this->getName();
     int i = rand()%2;
     if(i == 0){

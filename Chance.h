@@ -13,9 +13,8 @@ class Chance: public Case {
 private: 
     std::string m_carteChance[16];
 public:
-    void arreterSur();
+    void arreterSur(Joueur* player);
     Chance(std::string, Case*);
-    void jouerChance(Joueur* player);
     std::string getCarteChance(int);
     void setCarteChance(int, std::string);
 

@@ -15,11 +15,7 @@ int Depart::getprime() {
     return prime;
 }
 
-void Depart::jouerDepart(Joueur* player){
+void Depart::arreterSur(Joueur* player){
     cout << player->getNom() << " s'est arreté sur " << this->getName() << ", il/elle reçoit donc 20 000 francs";
     player->crediter(20000);
-}
-
-void Depart::arreterSur(){
-    
 }

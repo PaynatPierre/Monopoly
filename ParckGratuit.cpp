@@ -18,17 +18,13 @@ void ParckGratuit::addcagnotte(int i){
     this->cagnotte += i;
 }
 
-void ParckGratuit::arreterSur(){
-
-}
-
-int ParckGratuit::getcagnotte() {
-    return cagnotte;
-}
-
-void ParckGratuit::jouerparckgratuit(Joueur* player){
+void ParckGratuit::arreterSur(Joueur* player){
     cout << player->getNom() << " s'est arreter sur " << this->getName() << ", la cagnote est de " << this->cagnotte << " francs";
     player->crediter(this->cagnotte);
     cout << player->getNom() << " gagne donc " << this->cagnotte << " francs";
     this->cagnotte = 0;
+}
+
+int ParckGratuit::getcagnotte() {
+    return cagnotte;
 }
