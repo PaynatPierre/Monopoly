@@ -15,7 +15,7 @@ private:
 public:
     Prison(Case* ptsuivante);
     void arreterSur();
-    void jouerPrison();
+    void jouerPrison(Joueur* player, int, int);
 
 };
 
