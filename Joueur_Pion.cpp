@@ -192,5 +192,5 @@ void Pion :: setNom(string& Nom){
 }
 
 void Pion :: deplacer(){
-    // a coder
+    this->setPtCase(this->ptCase->getSuivante());
 }
