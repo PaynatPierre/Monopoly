@@ -13,7 +13,7 @@ class Gare : public Propriete{
 private:
 public:
     Gare(std::string, Case*, int, int *loyer);
-    void jouergare();
+    void jouergare(Joueur* player);
     void arreterSur();
 };
 

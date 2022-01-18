@@ -54,8 +54,6 @@ void Compagnie::jouerCompagnie(Joueur* player){
         cout << player->getNom() << " paie " << payement << " francs à " << this->getProprietaire()->getNom();                  
         }
 
-        //TODO ajouter le cas du loyer nu double
-
     }
 }
 
