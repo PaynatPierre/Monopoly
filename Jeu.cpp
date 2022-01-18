@@ -6,6 +6,7 @@
 #include "Plateau.h"
 #include "Joueur_Pion.h"
 #include "De_Gobelet.h"
+#include "Prison.h"
 #include <iostream>
 using namespace std;
 
@@ -28,6 +29,70 @@ void Jeu::jouer(){
     if(this->liste[this->joueurcourant]->getStatus()){
         de1.lancerDe();
         de2.lancerDe();
+
+        if(de1.getValeur() == de2.getValeur()){
+            this->liste[this->joueurcourant]->setNbDouble(this->liste[this->joueurcourant]->getNbDouble() + 1);
+        }
+
+        if(this->liste[this->joueurcourant]->getNbDouble() == 3){
+            this->liste[this->joueurcourant]->setNbDouble(0);
+            this->liste[this->joueurcourant]->setinprison(true);
+            this->liste[this->joueurcourant]->settourinprison(0);
+
+            while(this->liste[this->joueurcourant]->getPion()->getPtCase()->getName() != "prison"){
+                this->liste[this->joueurcourant]->getPion()->deplacer();
+            }
+
+            tourdejeu += 1;
+
+            if(this->joueurcourant == nbrdejoueur - 1){
+                joueurcourant = 0;
+            }else{
+                joueurcourant += 1;
+            }
+
+        }else{
+            if(this->liste[this->joueurcourant]->getinprison()){
+                Case* c = this->liste[this->joueurcourant]->getPion()->getPtCase();
+                Prison* p = (Prison*)c;
+                p->arreterSurPrison(this->liste[this->joueurcourant], de1.getValeur(), de2.getValeur());
+            }else{
+                for(int i=0; i<(de1.getValeur()+de2.getValeur()); i++){
+                    this->liste[this->joueurcourant]->getPion()->deplacer();
+                }
+
+                if(this->liste[this->joueurcourant]->getPion()->getPtCase()->getName() == "prison"){
+                    Case* c = this->liste[this->joueurcourant]->getPion()->getPtCase();
+                    Prison* p = (Prison*)c;
+                    p->arreterSurPrison(this->liste[this->joueurcourant], de1.getValeur(), de2.getValeur());
+                }else{
+                    this->liste[this->joueurcourant]->getPion()->getPtCase()->arreterSur(this->liste[this->joueurcourant]);
+                }
+
+                if(this->liste[this->joueurcourant]->getSolde() == 0){
+                    this->liste[this->joueurcourant]->perdre();
+                    tourdejeu += 1;
+                    if(this->joueurcourant == nbrdejoueur - 1){
+                        joueurcourant = 0;
+                    }else{
+                        joueurcourant += 1;
+                    }
+                }else{
+                    if(de1.getValeur() != de2.getValeur()){
+                        if(this->joueurcourant == nbrdejoueur - 1){
+                            joueurcourant = 0;
+                        }else{
+                            joueurcourant += 1;
+                        }
+                        tourdejeu +=1;
+                    }else{
+                        tourdejeu += 1;
+                    }
+                }
+
+
+            }
+        }
 
     }else{
         if(this->joueurcourant == nbrdejoueur - 1){
