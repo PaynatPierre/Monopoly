@@ -6,8 +6,8 @@ using namespace std;
 Prison::Prison(Case *ptsuivante) : Case("prison", ptsuivante){
 }
 
-void Prison::jouerPrison(Joueur* player, int de1, int de2){
-
+void Prison::arreterSur(Joueur* player, int de1, int de2){
+    
     if(player->getinprison()){
         if(player->gettourinprison() < 3){
             if(de1 == de2){
@@ -22,9 +22,4 @@ void Prison::jouerPrison(Joueur* player, int de1, int de2){
         }
     }else{
     cout <<  "Vous etes en simple visite " << endl;}
-}
-
-
-void Prison::arreterSur(){
-    
 }
