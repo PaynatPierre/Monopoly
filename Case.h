@@ -22,7 +22,7 @@ public:
 	void setSuivante(Case*);
 	/*Jeu* getJeuEnCours();
 	void setJeuEnCours(Jeu*);*/
-	virtual void arreterSur() = 0;
+	virtual void arreterSur(Joueur*) = 0;
 };
 
 #endif

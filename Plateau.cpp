@@ -137,8 +137,11 @@ void Plateau::creercase() {
     Terrain t17("violet", "boulevard de la villette", &comp2, 14000, loyer_t17, 10000);
     this->setcase(&t17,11);
 
+    Prison pris1(&t17);
+    this->setcase(&pris1,10);
+
     int loyer_t18[6] = {800,4000,10000,30000,45000,60000};
-    Terrain t18("bleu clair", "avenue de la république", &t17, 12000, loyer_t18, 5000);
+    Terrain t18("bleu clair", "avenue de la république", &pris1, 12000, loyer_t18, 5000);
     this->setcase(&t18,9);
 
     int loyer_t19[6] = {600,3000,9000,27000,40000,55000};
