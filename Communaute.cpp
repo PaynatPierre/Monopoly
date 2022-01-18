@@ -22,7 +22,7 @@ void Communaute::jouerCommunaute(Joueur* player){
         
         player->debiter(payement);
 
-        Case * c = player->getPion()->getPtCase();
+        Case * c = this;
         while(c->getName() != "parck gratuit"){
             c = c->getSuivante();
         }

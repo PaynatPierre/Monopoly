@@ -13,8 +13,6 @@ using namespace std;
 Jeu :: Jeu ( Joueur ** liste_de_joueurs, int t = 0, int bonjour = 8) : de1(), de2(), plateau(){
     nbrdejoueur = bonjour;
     tourdejeu = t;
-    /* de1 = new De(d1);
-    de2 = new De(d2); */
     plateau.creercase();
     for (int i=0; i<nbrdejoueur ; i++){
         liste[i] = liste_de_joueurs[i];

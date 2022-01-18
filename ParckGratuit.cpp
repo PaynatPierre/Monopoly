@@ -3,6 +3,7 @@
 //
 
 #include "ParckGratuit.h"
+#include <string>
 #include <iostream>
 using namespace std;
 
@@ -25,6 +26,5 @@ int ParckGratuit::getcagnotte() {
     return cagnotte;
 }
 
-void ParckGratuit::jouerparckgratuit() {
-//    TODO jouer parck gratuit
+void ParckGratuit::jouerparckgratuit(Joueur* player){
 }

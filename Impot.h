@@ -19,7 +19,7 @@ public:
     Impot(std::string, Case*, int);
     void settaxe(int);
     int gettaxe();
-    void jouerimpot();
+    void jouerimpot(Joueur*);
 
 };
 

@@ -18,7 +18,7 @@ public:
     ParckGratuit(Case*, int);
     void setcagnotte(int);
     int getcagnotte();
-    void jouerparckgratuit();
+    void jouerparckgratuit(Joueur*);
 };
 
 

@@ -15,10 +15,9 @@ int Depart::getprime() {
     return prime;
 }
 
-void Depart::jouerDepart(){
-    /*Jeu *jeuEnCours(0);
-    jeuEnCours = getJeuEnCours();
-    (*jeuEnCours).toursuivant();*/
+void Depart::jouerDepart(Joueur* player){
+    cout << player->getNom() << " s'est arreté sur " << this->getName() << ", il/elle reçoit donc 20 000 francs";
+    player->crediter(20000);
 }
 
 void Depart::arreterSur(){
