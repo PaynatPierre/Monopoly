@@ -1,6 +1,7 @@
 #include "Joueur_Pion.h"
 #include "Propriete.h"
 #include "Case.h"
+#include "De_gobelet.h"
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -26,6 +27,7 @@ Joueur :: Joueur(const std::string &Nom, Pion& P, const bool Status = true,Propr
         liste_acquisitions =  new Propriete*[10];
     }
     nbDouble = NbDouble;
+    valeurde = 0;
 
 }
 
@@ -143,15 +145,15 @@ void Joueur :: debiter(int debit){
     solde -= debit;
 }
 
-void Joueur :: jouer(Joueur*){
-    // a coder
-}
-
-
 void Joueur :: perdre(){
     status =  false;
     solde = 0;
     delete pion;
+
+    for(int i=0;i<this->nbPropriete;i++){
+        this->liste_acquisitions[i]->setProprietaire(NULL);
+    }
+
     delete liste_acquisitions;
 }
 

@@ -75,6 +75,8 @@ void startgame(){
         p_i.setPtJoueur(&j);
         liste[i]= &j;
     }
+
     Jeu J(liste,0,nbr_player);
+    J.schedule();
 }
 

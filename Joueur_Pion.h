@@ -1,6 +1,7 @@
 #ifndef Joueur_Pion_h
 #define Joueur_Pion_h
 
+#include "De_gobelet.h"
 #include <string>
 
 
@@ -28,11 +29,13 @@ class Joueur{
         int nbgare;
         bool inprison;
         int tourinprison;
+        int valeurde;
 
     public:
 
         Joueur(const std::string &, Pion&, const bool, Propriete**,int,int,int,int,int,bool,int);
     
+        int getvaleurde();
         bool getStatus();
         std::string getNom();
         int getSolde();
@@ -45,6 +48,7 @@ class Joueur{
         bool getinprison();
         int gettourinprison();
 
+        void setvaleurde(int);
         void addgare();
         void setinprison(bool);
         void settourinprison(int);
@@ -59,7 +63,7 @@ class Joueur{
         void ajouterAcquisition(Propriete*);
         void crediter(int);
         void debiter(int);
-        void jouer(Joueur*);
+        void jouer();
         void perdre();
     
 };

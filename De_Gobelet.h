@@ -11,24 +11,30 @@ class Plateau;
 
 class De {
 
-    friend class Gobelet;
-
     private:
 
     int nbFaces;
     int *valeurs; /* tableau dynamique */
+    int valeur_actuelle;
 
     public:
     De();
-    De(const int, const int*);
+    De(int, int*);
     De(const De&);
-    void setNbFaces(const int);
-    void setValeurs(const int*);
+    void setNbFaces(int);
+    void setValeurs(int*);
+    void setValeur(int);
     int getNbFaces();
-    int* setValeurs();
+    int getValeur();
+    int* getValeurs();
+    void lancerDe();
+    
 
 };
 
+
+
+/*
 class Gobelet{
     public:
     Gobelet();
@@ -36,6 +42,6 @@ class Gobelet{
     bool doubleValeurs(const int, const int);
 };
 
-
+*/
 
 #endif 

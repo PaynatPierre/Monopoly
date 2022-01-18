@@ -12,7 +12,7 @@ De :: De(){
         valeurs[i] = i+1;
 }
 
-De :: De(const int NbFaces, const int* tab_val){
+De :: De(int NbFaces, int* tab_val){
     nbFaces = NbFaces;
     valeurs = new int[NbFaces];
     try{
@@ -24,16 +24,17 @@ De :: De(const int NbFaces, const int* tab_val){
     }
 
 }
+
 De :: De(const De& d){
     nbFaces = d.nbFaces;
     valeurs = d.valeurs;
 }
 
-void De :: setNbFaces(const int NbFaces){
+void De :: setNbFaces(int NbFaces){
     nbFaces = NbFaces;
 }
 
-void De :: setValeurs(const int* tab_val){
+void De :: setValeurs(int* tab_val){
     try{
         for (int i =0; i<nbFaces;i++)
             valeurs[i] = tab_val[i];
@@ -43,26 +44,32 @@ void De :: setValeurs(const int* tab_val){
     }
 }
 
+void De :: setValeur(int val){
+    valeur_actuelle = val;
+}
+
 int De :: getNbFaces(){
     return nbFaces;
 }
 
-int* De :: setValeurs(){
+int* De :: getValeurs(){
     return valeurs;
 }
 
-Gobelet::Gobelet(){
-    
+int De :: getValeur(){
+    return valeur_actuelle;
 }
 
-bool Gobelet :: doubleValeurs(const int val1, const int val2){
-    bool Double;
-    Double =   val1 == val2 ;
-    return Double;
+void De :: lancerDe(){
+    int val1;
+    int indice1 = rand() % (nbFaces -1)  + 0;
+    val1 = valeurs[indice1];
+    valeur_actuelle = val1;
 }
 
 
-int Gobelet :: getValeursDes(Joueur &J, const De& d1,const De& d2){
+/*
+int Gobelet :: getValeursDes(Joueur &J, De& d1,De& d2){
     int val1;
     int val2;
     int rst;
@@ -81,7 +88,7 @@ int Gobelet :: getValeursDes(Joueur &J, const De& d1,const De& d2){
     }
 }
 
-/*
+
     int val3;
         int val4;
         int indice3 = rand() % (d1.nbFaces -1)  + 0;

@@ -14,16 +14,19 @@ class Jeu {
 private:
     int nbrdejoueur;
     int tourdejeu;
+    int joueurcourant;
+    int nbelimine;
     Plateau plateau;
     Joueur *liste[6];
     De de1;
     De de2;
-    Gobelet gobelet;
 
 public:
 
     Jeu(Joueur**, int, int);
 
+    void schedule();
+    void jouer();
     int gettourdejeu();
     void settourdejeu(int);
     void toursuivant();
@@ -36,9 +39,6 @@ public:
 
     Joueur* getjoueur(int);
     void setjoueur(Joueur*, int);
-
-    Gobelet getgobelet();
-    void setgobelet(Gobelet);
 
     De getde1();
     De getde2();
