@@ -10,14 +10,13 @@ class Plateau;
 #include <string>
 #include "Case.h"
 
-
 class Communaute: public Case {
 private: 
 	std::string m_carteCommunaute[16];
 public:
     void arreterSur();
     Communaute(std::string, Case*);
-    void jouerCommunaute();
+    void jouerCommunaute(Joueur* player);
     std::string getCarteCommunaute(int);
     void setCarteCommunaute(int, std::string);
 

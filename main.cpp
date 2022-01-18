@@ -71,7 +71,7 @@ void startgame(){
     for(int i = 0; i < nbr_player; i++){
         const Propriete* p[40];
         Pion p_i(pion[i],NULL,NULL);
-        Joueur j(player[i],p_i, true, NULL,0,0,0);
+        Joueur j(player[i],p_i, true, NULL,0,0,150000);
         p_i.setPtJoueur(&j);
         liste[i]= &j;
     }

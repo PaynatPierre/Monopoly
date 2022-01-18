@@ -15,7 +15,7 @@ private:
 public:
     void arreterSur();
     Chance(std::string, Case*);
-    void jouerChance();
+    void jouerChance(Joueur* player);
     std::string getCarteChance(int);
     void setCarteChance(int, std::string);
 

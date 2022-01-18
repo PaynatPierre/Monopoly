@@ -14,6 +14,7 @@ private:
     int cagnotte;
 public:
     void arreterSur();
+    void addcagnotte(int);
     ParckGratuit(Case*, int);
     void setcagnotte(int);
     int getcagnotte();

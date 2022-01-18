@@ -13,6 +13,10 @@ void ParckGratuit::setcagnotte(int i){
     this->cagnotte=i;
 }
 
+void ParckGratuit::addcagnotte(int i){
+    this->cagnotte += i;
+}
+
 void ParckGratuit::arreterSur(){
 
 }
