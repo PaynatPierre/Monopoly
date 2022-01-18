@@ -7,7 +7,7 @@ class GoPrison : public Case{
 
 public:
     GoPrison(Case*);
-    void jouergoprison();
+    void jouergoprison(Joueur* player);
     void arreterSur();
 };
 
