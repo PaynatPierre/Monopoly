@@ -27,6 +27,7 @@ void Plateau::creercase() {
 
     Depart dp(20000, NULL);
     this->setcase(&dp,0);
+    
     int loyer_t1[6]= {5000,20000,60000,140000,170000,200000};
     Terrain t1("bleu fonce", "rue de la paix", &dp, 40000, loyer_t1, 20000);
     this->setcase(&t1,39);

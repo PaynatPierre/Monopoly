@@ -61,6 +61,10 @@ void Jeu::jouer(){
             }else{
                 for(int i=0; i<(de1.getValeur()+de2.getValeur()); i++){
                     this->liste[this->joueurcourant]->getPion()->deplacer();
+                    if(this->liste[this->joueurcourant]->getPion()->getPtCase()->getName() == "Case Depart"){
+                        this->liste[this->joueurcourant]->crediter(20000);
+                        cout << this->liste[this->joueurcourant]->getNom() << " est passé par la case départ, il/elle reçoit donc 20 000 francs." <<endl;
+                    }
                 }
 
                 if(this->liste[this->joueurcourant]->getPion()->getPtCase()->getName() == "prison"){
