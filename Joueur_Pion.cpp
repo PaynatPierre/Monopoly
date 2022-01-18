@@ -6,11 +6,12 @@
 #include <cstdlib>
 using namespace std;
 
-Joueur :: Joueur(const std::string &Nom, Pion& P, const bool Status = true,Propriete** Liste_de_proprietes = NULL, int NbPropriete = 0, int NbDouble = 0, int Solde = 0){
+Joueur :: Joueur(const std::string &Nom, Pion& P, const bool Status = true,Propriete** Liste_de_proprietes = NULL, int NbPropriete = 0, int NbCompagnie = 0, int NbDouble = 0, int Solde = 0){
     status =  Status;
     nom = Nom;
     solde = Solde;
     nbPropriete = NbPropriete;
+    nbCompagnie = NbCompagnie;
     pion = new Pion(P);
     if (nbPropriete != 0){
         const int init = 2*nbPropriete;
@@ -47,6 +48,10 @@ int Joueur :: getNbPropriete(){
     return nbPropriete;
 }
 
+int Joueur :: getNbCompagnie(){
+    return nbCompagnie;
+}
+
 Propriete** Joueur :: getListe_acquisitions(){
     return liste_acquisitions;
 }
@@ -69,6 +74,10 @@ void Joueur :: setSolde(int Solde){
 
 void Joueur :: setNbPropriete(int NbPropriete){
     nbPropriete = NbPropriete;
+}
+
+void Joueur :: addCompagnie(int NbCompagnie){
+    nbCompagnie = NbCompagnie;
 }
 
 void Joueur :: setPion(const Pion& P){
