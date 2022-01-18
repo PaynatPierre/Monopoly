@@ -3,7 +3,7 @@
 //
 
 #include "ParckGratuit.h"
-#include <string>
+#include "jeu.h"
 #include <iostream>
 using namespace std;
 
@@ -27,4 +27,8 @@ int ParckGratuit::getcagnotte() {
 }
 
 void ParckGratuit::jouerparckgratuit(Joueur* player){
+    cout << player->getNom() << " s'est arreter sur " << this->getName() << ", la cagnote est de " << this->cagnotte << " francs";
+    player->crediter(this->cagnotte);
+    cout << player->getNom() << " gagne donc " << this->cagnotte << " francs";
+    this->cagnotte = 0;
 }
