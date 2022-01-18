@@ -27,8 +27,10 @@ Jeu :: Jeu ( Joueur ** liste_de_joueurs, int t = 0, int bonjour = 8) : de1(), de
 
 void Jeu::jouer(){
     if(this->liste[this->joueurcourant]->getStatus()){
+        cout << "c'est à " << this->liste[this->joueurcourant]->getNom() << " de jouer" <<endl;
         de1.lancerDe();
         de2.lancerDe();
+        cout << this->liste[this->joueurcourant]->getNom() << " a obtenu " << de1.getValeur() << " et " << de2.getValeur() << " au lancer de dés" <<endl;
 
         if(de1.getValeur() == de2.getValeur()){
             this->liste[this->joueurcourant]->setNbDouble(this->liste[this->joueurcourant]->getNbDouble() + 1);
@@ -42,7 +44,7 @@ void Jeu::jouer(){
             while(this->liste[this->joueurcourant]->getPion()->getPtCase()->getName() != "prison"){
                 this->liste[this->joueurcourant]->getPion()->deplacer();
             }
-
+            cout << this->liste[this->joueurcourant]->getNom() << " a obtenue 3 double d'affilé, il va donc directement en prison" <<endl;
             tourdejeu += 1;
 
             if(this->joueurcourant == nbrdejoueur - 1){
@@ -71,6 +73,7 @@ void Jeu::jouer(){
 
                 if(this->liste[this->joueurcourant]->getSolde() == 0){
                     this->liste[this->joueurcourant]->perdre();
+                    cout << this->liste[this->joueurcourant]->getNom() << "n'a plus d'argent il est éliminé" <<endl;
                     tourdejeu += 1;
                     if(this->joueurcourant == nbrdejoueur - 1){
                         joueurcourant = 0;
