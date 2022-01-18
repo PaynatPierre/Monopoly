@@ -68,7 +68,7 @@ void Plateau::creercase() {
     this->setcase(&t6,29);
 
     int loyer_comp1[6]= {0,0,0,0,0,0};
-    Compagnie comp1("Companie des eaux",&t6,2,15000,loyer_comp1);
+    Compagnie comp1("Compagnie des eaux",&t6,15000,loyer_comp1);
     this->setcase(&comp1,28);
 
     int loyer_t7[6]= {2200,11000,33000,80000,97500,115000};
@@ -130,7 +130,7 @@ void Plateau::creercase() {
     this->setcase(&t16,13);
 
     int loyer_comp2[6]= {0,0,0,0,0,0};
-    Compagnie comp2("compagnie d'electricité", &t16,2,15000,loyer_comp2);
+    Compagnie comp2("compagnie d'electricité", &t16,15000,loyer_comp2);
     this->setcase(&comp2,12);
 
     int loyer_t17[6] = {1000,5000,15000,45000,62000,75000};

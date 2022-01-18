@@ -15,14 +15,12 @@ class Plateau;
 class Compagnie: public Propriete{
 
 private:
-    int nbcompagnies;
+
 protected:
 
 public:
-    Compagnie(const std::string&,  Case*,int, int, int*);
-    void jouerCompagnie();
-    int getnb_compagnie();
-    void setnb_compagnie(int);
+    Compagnie(const std::string&,  Case*, int, int*);
+    void jouerCompagnie(Joueur* player);
     void arreterSur();
 };
 
