@@ -6,7 +6,10 @@
 #include <cstdlib>
 using namespace std;
 
-Joueur :: Joueur(const std::string &Nom, Pion& P, const bool Status = true,Propriete** Liste_de_proprietes = NULL, int NbPropriete = 0, int NbCompagnie = 0, int NbDouble = 0, int Solde = 0){
+Joueur :: Joueur(const std::string &Nom, Pion& P, const bool Status = true,Propriete** Liste_de_proprietes = NULL, int NbPropriete = 0, int NbCompagnie = 0, int NbDouble = 0, int Solde = 0, int nombregare = 0, bool enprison = false, int tourenprison=0){
+    nbgare = nombregare;
+    inprison = enprison;
+    tourinprison = tourenprison;
     status =  Status;
     nom = Nom;
     solde = Solde;
@@ -26,6 +29,17 @@ Joueur :: Joueur(const std::string &Nom, Pion& P, const bool Status = true,Propr
 
 }
 
+int Joueur :: gettourinprison(){
+    return tourinprison;
+}
+
+bool Joueur :: getinprison(){
+    return inprison;
+}
+
+int Joueur :: getnbgare(){
+    return nbgare;
+}
 
 bool Joueur :: getStatus(){
     return status;
@@ -58,6 +72,18 @@ Propriete** Joueur :: getListe_acquisitions(){
 
 int Joueur :: getNbDouble(){
     return nbDouble;
+}
+
+void Joueur :: setinprison(bool b){
+    inprison = b;
+}
+
+void Joueur::addgare(){
+    nbgare += 1;
+}
+
+void Joueur::settourinprison(int i){
+    tourinprison = i;
 }
 
 void Joueur :: setStatus(const bool Status){

@@ -25,10 +25,13 @@ class Joueur{
         int nbCompagnie;
         Propriete* *liste_acquisitions; // tableau dynamique de pointeurs, pointant sur les proprietes du joueur
         int nbDouble;
+        int nbgare;
+        bool inprison;
+        int tourinprison;
 
     public:
 
-        Joueur(const std::string &, Pion&, const bool, Propriete**,int,int,int,int);
+        Joueur(const std::string &, Pion&, const bool, Propriete**,int,int,int,int,int,bool,int);
     
         bool getStatus();
         std::string getNom();
@@ -38,7 +41,13 @@ class Joueur{
         int getNbCompagnie();
         Propriete** getListe_acquisitions();
         int getNbDouble();
+        int getnbgare();
+        bool getinprison();
+        int gettourinprison();
 
+        void addgare();
+        void setinprison(bool);
+        void settourinprison(int);
         void setStatus(const bool);
         void setNom(const std::string&);
         void setSolde(int);
