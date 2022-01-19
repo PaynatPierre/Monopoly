@@ -28,15 +28,19 @@ Jeu :: Jeu ( Joueur ** liste_de_joueurs, int t = 0, int bonjour = 8) : de1(), de
 void Jeu::jouer(){
     if(this->liste[this->joueurcourant]->getStatus()){
         cout << "c'est à " << this->liste[this->joueurcourant]->getNom() << " de jouer" <<endl;
+        cout << "test1" <<endl;
         de1.lancerDe();
         de2.lancerDe();
         cout << this->liste[this->joueurcourant]->getNom() << " a obtenu " << de1.getValeur() << " et " << de2.getValeur() << " au lancer de dés" <<endl;
+        cout << "test2" <<endl;
 
         if(de1.getValeur() == de2.getValeur()){
             this->liste[this->joueurcourant]->setNbDouble(this->liste[this->joueurcourant]->getNbDouble() + 1);
         }
+        cout << "test3" <<endl;
 
         if(this->liste[this->joueurcourant]->getNbDouble() == 3){
+            cout << "test4" <<endl;
             this->liste[this->joueurcourant]->setNbDouble(0);
             this->liste[this->joueurcourant]->setinprison(true);
             this->liste[this->joueurcourant]->settourinprison(0);
@@ -54,11 +58,14 @@ void Jeu::jouer(){
             }
 
         }else{
+            cout << "test5" <<endl;
             if(this->liste[this->joueurcourant]->getinprison()){
+                cout << "test6" <<endl;
                 Case* c = this->liste[this->joueurcourant]->getPion()->getPtCase();
                 Prison* p = (Prison*)c;
                 p->arreterSurPrison(this->liste[this->joueurcourant], de1.getValeur(), de2.getValeur());
             }else{
+                cout << "test7" <<endl;
                 for(int i=0; i<(de1.getValeur()+de2.getValeur()); i++){
                     this->liste[this->joueurcourant]->getPion()->deplacer();
                     if(this->liste[this->joueurcourant]->getPion()->getPtCase()->getName() == "Case Depart"){
@@ -66,12 +73,15 @@ void Jeu::jouer(){
                         cout << this->liste[this->joueurcourant]->getNom() << " est passé par la case départ, il/elle reçoit donc 20 000 francs." <<endl;
                     }
                 }
-
+                cout << "test8" <<endl;
                 if(this->liste[this->joueurcourant]->getPion()->getPtCase()->getName() == "prison"){
+                    cout << "test9" <<endl;
                     Case* c = this->liste[this->joueurcourant]->getPion()->getPtCase();
                     Prison* p = (Prison*)c;
                     p->arreterSurPrison(this->liste[this->joueurcourant], de1.getValeur(), de2.getValeur());
                 }else{
+                    cout << "test10" <<endl;
+                    cout << this->liste[this->joueurcourant]->getPion()->getPtCase()->getName() <<endl;
                     this->liste[this->joueurcourant]->getPion()->getPtCase()->arreterSur(this->liste[this->joueurcourant]);
                 }
 
