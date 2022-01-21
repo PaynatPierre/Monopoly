@@ -8,7 +8,7 @@ Gare::Gare(std::string nom, Case* ptsuivant, int prixachat, int loyer[]) : Propr
 }
 
 void Gare::arreterSur(Joueur* player){
-
+    cout << "test12" <<endl;
     if(this->getProprietaire() == NULL){
         cout << player->getNom() << " s'est arreter sur " << this->getName() << " qui n'appartient à personne";
         cout << "son prix d'achat est de " << this->getPrixAchat();

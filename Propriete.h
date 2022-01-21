@@ -25,6 +25,7 @@ public:
 	void setPrixAchat(int);
 	void setLoyer(int, int);
 	void setProprietaire(Joueur*);
+	virtual void arreterSur(Joueur*)=0;
 };
 
 #endif

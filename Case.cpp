@@ -14,7 +14,6 @@ Case :: Case(const Case& c){
 	m_ptsuivante = c.m_ptsuivante;
 }
 
-
 string Case::getName() {
 	return m_name;
 }

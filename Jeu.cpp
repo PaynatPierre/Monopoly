@@ -83,6 +83,7 @@ void Jeu::jouer(){
                     cout << "test10" <<endl;
                     cout << this->liste[this->joueurcourant]->getPion()->getPtCase()->getName() <<endl;
                     this->liste[this->joueurcourant]->getPion()->getPtCase()->arreterSur(this->liste[this->joueurcourant]);
+                    cout << "test11" <<endl;
                 }
 
                 if(this->liste[this->joueurcourant]->getSolde() == 0){
