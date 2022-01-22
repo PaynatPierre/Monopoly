@@ -1,14 +1,10 @@
 #ifndef COMMUNAUTE_H
 #define COMMUNAUTE_H
 
-class Case;
-class Jeu;
-class Joueur;
-class Plateau;
-
-
 #include <string>
 #include "Case.h"
+#include "Joueur_Pion.h"
+
 
 class Communaute: public Case {
 private: 

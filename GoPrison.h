@@ -2,6 +2,7 @@
 #define CODEPROJET5_GOPRISON_H
 
 #include "Case.h"
+#include "Joueur_Pion.h"
 
 class GoPrison : public Case{
 

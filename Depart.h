@@ -1,13 +1,10 @@
 #ifndef DEPART_H
 #define DEPART_H
 
-class Case;
-class Jeu;
-class Joueur;
-class Plateau;
-
 #include <string>
+
 #include "Case.h"
+#include "Joueur_Pion.h"
 
 
 class Depart: public Case {

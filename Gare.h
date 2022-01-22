@@ -1,19 +1,19 @@
-//
-// Created by pierr on 09/01/2022.
-//
-
 #ifndef CODEPROJET5_GARE_H
 #define CODEPROJET5_GARE_H
-#include "propriete.h"
-#include "Case.h"
+
 #include <string>
+
+#include "Case.h"
+#include "Propriete.h"
+#include "Joueur_Pion.h"
+
 
 
 class Gare : public Propriete{
-private:
 public:
-    Gare(std::string, Case*, int, int *loyer);
-    virtual void arreterSur(Joueur* player);
+    Gare(std::string, Case*, int, int *);
+    virtual void arreterSur(Joueur*);
+    virtual void hello();
 };
 
 

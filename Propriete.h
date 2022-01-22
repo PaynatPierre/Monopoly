@@ -2,18 +2,15 @@
 #define PROPRIETE_H
 
 
-class Jeu;
-class Joueur;
-class Plateau;
-
-
 #include <string>
+
 #include "Case.h"
-#include "Joueur_Pion.h"
+
+class Joueur;
 
 
 class Propriete : public Case {
-private: 
+protected: 
 	int m_prixAchat;
 	int m_loyer[6];
     Joueur* m_proprietaire;
@@ -25,7 +22,7 @@ public:
 	void setPrixAchat(int);
 	void setLoyer(int, int);
 	void setProprietaire(Joueur*);
-	virtual void arreterSur(Joueur*)=0;
+	virtual void hello();
 };
 
 #endif

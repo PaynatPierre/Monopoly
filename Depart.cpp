@@ -1,14 +1,16 @@
 #include "Depart.h"
-#include "jeu.h"
+
 #include <iostream>
+#include <string>
+
 using namespace std;
 
 Depart::Depart(int prime, Case* ptsuivante) : Case("Case Depart", ptsuivante){
-    this->prime = prime;
+    prime = prime;
 }
 
 void Depart::setprime(int i) {
-    this->prime = i;
+    prime = i;
 }
 
 int Depart::getprime() {
@@ -16,6 +18,7 @@ int Depart::getprime() {
 }
 
 void Depart::arreterSur(Joueur* player){
-    cout << player->getNom() << " s'est arreté sur " << this->getName() << ", il/elle reçoit donc 20 000 francs";
+    cout << "Bonjour je suis une case Depart" << endl;
+    cout << player->getNom() << " s'est arreté sur " << m_name << ", il/elle reçoit donc 20 000 francs" << endl;
     player->crediter(20000);
 }

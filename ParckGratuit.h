@@ -1,13 +1,9 @@
 #ifndef CODEPROJET5_PARCKGRATUIT_H
 #define CODEPROJET5_PARCKGRATUIT_H
 
-class Case;
-class Jeu;
-class Joueur;
-class Plateau;
-
-#include "Case.h"
 #include <string>
+#include "Case.h"
+#include "Joueur_Pion.h"
 
 class ParckGratuit : public Case{
 private:

@@ -1,17 +1,13 @@
 #ifndef Joueur_Pion_h
 #define Joueur_Pion_h
 
-#include "De_gobelet.h"
+
 #include <string>
+#include "Case.h"
+#include "Propriete.h"
 
 
-class Case;
-class Jeu;
-class Joueur;
-class Plateau;
 class Pion;
-class Propriete;
-
 
 class Joueur{
 

@@ -1,13 +1,9 @@
 #ifndef CHANCE_H
 #define CHANCE_H
 
-class Case;
-class Jeu;
-class Joueur;
-class Plateau;
-
 #include <string>
 #include "Case.h"
+#include "Joueur_Pion.h"
 
 class Chance: public Case {
 private: 

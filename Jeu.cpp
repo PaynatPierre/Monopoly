@@ -1,57 +1,55 @@
-//
-// Created by pierr on 15/12/2021.
-//
-
 #include "Jeu.h"
-#include "Plateau.h"
-#include "Joueur_Pion.h"
-#include "De_Gobelet.h"
+#include "Case.h"
+#include "Propriete.h"
 #include "Prison.h"
+
+#include <string>
 #include <iostream>
+
 using namespace std;
 
 
-Jeu :: Jeu ( Joueur ** liste_de_joueurs, int t = 0, int bonjour = 8) : de1(), de2(), plateau(){
+Jeu :: Jeu ( Joueur ** liste_de_joueurs, Plateau& p,int t = 0, int bonjour = 8) : de1(), de2(), plateau(p){
     nbrdejoueur = bonjour;
     nbelimine = 0;
     tourdejeu = t;
     joueurcourant=0;
-    plateau.creercase();
     for (int i=0; i<nbrdejoueur ; i++){
         liste[i] = liste_de_joueurs[i];
         liste[i]->getPion()->setPtCase(plateau.getcase(0));
-    }   
+    }
+    cout << "Construction du jeu terminee"  << endl;
      
 }
 //TODO geter et setter de nbelimine
 
 void Jeu::jouer(){
-    if(this->liste[this->joueurcourant]->getStatus()){
-        cout << "c'est à " << this->liste[this->joueurcourant]->getNom() << " de jouer" <<endl;
-        cout << "test1" <<endl;
+    if(liste[joueurcourant]->getStatus()){
+        cout << "c'est a " << liste[joueurcourant]->getNom() << " de jouer" << endl;
+        cout << "test1" << endl;
         de1.lancerDe();
         de2.lancerDe();
-        cout << this->liste[this->joueurcourant]->getNom() << " a obtenu " << de1.getValeur() << " et " << de2.getValeur() << " au lancer de dés" <<endl;
+        cout << liste[joueurcourant]->getNom() << " a obtenu " << de1.getValeur() << " et " << de2.getValeur() << " au lancer de des" <<endl;
         cout << "test2" <<endl;
 
         if(de1.getValeur() == de2.getValeur()){
-            this->liste[this->joueurcourant]->setNbDouble(this->liste[this->joueurcourant]->getNbDouble() + 1);
+            liste[joueurcourant]->setNbDouble(liste[joueurcourant]->getNbDouble() + 1);
         }
         cout << "test3" <<endl;
 
-        if(this->liste[this->joueurcourant]->getNbDouble() == 3){
+        if(liste[joueurcourant]->getNbDouble() == 3){
             cout << "test4" <<endl;
-            this->liste[this->joueurcourant]->setNbDouble(0);
-            this->liste[this->joueurcourant]->setinprison(true);
-            this->liste[this->joueurcourant]->settourinprison(0);
+            liste[joueurcourant]->setNbDouble(0);
+            liste[joueurcourant]->setinprison(true);
+            liste[joueurcourant]->settourinprison(0);
 
-            while(this->liste[this->joueurcourant]->getPion()->getPtCase()->getName() != "prison"){
-                this->liste[this->joueurcourant]->getPion()->deplacer();
+            while(liste[joueurcourant]->getPion()->getPtCase()->getName() != "prison"){
+                liste[joueurcourant]->getPion()->deplacer();
             }
-            cout << this->liste[this->joueurcourant]->getNom() << " a obtenue 3 double d'affilé, il va donc directement en prison" <<endl;
+            cout << liste[joueurcourant]->getNom() << " a obtenue 3 double d'affilé, il va donc directement en prison" <<endl;
             tourdejeu += 1;
 
-            if(this->joueurcourant == nbrdejoueur - 1){
+            if(joueurcourant == nbrdejoueur - 1){
                 joueurcourant = 0;
             }else{
                 joueurcourant += 1;
@@ -59,45 +57,46 @@ void Jeu::jouer(){
 
         }else{
             cout << "test5" <<endl;
-            if(this->liste[this->joueurcourant]->getinprison()){
+            if(liste[joueurcourant]->getinprison()){
                 cout << "test6" <<endl;
-                Case* c = this->liste[this->joueurcourant]->getPion()->getPtCase();
+                Case* c = liste[joueurcourant]->getPion()->getPtCase();
                 Prison* p = (Prison*)c;
-                p->arreterSurPrison(this->liste[this->joueurcourant], de1.getValeur(), de2.getValeur());
+                p->arreterSurPrison(liste[joueurcourant], de1.getValeur(), de2.getValeur());
             }else{
                 cout << "test7" <<endl;
                 for(int i=0; i<(de1.getValeur()+de2.getValeur()); i++){
-                    this->liste[this->joueurcourant]->getPion()->deplacer();
-                    if(this->liste[this->joueurcourant]->getPion()->getPtCase()->getName() == "Case Depart"){
-                        this->liste[this->joueurcourant]->crediter(20000);
-                        cout << this->liste[this->joueurcourant]->getNom() << " est passé par la case départ, il/elle reçoit donc 20 000 francs." <<endl;
+                    liste[joueurcourant]->getPion()->deplacer();
+                    if(liste[joueurcourant]->getPion()->getPtCase()->getName() == "Case Depart"){
+                        liste[joueurcourant]->crediter(20000);
+                        cout << liste[joueurcourant]->getNom() << " est passé par la case départ, il/elle reçoit donc 20 000 francs." <<endl;
                     }
                 }
                 cout << "test8" <<endl;
-                if(this->liste[this->joueurcourant]->getPion()->getPtCase()->getName() == "prison"){
+                if(liste[joueurcourant]->getPion()->getPtCase()->getName() == "prison"){
                     cout << "test9" <<endl;
-                    Case* c = this->liste[this->joueurcourant]->getPion()->getPtCase();
+                    Case* c = liste[joueurcourant]->getPion()->getPtCase();
                     Prison* p = (Prison*)c;
-                    p->arreterSurPrison(this->liste[this->joueurcourant], de1.getValeur(), de2.getValeur());
+                    p->arreterSurPrison(liste[joueurcourant], de1.getValeur(), de2.getValeur());
                 }else{
                     cout << "test10" <<endl;
-                    cout << this->liste[this->joueurcourant]->getPion()->getPtCase()->getName() <<endl;
-                    this->liste[this->joueurcourant]->getPion()->getPtCase()->arreterSur(this->liste[this->joueurcourant]);
+                    cout << liste[joueurcourant]->getPion()->getPtCase()->getName() <<endl;
+
+                    liste[joueurcourant]->getPion()->getPtCase()->arreterSur(liste[joueurcourant]);
                     cout << "test11" <<endl;
                 }
 
-                if(this->liste[this->joueurcourant]->getSolde() == 0){
-                    this->liste[this->joueurcourant]->perdre();
-                    cout << this->liste[this->joueurcourant]->getNom() << "n'a plus d'argent il est éliminé" <<endl;
+                if(liste[joueurcourant]->getSolde() == 0){
+                    liste[joueurcourant]->perdre();
+                    cout << liste[joueurcourant]->getNom() << "n'a plus d'argent il est éliminé" <<endl;
                     tourdejeu += 1;
-                    if(this->joueurcourant == nbrdejoueur - 1){
+                    if(joueurcourant == nbrdejoueur - 1){
                         joueurcourant = 0;
                     }else{
                         joueurcourant += 1;
                     }
                 }else{
                     if(de1.getValeur() != de2.getValeur()){
-                        if(this->joueurcourant == nbrdejoueur - 1){
+                        if(joueurcourant == nbrdejoueur - 1){
                             joueurcourant = 0;
                         }else{
                             joueurcourant += 1;
@@ -113,7 +112,7 @@ void Jeu::jouer(){
         }
 
     }else{
-        if(this->joueurcourant == nbrdejoueur - 1){
+        if(joueurcourant == nbrdejoueur - 1){
             joueurcourant = 0;
         }else{
             joueurcourant += 1;
@@ -133,7 +132,7 @@ void Jeu::toursuivant(){
 }
 
 int Jeu::getnbrjoueur(){
-    return this->nbrdejoueur;
+    return nbrdejoueur;
 }
 void Jeu::setnbrjoueur(int i){
    nbrdejoueur = i;
@@ -162,7 +161,8 @@ De Jeu :: getde2(){
 }
 
 void Jeu::schedule(){
+    cout << "Lancement du jeu" << endl;
     while(nbelimine < nbrdejoueur-1){
-        this->jouer();
+        jouer();
     }
 }

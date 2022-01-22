@@ -2,15 +2,11 @@
 #define CODEPROJET4_TERRAIN_H
 
 
-class Case;
-class Jeu;
-class Joueur;
-class Plateau;
-
-
 #include <string>
+
 #include "Case.h"
 #include "Propriete.h"
+#include "Joueur_Pion.h"
 
 class Terrain: public Propriete{
 
@@ -21,7 +17,7 @@ private:
 protected:
 
 public:
-    Terrain(const std::string&, const std::string&,  Case*, int, int*, int prixm);
+    Terrain(const std::string&, const std::string&,  Case*, int, int*, int);
     std::string getcouleur();
     void setcouleur(std::string);
     void setnbrmaison(int);

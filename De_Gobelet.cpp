@@ -1,8 +1,9 @@
 #include "De_Gobelet.h"
-#include "Joueur_Pion.h"
+
 #include <iostream>
 #include <string>
 #include <cstdlib>
+
 using namespace std;
 
 De :: De(){
@@ -32,6 +33,11 @@ De :: De(const De& d){
 
 void De :: setNbFaces(int NbFaces){
     nbFaces = NbFaces;
+}
+
+void De :: display(){
+    for (int i=0; i<nbFaces;i++)
+        cout << valeurs[i] << "\n" << endl;
 }
 
 void De :: setValeurs(int* tab_val){
@@ -66,54 +72,3 @@ void De :: lancerDe(){
     val1 = valeurs[indice1];
     valeur_actuelle = val1;
 }
-
-
-/*
-int Gobelet :: getValeursDes(Joueur &J, De& d1,De& d2){
-    int val1;
-    int val2;
-    int rst;
-    int indice1 = rand() % (d1.nbFaces -1)  + 0;
-    int indice2 = rand() % (d2.nbFaces -1)  + 0;
-    val1 = d1.valeurs[indice1];
-    val2 = d1.valeurs[indice2];
-    rst = val1 + val2;
-    if (doubleValeurs(val1,val2)){
-        int OldNbDouble = J.getNbDouble();
-        J.setNbDouble(OldNbDouble +1);
-        return rst;
-    }
-    else{
-        return rst;
-    }
-}
-
-
-    int val3;
-        int val4;
-        int indice3 = rand() % (d1.nbFaces -1)  + 0;
-        int indice4 = rand() % (d2.nbFaces -1)  + 0;
-        val3 = d1.valeurs[indice3];
-        val4 = d1.valeurs[indice4];
-        rst = rst + val3 + val4;
-        if (doubleValeurs(val3,val4)){
-            int val5;
-            int val6;
-            int indice5 = rand() % (d1.nbFaces -1)  + 0;
-            int indice6 = rand() % (d2.nbFaces -1)  + 0;
-            val5 = d1.valeurs[indice5];
-            val6 = d1.valeurs[indice6];
-            rst = rst + val5 + val6;
-            if (doubleValeurs(val5,val6)){
-                return 0; // Va en prison
-            }
-            else{
-                return rst;
-            }
-        }
-        else{
-            return rst;
-        }
-    }
-
-*/

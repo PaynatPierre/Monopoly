@@ -1,10 +1,10 @@
 #include "Joueur_Pion.h"
-#include "Propriete.h"
-#include "Case.h"
-#include "De_gobelet.h"
+#include "De_Gobelet.h"
+
 #include <iostream>
 #include <string>
 #include <cstdlib>
+
 using namespace std;
 
 Joueur :: Joueur(const std::string &Nom, Pion& P, const bool Status = true,Propriete** Liste_de_proprietes = NULL, int NbPropriete = 0, int NbCompagnie = 0, int NbDouble = 0, int Solde = 0, int nombregare = 0, bool enprison = false, int tourenprison=0){
@@ -150,23 +150,24 @@ void Joueur :: perdre(){
     solde = 0;
     delete pion;
 
-    for(int i=0;i<this->nbPropriete;i++){
-        this->liste_acquisitions[i]->setProprietaire(NULL);
+    for(int i=0;i<nbPropriete;i++){
+        liste_acquisitions[i]->setProprietaire(NULL);
     }
 
     delete liste_acquisitions;
 }
 
 
-string Pion::getNom(){
-    return nom;
-}
 
 Pion :: Pion(string &Nom, Joueur* ptJ,Case* ptC){
     nom = Nom;
     ptJoueur = ptJ;
     ptCase = ptC;
 } 
+
+string Pion::getNom(){
+    return nom;
+}
 
 Pion :: Pion(const Pion&P ){
     ptJoueur = P.ptJoueur;
@@ -194,5 +195,5 @@ void Pion :: setNom(string& Nom){
 }
 
 void Pion :: deplacer(){
-    this->setPtCase(this->ptCase->getSuivante());
+    setPtCase(ptCase->getSuivante());
 }

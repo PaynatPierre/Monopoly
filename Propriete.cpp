@@ -1,6 +1,8 @@
+#include "Propriete.h"
+
 #include <iostream>
 #include <string>
-#include "Propriete.h"
+
 using namespace std;
 
 Propriete::Propriete(string name, Case* ptsuivante, int prixAchat, int *loyer) : Case(name, ptsuivante), m_prixAchat(prixAchat) {
@@ -25,6 +27,9 @@ void Propriete::setPrixAchat(int prixAchat) {
 	m_prixAchat = prixAchat;
 }
 
+void Propriete :: hello(){
+	cout << "hello je suis une propriété" << endl;
+}
 void Propriete::setProprietaire(Joueur* proprietaire) {
 	m_proprietaire = proprietaire;
 }

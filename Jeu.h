@@ -1,10 +1,6 @@
 #ifndef CODEPROJET4_JEU_H
 #define CODEPROJET4_JEU_H
 
-class Case;
-class Jeu;
-class Joueur;
-class Plateau;
 
 #include "Plateau.h"
 #include "Joueur_Pion.h"
@@ -23,7 +19,7 @@ private:
 
 public:
 
-    Jeu(Joueur**, int, int);
+    Jeu(Joueur**,  Plateau&, int, int);
 
     void schedule();
     void jouer();
