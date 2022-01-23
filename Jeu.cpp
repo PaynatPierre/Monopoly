@@ -58,6 +58,19 @@ void Jeu::jouer(){
                 Case* c = liste[joueurcourant].getPion()->getPtCase();
                 Prison* p = (Prison*)c;
                 p->arreterSurPrison(&liste[joueurcourant], de1.getValeur(), de2.getValeur());
+
+                if(de1.getValeur() != de2.getValeur()){
+                        if(joueurcourant == nbrdejoueur - 1){
+                            liste[joueurcourant].setNbDouble(0);
+                            joueurcourant = 0;
+                        }else{
+                            liste[joueurcourant].setNbDouble(0);
+                            joueurcourant += 1;
+                        }
+                        tourdejeu +=1;
+                }else{
+                    tourdejeu += 1;
+                }
             }else{
                 for(int i=0; i<(de1.getValeur()+de2.getValeur()); i++){
                     liste[joueurcourant].getPion()->deplacer();
@@ -174,16 +187,13 @@ void Jeu::schedule(){
         }
     }
 
+
+    cout<< "  "<<endl;
+    cout<< "  "<<endl;
     cout<< "************************************************************************" <<endl;
     cout<< "                    la partie est fini "<<endl;
     cout<< "************************************************************************" <<endl;
     cout<< "  "<<endl;
     cout<< player->getNom() << " a gagne la partie felicitation !!!!!"<<endl;
-
-    cout<< "  "<<endl;
-    cout<< "  "<<endl;
-    cout<< "appuyez sur entrer pour fermer le jeu"<<endl;
-    std:string wait;
-    cin>> wait;
 
 }
