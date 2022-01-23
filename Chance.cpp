@@ -10,7 +10,7 @@ Chance::Chance(string nom, Case* ptsuivante) : Case(nom, ptsuivante){
 }
 
 void Chance::arreterSur(Joueur* player){
-    cout << "Hello je suis une case chance" <<endl;
+    //cout << "Hello je suis une case chance" <<endl;
     cout << player->getNom() << " s'est arreter sur " << m_name << endl;
     int i = rand()%2;
     if(i == 0){

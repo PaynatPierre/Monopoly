@@ -8,7 +8,7 @@ GoPrison :: GoPrison(Case *pt): Case ("Aller en Prison", pt){
 }
 
 void GoPrison::arreterSur(Joueur* player){
-    cout << "Hello je suis une Case GoPrison" <<endl;
+    //cout << "Hello je suis une Case GoPrison" <<endl;
     cout << player->getNom() << " s'est arreter sur " << m_name<< endl;
     player->setinprison(true);
     player->settourinprison(0);

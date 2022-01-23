@@ -10,7 +10,7 @@ Communaute::Communaute(string nom, Case* ptsuivante) : Case(nom, ptsuivante){
 }
 
 void Communaute::arreterSur(Joueur* player){
-    cout << "Hello je suis une case communaute" <<endl;
+    //cout << "Hello je suis une case communaute" <<endl;
     cout << player->getNom() << " s'est arreter sur " << m_name << endl;
     int i = rand()%2;
     if(i == 0){

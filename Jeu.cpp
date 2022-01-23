@@ -17,6 +17,7 @@ Jeu :: Jeu ( Joueur ** liste_de_joueurs, Plateau& p,int t = 0, int bonjour = 8) 
     for (int i=0; i<nbrdejoueur ; i++){
         liste[i] = liste_de_joueurs[i];
         liste[i]->getPion()->setPtCase(plateau.getcase(0));
+        cout<< liste_de_joueurs[i]->getNom() << endl;
     }
     cout << "Construction du jeu terminee"  << endl;
      
@@ -79,13 +80,14 @@ void Jeu::jouer(){
                     p->arreterSurPrison(liste[joueurcourant], de1.getValeur(), de2.getValeur());
                 }else{
                     cout << "test10" <<endl;
-                    cout << liste[joueurcourant]->getPion()->getPtCase()->getName() <<endl;
+                    //cout << liste[joueurcourant]->getPion()->getPtCase()->getName() <<endl;
 
                     liste[joueurcourant]->getPion()->getPtCase()->arreterSur(liste[joueurcourant]);
                     cout << "test11" <<endl;
                 }
 
                 if(liste[joueurcourant]->getSolde() == 0){
+                    cout << "test16" <<endl;
                     liste[joueurcourant]->perdre();
                     cout << liste[joueurcourant]->getNom() << "n'a plus d'argent il est éliminé" <<endl;
                     tourdejeu += 1;
@@ -95,10 +97,14 @@ void Jeu::jouer(){
                         joueurcourant += 1;
                     }
                 }else{
+                    cout << "test12" <<endl;
                     if(de1.getValeur() != de2.getValeur()){
+                        cout << "test13" <<endl;
                         if(joueurcourant == nbrdejoueur - 1){
+                            cout << "test14" <<endl;
                             joueurcourant = 0;
                         }else{
+                            cout << "test15" <<endl;
                             joueurcourant += 1;
                         }
                         tourdejeu +=1;
@@ -112,9 +118,12 @@ void Jeu::jouer(){
         }
 
     }else{
+        cout << "test17" <<endl;
         if(joueurcourant == nbrdejoueur - 1){
+            cout << "test18" <<endl;
             joueurcourant = 0;
         }else{
+            cout << "test19" <<endl;
             joueurcourant += 1;
         }
 
@@ -163,6 +172,7 @@ De Jeu :: getde2(){
 void Jeu::schedule(){
     cout << "Lancement du jeu" << endl;
     while(nbelimine < nbrdejoueur-1){
+        cout<< " lancement d'un tout avec joueurcourant = " << joueurcourant << endl;
         jouer();
     }
 }

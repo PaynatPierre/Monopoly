@@ -17,10 +17,11 @@ void ParckGratuit::addcagnotte(int i){
 }
 
 void ParckGratuit::arreterSur(Joueur* player){
-    cout << "Hello je suis un parc gratuit" <<endl;
+    //cout << "Hello je suis un parc gratuit" <<endl;
     cout << player->getNom() << " s'est arreter sur " << getName() << ", la cagnote est de " << cagnotte << " francs"<<endl;
     player->crediter(cagnotte);
     cout << player->getNom() << " gagne donc " << cagnotte << " francs"<<endl;
+    cout << "il lui reste donc " << player->getSolde() << " francs" <<endl;
     cagnotte = 0;
 }
 

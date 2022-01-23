@@ -69,20 +69,17 @@ class Pion{
     private :
 
         std::string nom;
-        Joueur* ptJoueur;
         Case* ptCase;
 
     public:
 
-        Pion(std::string&, Joueur* ,Case*); 
+        Pion(std::string&,Case*); 
         Pion(const Pion&);
 
         std::string getNom();
-        Joueur* getPtJoueur();
         Case* getPtCase();
 
         void  setNom(std::string&);
-        void setPtJoueur(Joueur*);
         void setPtCase(Case*);
 
         void deplacer();

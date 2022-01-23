@@ -193,7 +193,12 @@ int main() {
     }
 
     cout << "nous jouerons donc une partie avec " << nbr_player << " joueurs\n\n";
+
+
+
 //  choix du nom de chaque joueur et du pion qui lui sera associe
+    //Joueur* liste_joueur;
+    //Pion* liste_pion;
     for(int i = 0; i < nbr_player; i++){
         cout << "qui sera le joueur " << i + 1 << " :\n";
         cin >> player[i];
@@ -205,22 +210,38 @@ int main() {
             cin >> trypion;
         }
         pion[i] = trypion;
+
+
+       /* cout<< "test1001" <<endl;
+        liste_pion[i] = Pion(trypion, NULL);
+        cout<< "test1002" <<endl;
+        liste_joueur[i] = Joueur(player[i], liste_pion[i], true, NULL,0,0,0,150000,0,false,0);
+        cout<< "test1003" <<endl;*/
+
     }
+
+    /*Joueur **liste;
+    liste = new Joueur*[8];
+    for(int i = 0; i < nbr_player; i++){
+        liste[i]=&liste_joueur[i];
+    }
+    Jeu J(liste,plateau, 0,  nbr_player);
+    J.schedule();*/
 
 //    appel du constructeur de jeu
     Joueur **liste;
     liste = new Joueur*[8];
     for(int i = 0; i < nbr_player; i++){
         const Propriete* p[40];
-        Pion p_i(pion[i],NULL,NULL);
+        Pion p_i(pion[i],NULL);
         Joueur j(player[i],p_i, true, NULL,0,0,0,150000,0,false,0);
-        p_i.setPtJoueur(&j);
         liste[i]= &j;
     }
 
     Jeu J(liste,plateau, 0,  nbr_player);
     J.schedule();
 }
+
 //  TODO print le list de pion disponible
 bool goodpion(string pion, string tab[], int nbr_pion){
     string goodpion[8] = {"cheval", "chapeau", "tour eiffel", "tour de pise", "colise", "sagrada familia", "clef", "voiture"};

@@ -8,7 +8,7 @@ Prison::Prison(Case *ptsuivante) : Case("prison", ptsuivante){
 }
 
 void Prison::arreterSurPrison(Joueur* player, int de1, int de2){
-    cout << "Hello je suis une case Prison" << endl;
+    //cout << "Hello je suis une case Prison" << endl;
     if(player->getinprison()){
         if(player->gettourinprison() < 3){
             if(de1 == de2){

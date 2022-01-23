@@ -12,14 +12,14 @@ Compagnie :: Compagnie(const string& name,  Case* ptsuivante, int prixAchat, int
 void Compagnie::arreterSur(Joueur* player){
      
    if(m_proprietaire == NULL){
-        cout << "Hello je suis une case compagnie" <<endl;
+        //cout << "Hello je suis une case compagnie" <<endl;
         cout << player->getNom() << " s'est arreter sur " << m_name << " dont personne ne possède la carte" << endl;
         cout << "son prix d'achat est de " << m_prixAchat << endl;
 
         if(m_prixAchat < player->getSolde()){
             cout << player->getNom() << " souhaitez vous l'acheter ? (entrez oui ou non)" << endl;
             string reponse = "init";
-            while(reponse != "oui" || reponse != "non"){
+            while(reponse != "oui" && reponse != "non"){
                 cin >> reponse;
                 if(reponse == "oui"){
                     player->debiter(m_prixAchat);

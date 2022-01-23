@@ -159,9 +159,8 @@ void Joueur :: perdre(){
 
 
 
-Pion :: Pion(string &Nom, Joueur* ptJ,Case* ptC){
+Pion :: Pion(string &Nom,Case* ptC){
     nom = Nom;
-    ptJoueur = ptJ;
     ptCase = ptC;
 } 
 
@@ -170,20 +169,11 @@ string Pion::getNom(){
 }
 
 Pion :: Pion(const Pion&P ){
-    ptJoueur = P.ptJoueur;
     ptCase = P.ptCase;
-}
-
-Joueur* Pion :: getPtJoueur(){
-    return ptJoueur;
 }
 
 Case* Pion :: getPtCase(){
     return ptCase;
-}
-
-void Pion :: setPtJoueur(Joueur* ptJ){
-    ptJoueur = ptJ;
 }
 
 void Pion :: setPtCase(Case* ptC){
