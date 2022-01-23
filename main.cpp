@@ -34,7 +34,7 @@ int main() {
     plateau.setcase(&i1,38);
 
     int loyer_t2[6]= {3500,17500,50000,110000,130000,150000};
-    Terrain t2("bleu foncé", "avenue des champs élysées", &i1, 35000, loyer_t2, 20000);
+    Terrain t2("bleu foncé", "avenue des champs elysees", &i1, 35000, loyer_t2, 20000);
     plateau.setcase(&t2,37);
 
     Chance c1("chance 1", &t2);
@@ -75,7 +75,7 @@ int main() {
     plateau.setcase(&t7,27);
 
    int loyer_t8[6] = {2200,11000,33000,80000,97500,115000};
-    Terrain t8("jaune", "faubourg saint-honoré", &t7, 26000, loyer_t8, 15000);
+    Terrain t8("jaune", "faubourg saint-honore", &t7, 26000, loyer_t8, 15000);
     plateau.setcase(&t8,26);
 
     int loyer_g2[6] = {2500,5000,10000,20000, 0, 0};
@@ -129,7 +129,7 @@ int main() {
     plateau.setcase(&t16,13);
 
     int loyer_comp2[6]= {0,0,0,0,0,0};
-    Compagnie comp2("compagnie d'electricité", &t16,15000,loyer_comp2);
+    Compagnie comp2("compagnie d electricite", &t16,15000,loyer_comp2);
     plateau.setcase(&comp2,12);
 
     int loyer_t17[6] = {1000,5000,15000,45000,62000,75000};
@@ -140,7 +140,7 @@ int main() {
     plateau.setcase(&pris1,10);
 
     int loyer_t18[6] = {800,4000,10000,30000,45000,60000};
-    Terrain t18("bleu clair", "avenue de la république", &pris1, 12000, loyer_t18, 5000);
+    Terrain t18("bleu clair", "avenue de la republique", &pris1, 12000, loyer_t18, 5000);
     plateau.setcase(&t18,9);
 
     int loyer_t19[6] = {600,3000,9000,27000,40000,55000};

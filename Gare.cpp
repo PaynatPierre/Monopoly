@@ -37,7 +37,6 @@ void Gare::arreterSur(Joueur* player){
                     cout << "veuillez repondre pas oui ou par non"<< endl;
                 }
             }
-            cout << "test103" <<endl;
         }else{
             cout << player->getNom() << " n'a pas assez d'argent pour l'acheter"<< endl;
         }

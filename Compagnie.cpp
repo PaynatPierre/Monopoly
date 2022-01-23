@@ -26,6 +26,7 @@ void Compagnie::arreterSur(Joueur* player){
                     player->ajouterAcquisition(this);
                     player->addCompagnie();
                     cout << player->getNom() << " a acheté " << m_name << " pour " << m_prixAchat << " francs" << endl;
+                    cout << "il lui reste donc " << player->getSolde() << " francs" <<endl;
                 }else if(reponse == "non"){
                     cout << player->getNom() << " n'a pas acheté " << m_name << endl;
                 }else{

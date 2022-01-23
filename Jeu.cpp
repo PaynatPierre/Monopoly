@@ -28,19 +28,15 @@ void Jeu::create_joueur(std::string &nom, std::string &nom_pion){
 void Jeu::jouer(){
     if(liste[joueurcourant].getStatus()){
         cout << "c'est a " << liste[joueurcourant].getNom() << " de jouer" << endl;
-        cout << "test1" << endl;
         de1.lancerDe();
         de2.lancerDe();
         cout << liste[joueurcourant].getNom() << " a obtenu " << de1.getValeur() << " et " << de2.getValeur() << " au lancer de des" <<endl;
-        cout << "test2" <<endl;
 
         if(de1.getValeur() == de2.getValeur()){
             liste[joueurcourant].setNbDouble(liste[joueurcourant].getNbDouble() + 1);
         }
-        cout << "test3" <<endl;
 
         if(liste[joueurcourant].getNbDouble() == 3){
-            cout << "test4" <<endl;
             liste[joueurcourant].setNbDouble(0);
             liste[joueurcourant].setinprison(true);
             liste[joueurcourant].settourinprison(0);
@@ -58,14 +54,11 @@ void Jeu::jouer(){
             }
 
         }else{
-            cout << "test5" <<endl;
             if(liste[joueurcourant].getinprison()){
-                cout << "test6" <<endl;
                 Case* c = liste[joueurcourant].getPion()->getPtCase();
                 Prison* p = (Prison*)c;
                 p->arreterSurPrison(&liste[joueurcourant], de1.getValeur(), de2.getValeur());
             }else{
-                cout << "test7" <<endl;
                 for(int i=0; i<(de1.getValeur()+de2.getValeur()); i++){
                     liste[joueurcourant].getPion()->deplacer();
                     if(liste[joueurcourant].getPion()->getPtCase()->getName() == "Case Depart"){
@@ -73,25 +66,21 @@ void Jeu::jouer(){
                         cout << liste[joueurcourant].getNom() << " est passé par la case départ, il/elle reçoit donc 20 000 francs." <<endl;
                     }
                 }
-                cout << "test8" <<endl;
                 if(liste[joueurcourant].getPion()->getPtCase()->getName() == "prison"){
-                    cout << "test9" <<endl;
                     Case* c = liste[joueurcourant].getPion()->getPtCase();
                     Prison* p = (Prison*)c;
                     p->arreterSurPrison(&liste[joueurcourant], de1.getValeur(), de2.getValeur());
                 }else{
-                    cout << "test10" <<endl;
                     //cout << liste[joueurcourant]->getPion()->getPtCase()->getName() <<endl;
 
                     liste[joueurcourant].getPion()->getPtCase()->arreterSur(&liste[joueurcourant]);
-                    cout << "test11" <<endl;
                 }
 
                 if(liste[joueurcourant].getSolde() == 0){
-                    cout << "test16" <<endl;
                     liste[joueurcourant].perdre();
                     cout << liste[joueurcourant].getNom() << "n'a plus d'argent il est éliminé" <<endl;
                     tourdejeu += 1;
+                    nbelimine += 1;
 
                     if(joueurcourant == nbrdejoueur - 1){
                         joueurcourant = 0;
@@ -99,14 +88,12 @@ void Jeu::jouer(){
                         joueurcourant += 1;
                     }
                 }else{
-                    cout << "test12" <<endl;
                     if(de1.getValeur() != de2.getValeur()){
-                        cout << "test13" <<endl;
                         if(joueurcourant == nbrdejoueur - 1){
-                            cout << "test14" <<endl;
+                            liste[joueurcourant].setNbDouble(0);
                             joueurcourant = 0;
                         }else{
-                            cout << "test15" <<endl;
+                            liste[joueurcourant].setNbDouble(0);
                             joueurcourant += 1;
                         }
                         tourdejeu +=1;
@@ -173,13 +160,30 @@ De Jeu :: getde2(){
 
 void Jeu::schedule(){
     cout << "Lancement du jeu" << endl;
-    /*for (int i=0; i<nbrdejoueur ; i++){
-        cout<< liste[i].getNom() << endl;
-        cout<< liste[i].getPion()->getNom() <<endl;
-        cout<< "------------------------------------" <<endl;
-    }*/
     while(nbelimine < nbrdejoueur-1){
-        cout<< " lancement d'un tour avec joueurcourant = " << joueurcourant << endl;
+        cout<< "=============================================================="<< endl;
+        cout<< "                    tour numero " << tourdejeu + 1 << "                       " <<endl;
+        cout<< "==============================================================" << endl;
         jouer();
     }
+
+    Joueur* player;
+    for(int i =0; i<nbrdejoueur; i++){
+        if(liste[i].getStatus()){
+            player = &liste[i];
+        }
+    }
+
+    cout<< "************************************************************************" <<endl;
+    cout<< "                    la partie est fini "<<endl;
+    cout<< "************************************************************************" <<endl;
+    cout<< "  "<<endl;
+    cout<< player->getNom() << " a gagne la partie felicitation !!!!!"<<endl;
+
+    cout<< "  "<<endl;
+    cout<< "  "<<endl;
+    cout<< "appuyez sur entrer pour fermer le jeu"<<endl;
+    std:string wait;
+    cin>> wait;
+
 }
