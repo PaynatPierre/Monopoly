@@ -6,8 +6,28 @@
 #include "Case.h"
 #include "Propriete.h"
 
+class Pion{
 
-class Pion;
+    private :
+
+        std::string nom;
+        Case* ptCase;
+
+    public:
+
+        Pion(std::string&,Case*); 
+        Pion(const Pion&);
+        Pion();
+
+        std::string getNom();
+        Case* getPtCase();
+
+        void  setNom(std::string&);
+        void setPtCase(Case*);
+
+        void deplacer();
+
+};
 
 class Joueur{
 
@@ -17,7 +37,7 @@ class Joueur{
         bool status;
         std::string nom;
         int solde;
-        Pion *pion; //allocation dynamique de l'objet Pion
+        Pion pion; //allocation dynamique de l'objet Pion
         int nbPropriete;
         int nbCompagnie;
         Propriete* *liste_acquisitions; // tableau dynamique de pointeurs, pointant sur les proprietes du joueur
@@ -29,7 +49,8 @@ class Joueur{
 
     public:
 
-        Joueur(const std::string &, Pion&, const bool, Propriete**,int,int,int,int,int,bool,int);
+        Joueur();
+        Joueur(std::string &, std::string &, Case*,Propriete**, int,int,int,int,int,bool,int,bool);
     
         int getvaleurde();
         bool getStatus();
@@ -62,28 +83,6 @@ class Joueur{
         void jouer();
         void perdre();
     
-};
-
-class Pion{
-
-    private :
-
-        std::string nom;
-        Case* ptCase;
-
-    public:
-
-        Pion(std::string&,Case*); 
-        Pion(const Pion&);
-
-        std::string getNom();
-        Case* getPtCase();
-
-        void  setNom(std::string&);
-        void setPtCase(Case*);
-
-        void deplacer();
-
 };
 
 #endif

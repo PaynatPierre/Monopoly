@@ -13,14 +13,15 @@ private:
     int joueurcourant;
     int nbelimine;
     Plateau plateau;
-    Joueur *liste[6];
+    Joueur liste[6];
     De de1;
     De de2;
 
 public:
 
-    Jeu(Joueur**,  Plateau&, int, int);
+    Jeu(Plateau&, int);
 
+    void create_joueur(std::string &, std::string &);
     void schedule();
     void jouer();
     int gettourdejeu();
@@ -33,8 +34,8 @@ public:
     Plateau getplateau();
     void setplateau(Plateau);
 
-    Joueur* getjoueur(int);
-    void setjoueur(Joueur*, int);
+    Joueur getjoueur(int);
+    void setjoueur(Joueur, int);
 
     De getde1();
     De getde2();

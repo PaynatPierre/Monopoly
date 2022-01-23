@@ -7,7 +7,34 @@
 
 using namespace std;
 
-Joueur :: Joueur(const std::string &Nom, Pion& P, const bool Status = true,Propriete** Liste_de_proprietes = NULL, int NbPropriete = 0, int NbCompagnie = 0, int NbDouble = 0, int Solde = 0, int nombregare = 0, bool enprison = false, int tourenprison=0){
+Joueur::Joueur(){
+
+}
+
+Joueur :: Joueur ( string &Nom, string& nom_Pion, Case * ptCase, Propriete** Liste_de_proprietes = NULL, int NbPropriete = 0, int NbCompagnie = 0, int NbDouble = 0, int Solde = 0, int nombregare = 0, bool enprison = false, int tourenprison=0,bool Status = true ) : pion(nom_Pion,ptCase) {
+    nom = Nom;
+    nbgare = nombregare;
+    inprison = enprison;
+    tourinprison = tourenprison;
+    status =  Status;
+    solde = Solde;
+    nbPropriete = NbPropriete;
+    nbCompagnie = NbCompagnie;
+    if (nbPropriete != 0){
+        const int init = 2*nbPropriete;
+        liste_acquisitions =  new Propriete*[init];
+        for (int i=0; i<nbPropriete;i++)
+            liste_acquisitions[i] = Liste_de_proprietes[i];
+    }
+    else{
+        liste_acquisitions =  new Propriete*[10];
+    }
+    nbDouble = NbDouble;
+    valeurde = 0;
+
+}
+
+/*Joueur :: Joueur(const std::string &Nom, Pion& P, const bool Status = true,Propriete** Liste_de_proprietes = NULL, int NbPropriete = 0, int NbCompagnie = 0, int NbDouble = 0, int Solde = 0, int nombregare = 0, bool enprison = false, int tourenprison=0){
     nbgare = nombregare;
     inprison = enprison;
     tourinprison = tourenprison;
@@ -29,7 +56,7 @@ Joueur :: Joueur(const std::string &Nom, Pion& P, const bool Status = true,Propr
     nbDouble = NbDouble;
     valeurde = 0;
 
-}
+}*/
 
 int Joueur :: gettourinprison(){
     return tourinprison;
@@ -56,8 +83,7 @@ int Joueur :: getSolde(){
 }
 
 Pion* Joueur :: getPion(){
-    return pion;
-    
+    return &pion;
 }
 
 int Joueur :: getNbPropriete(){
@@ -108,12 +134,6 @@ void Joueur :: addCompagnie(){
     nbCompagnie += 1;
 }
 
-void Joueur :: setPion(const Pion& P){
-    delete pion;
-    pion = new Pion(P);
-
-} 
-
 void Joueur :: setNbDouble(int NbDouble){
     nbDouble = NbDouble;
 }
@@ -148,7 +168,6 @@ void Joueur :: debiter(int debit){
 void Joueur :: perdre(){
     status =  false;
     solde = 0;
-    delete pion;
 
     for(int i=0;i<nbPropriete;i++){
         liste_acquisitions[i]->setProprietaire(NULL);
@@ -186,4 +205,8 @@ void Pion :: setNom(string& Nom){
 
 void Pion :: deplacer(){
     setPtCase(ptCase->getSuivante());
+}
+
+Pion::Pion(){
+
 }

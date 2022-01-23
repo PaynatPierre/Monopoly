@@ -194,7 +194,7 @@ int main() {
 
     cout << "nous jouerons donc une partie avec " << nbr_player << " joueurs\n\n";
 
-
+    Jeu J(plateau, 0);
 
 //  choix du nom de chaque joueur et du pion qui lui sera associe
     //Joueur* liste_joueur;
@@ -211,38 +211,12 @@ int main() {
         }
         pion[i] = trypion;
 
-
-       /* cout<< "test1001" <<endl;
-        liste_pion[i] = Pion(trypion, NULL);
-        cout<< "test1002" <<endl;
-        liste_joueur[i] = Joueur(player[i], liste_pion[i], true, NULL,0,0,0,150000,0,false,0);
-        cout<< "test1003" <<endl;*/
-
     }
 
-    /*Joueur **liste;
-    liste = new Joueur*[8];
     for(int i = 0; i < nbr_player; i++){
-        liste[i]=&liste_joueur[i];
+        J.create_joueur(player[i], pion[i]);
     }
-    Jeu J(liste,plateau, 0,  nbr_player);
-    J.schedule();*/
-
-//    appel du constructeur de jeu
-    Joueur **liste;
-    liste = new Joueur*[8];
-    Pion *p_i;
-    Joueur *j;
-    for(int i = 0; i < nbr_player; i++){
-        const Propriete* p[40];
-        p_i = new Pion(pion[i],NULL);
-        j = new Joueur(player[i],*p_i, true, NULL,0,0,0,150000,0,false,0);
-        liste[i] = j;
-        delete p_i;
-        delete j;
-    }
-
-    Jeu J(liste,plateau, 0,  nbr_player);
+    
     J.schedule();
 }
 
