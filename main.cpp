@@ -231,11 +231,15 @@ int main() {
 //    appel du constructeur de jeu
     Joueur **liste;
     liste = new Joueur*[8];
+    Pion *p_i;
+    Joueur *j;
     for(int i = 0; i < nbr_player; i++){
         const Propriete* p[40];
-        Pion p_i(pion[i],NULL);
-        Joueur j(player[i],p_i, true, NULL,0,0,0,150000,0,false,0);
-        liste[i]= &j;
+        p_i = new Pion(pion[i],NULL);
+        j = new Joueur(player[i],*p_i, true, NULL,0,0,0,150000,0,false,0);
+        liste[i] = j;
+        delete p_i;
+        delete j;
     }
 
     Jeu J(liste,plateau, 0,  nbr_player);
