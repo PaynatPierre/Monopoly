@@ -16,5 +16,5 @@ void GoPrison::arreterSur(Joueur* player){
         player->getPion()->deplacer();
     }
 
-    cout <<   player->getNom() << " est a donc ete emmene.e en prison, il/elle ne passe pas par la case depart et ne reçoit pas 20 000 francs"<< endl;
+    cout <<   player->getNom() << " est a donc ete emmene.e en prison, il/elle ne passe pas par la case depart et ne recoit pas 20 000 francs"<< endl;
 }
