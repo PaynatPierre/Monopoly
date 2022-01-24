@@ -84,12 +84,13 @@ void Jeu::jouer(){
                     Prison* p = (Prison*)c;
                     p->arreterSurPrison(&liste[joueurcourant], de1.getValeur(), de2.getValeur());
                 }else{
+                    liste[joueurcourant].displayInfo();
                     liste[joueurcourant].getPion()->getPtCase()->arreterSur(&liste[joueurcourant]);
                 }
 
                 if(liste[joueurcourant].getSolde() == 0){
                     liste[joueurcourant].perdre();
-                    cout << liste[joueurcourant].getNom() << "n'a plus d'argent il est elimine" <<endl;
+                    cout << liste[joueurcourant].getNom() << " n'a plus d'argent, il/elle est elimine.e" <<endl;
                     tourdejeu += 1;
                     nbelimine += 1;
 

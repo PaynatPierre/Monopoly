@@ -6,8 +6,9 @@
 #include "Case.h"
 #include "Propriete.h"
 
+class Joueur;
 class Pion{
-
+    friend class Joueur;
     private :
 
         std::string nom;
@@ -31,7 +32,6 @@ class Pion{
 
 class Joueur{
 
-    friend class Pion;
     private:
 
         bool status;
@@ -60,6 +60,7 @@ class Joueur{
         int getNbPropriete();
         int getNbCompagnie();
         Propriete** getListe_acquisitions();
+
         int getNbDouble();
         int getnbgare();
         bool getinprison();
@@ -80,7 +81,7 @@ class Joueur{
         void ajouterAcquisition(Propriete*);
         void crediter(int);
         void debiter(int);
-        void jouer();
+        void displayInfo();
         void perdre();
     
 };
