@@ -19,7 +19,8 @@ using namespace std;
 bool goodpion(string pion, string tab[], int nbr_pion);
 
 int main() {
-    //startgame();
+    
+    cout << "Creation du plateau..." << endl;
     Plateau plateau;
     Depart dp(20000, NULL);
     plateau.setcase(&dp,0);
@@ -171,6 +172,7 @@ int main() {
     plateau.setcase(&t22,1);
 
     dp.setSuivante(&t22);
+    cout << "Plateau cree !" << endl;
 
     //  variable utile pour construire l'objet jeu
     int nbr_player;
@@ -178,7 +180,7 @@ int main() {
     string pion[8];
 
 //  message de bienvenue
-    cout << "Bienvenue dans le jeu Monopoly\n";
+    cout << "\n Bienvenue dans le jeu Monopoly ! \n";
 
 //  choix du nombre de joueur
     cout << "Combien y aura-t-il de joueur ?:\n";
@@ -189,7 +191,7 @@ int main() {
         cin >> nbr_player;
     }
 
-    cout << "Nous jouerons donc une partie avec " << nbr_player << " joueurs\n\n";
+    cout << "Nous jouerons donc une partie avec " << nbr_player << " joueurs " <<endl;
 
     Jeu J(plateau, 0);
     cout << "Voici les pions disponibles : cheval, chapeau, tour_eiffel, tour_de_pise, sagrada_familia, clef et voiture"<<endl;
