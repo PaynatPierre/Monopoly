@@ -76,7 +76,7 @@ void Jeu::jouer(){
                     liste[joueurcourant].getPion()->deplacer();
                     if(liste[joueurcourant].getPion()->getPtCase()->getName() == "Case Depart"){
                         liste[joueurcourant].crediter(20000);
-                        cout << liste[joueurcourant].getNom() << " est passe par la case départ, il/elle reçoit donc 20 000 francs" <<endl;
+                        cout << liste[joueurcourant].getNom() << " est passe par la case depart, il/elle recoit donc 20 000 francs" <<endl;
                     }
                 }
                 if(liste[joueurcourant].getPion()->getPtCase()->getName() == "prison"){

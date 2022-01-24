@@ -24,7 +24,7 @@ void Impot::arreterSur(Joueur* player){
     cout << "Il lui reste donc " << player->getSolde() << " francs" <<endl;
 
     Case* c = this;
-    while(c->getName() != "parck gratuit"){
+    while(c->getName() != "parck_gratuit"){
         c = c->getSuivante();
     }
 

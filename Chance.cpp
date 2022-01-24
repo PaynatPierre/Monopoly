@@ -20,7 +20,7 @@ void Chance::arreterSur(Joueur* player){
         player->debiter(payement);
 
         Case * c = this;
-        while(c->getName() != "parck gratuit"){
+        while(c->getName() != "parck_gratuit"){
             c = c->getSuivante();
         }
 
