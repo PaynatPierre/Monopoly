@@ -18,7 +18,6 @@ public:
 	Case* getSuivante();
 	void setName(std::string);
 	void setSuivante(Case*);
-	virtual void hello();
 	virtual void arreterSur(Joueur*) = 0;
 };
 

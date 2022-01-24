@@ -37,7 +37,7 @@ class Joueur{
         bool status;
         std::string nom;
         int solde;
-        Pion pion; //allocation dynamique de l'objet Pion
+        Pion pion;
         int nbPropriete;
         int nbCompagnie;
         Propriete* *liste_acquisitions; // tableau dynamique de pointeurs, pointant sur les proprietes du joueur

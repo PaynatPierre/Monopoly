@@ -8,8 +8,7 @@ GoPrison :: GoPrison(Case *pt): Case ("Aller en Prison", pt){
 }
 
 void GoPrison::arreterSur(Joueur* player){
-    //cout << "Hello je suis une Case GoPrison" <<endl;
-    cout << player->getNom() << " s'est arreter sur " << m_name<< endl;
+    cout << player->getNom() << " s'est arrete.e sur " << m_name << endl;
     player->setinprison(true);
     player->settourinprison(0);
 
@@ -17,5 +16,5 @@ void GoPrison::arreterSur(Joueur* player){
         player->getPion()->deplacer();
     }
 
-    cout <<   player->getNom() << " est a donc été emmené en prison, il/elle ne passe pas par la case départ et ne reçoit pas 20 000 francs"<< endl;
+    cout <<   player->getNom() << " est a donc ete emmene.e en prison, il/elle ne passe pas par la case depart et ne reçoit pas 20 000 francs"<< endl;
 }

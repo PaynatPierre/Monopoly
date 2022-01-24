@@ -11,18 +11,17 @@ Impot::Impot(string Nom, Case *Ptsuivante, int Taxe) : Case(Nom, Ptsuivante){
 }
 
 void Impot::arreterSur(Joueur* player){
-    //cout << "Hello je suis une case impot" <<endl;
     if(m_name == "taxe de luxe"){
         int taxe = 10000;
     }else{
         int taxe = 20000;
     }
 
-    cout << player->getNom() << " s'est arreté sur " << m_name << ", la taxe est de " << taxe <<" francs"<< endl;
+    cout << player->getNom() << " s'est arrete.e sur " << m_name << ", la taxe est de " << taxe <<" francs"<< endl;
     int payement = min(player->getSolde(), taxe);
     player->debiter(payement);
     cout << player->getNom() << " paie " << payement << " francs de taxe"<< endl;
-    cout << "il lui reste donc " << player->getSolde() << " francs" <<endl;
+    cout << "Il lui reste donc " << player->getSolde() << " francs" <<endl;
 
     Case* c = this;
     while(c->getName() != "parck gratuit"){

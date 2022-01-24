@@ -35,40 +35,38 @@ void Terrain::setcouleur(string color){
 }
 
 void Terrain::arreterSur(Joueur* player){
-    //cout << "Hello je suis une case Terrain" << endl;
     if(m_proprietaire == NULL){
-        cout << player->getNom() << " s'est arreter sur " << m_name << " qui n'appartient à personne"<< endl;
+        cout << player->getNom() << " s'est arrete.e sur " << m_name << " qui n'appartient a personne"<< endl;
         cout << "son prix d'achat est de " << m_prixAchat<< endl;
 
         if(m_prixAchat < player->getSolde()){
-            cout << player->getNom() << " souhaitez vous l'acheter ? (entrez oui ou non)"<< endl;
+            cout << player->getNom() << " Souhaitez-vous l'acheter ? (entrez oui ou non)"<< endl;
             string reponse = "init";
             while(reponse != "oui" && reponse != "non"){
                 cin >> reponse;
                 if(reponse == "oui"){
                     player->debiter(m_prixAchat);
                     player->ajouterAcquisition(this);
-                    cout << player->getNom() << " a acheté " << m_name << " pour " << m_prixAchat << " francs"<< endl;
+                    cout << player->getNom() << " a achete " << m_name << " pour " << m_prixAchat << " francs"<< endl;
                     cout << "il lui reste donc " << player->getSolde() << " francs" <<endl;
                 }else if(reponse == "non"){
-                    cout << player->getNom() << " n'a pas acheté " << m_name<< endl;
+                    cout << player->getNom() << " n'a pas achete " << m_name<< endl;
                 }else{
-                    cout << "voyez repondre pas oui ou par non"<< endl;
+                    cout << "Veuillez repondre pas oui ou par non"<< endl;
                 }
             }
         }else{
             cout << player->getNom() << " n'a pas assez d'argent pour l'acheter"<< endl;
         }
     }else{
-        cout << player->getNom() << " s'est arreter sur " << m_name << " qui appartient à " << m_proprietaire->getNom()<< endl;
+        cout << player->getNom() << " s'est arreter sur " << m_name << " qui appartient a " << m_proprietaire->getNom()<< endl;
         cout << "le loyer est de " << getLoyer(getnbrmaison()) << " francs"<< endl;
 
-        //TODO ajouter le cas du loyer nu double
         int payement = min(player->getSolde(),getLoyer(getnbrmaison()));
         player->debiter(payement);
         m_proprietaire->crediter(payement);
 
-        cout << player->getNom() << " paie " << payement << " francs à " << m_proprietaire->getNom()<< endl;
+        cout << player->getNom() << " paie " << payement << " francs a " << m_proprietaire->getNom()<< endl;
         cout << "il lui reste donc " << player->getSolde() << " francs" <<endl;
     }
 }

@@ -13,8 +13,7 @@ class Gare : public Propriete{
 public:
     Gare(std::string, Case*, int, int *);
     virtual void arreterSur(Joueur*);
-    virtual void hello();
 };
 
 
-#endif //CODEPROJET5_GARE_H
+#endif

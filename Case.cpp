@@ -18,10 +18,6 @@ string Case::getName() {
 	return m_name;
 }
 
-void Case :: hello(){
-	cout << "Hello je suis une case"<<endl;
-}
-
 void Case::setName(string n) {
 	m_name = n;
 }
@@ -32,8 +28,4 @@ Case* Case::getSuivante() {
 
 void Case::setSuivante(Case* ptsuivante) {
 	m_ptsuivante = ptsuivante;	
-}
-
-void Case :: arreterSur(Joueur* J){
-	cout << "arreterSur Case" << endl;
 }

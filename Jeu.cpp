@@ -27,7 +27,7 @@ void Jeu::create_joueur(std::string &nom, std::string &nom_pion){
 
 void Jeu::jouer(){
     if(liste[joueurcourant].getStatus()){
-        cout << "c'est a " << liste[joueurcourant].getNom() << " de jouer" << endl;
+        cout << "C'est a " << liste[joueurcourant].getNom() << " de jouer" << endl;
         de1.lancerDe();
         de2.lancerDe();
         cout << liste[joueurcourant].getNom() << " a obtenu " << de1.getValeur() << " et " << de2.getValeur() << " au lancer de des" <<endl;
@@ -44,7 +44,7 @@ void Jeu::jouer(){
             while(liste[joueurcourant].getPion()->getPtCase()->getName() != "prison"){
                 liste[joueurcourant].getPion()->deplacer();
             }
-            cout << liste[joueurcourant].getNom() << " a obtenue 3 double d'affilé, il va donc directement en prison" <<endl;
+            cout << liste[joueurcourant].getNom() << " a obtenu 3 doubles d'affile, il va donc directement en prison" <<endl;
             tourdejeu += 1;
 
             if(joueurcourant == nbrdejoueur - 1){
@@ -76,7 +76,7 @@ void Jeu::jouer(){
                     liste[joueurcourant].getPion()->deplacer();
                     if(liste[joueurcourant].getPion()->getPtCase()->getName() == "Case Depart"){
                         liste[joueurcourant].crediter(20000);
-                        cout << liste[joueurcourant].getNom() << " est passé par la case départ, il/elle reçoit donc 20 000 francs." <<endl;
+                        cout << liste[joueurcourant].getNom() << " est passe par la case départ, il/elle reçoit donc 20 000 francs" <<endl;
                     }
                 }
                 if(liste[joueurcourant].getPion()->getPtCase()->getName() == "prison"){
@@ -84,14 +84,12 @@ void Jeu::jouer(){
                     Prison* p = (Prison*)c;
                     p->arreterSurPrison(&liste[joueurcourant], de1.getValeur(), de2.getValeur());
                 }else{
-                    //cout << liste[joueurcourant]->getPion()->getPtCase()->getName() <<endl;
-
                     liste[joueurcourant].getPion()->getPtCase()->arreterSur(&liste[joueurcourant]);
                 }
 
                 if(liste[joueurcourant].getSolde() == 0){
                     liste[joueurcourant].perdre();
-                    cout << liste[joueurcourant].getNom() << "n'a plus d'argent il est éliminé" <<endl;
+                    cout << liste[joueurcourant].getNom() << "n'a plus d'argent il est elimine" <<endl;
                     tourdejeu += 1;
                     nbelimine += 1;
 
@@ -120,12 +118,9 @@ void Jeu::jouer(){
         }
 
     }else{
-        cout << "test17" <<endl;
         if(joueurcourant == nbrdejoueur - 1){
-            cout << "test18" <<endl;
             joueurcourant = 0;
         }else{
-            cout << "test19" <<endl;
             joueurcourant += 1;
         }
 
@@ -175,7 +170,7 @@ void Jeu::schedule(){
     cout << "Lancement du jeu" << endl;
     while(nbelimine < nbrdejoueur-1){
         cout<< "=============================================================="<< endl;
-        cout<< "                    tour numero " << tourdejeu + 1 << "                       " <<endl;
+        cout<< "                    Tour numero " << tourdejeu + 1 << "                       " <<endl;
         cout<< "==============================================================" << endl;
         jouer();
     }
@@ -191,9 +186,9 @@ void Jeu::schedule(){
     cout<< "  "<<endl;
     cout<< "  "<<endl;
     cout<< "************************************************************************" <<endl;
-    cout<< "                    la partie est fini "<<endl;
+    cout<< "                    La partie est finie "<<endl;
     cout<< "************************************************************************" <<endl;
     cout<< "  "<<endl;
-    cout<< player->getNom() << " a gagne la partie felicitation !!!!!"<<endl;
+    cout<< player->getNom() << " a gagne la partie. Felicitations !!!!!"<<endl;
 
 }

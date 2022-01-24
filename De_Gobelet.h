@@ -7,7 +7,7 @@ class De {
     private:
 
     int nbFaces;
-    int *valeurs; /* tableau dynamique */
+    int *valeurs; // tableau dynamique 
     int valeur_actuelle;
 
     public:
