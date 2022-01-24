@@ -13,7 +13,7 @@ Chance::Chance(string nom, Case* ptsuivante) : Case(nom, ptsuivante){
 
 void Chance::arreterSur(Joueur* player){
     cout << player->getNom() << " s'est arrete.e sur " << m_name << endl;
-    int i = 6;
+    int i = 9;
     ifstream liste_carte_chance("Carte_Chance/Chance" + to_string(i) + ".txt");
     if(liste_carte_chance){
         string descr;
@@ -46,7 +46,6 @@ void Chance::arreterSur(Joueur* player){
             player->crediter(somme_percue);}
 
         else if(methode == "d"){
-
             while(player->getPion()->getPtCase()->getName() != info){
                 player->getPion()->deplacer();
                 if(player->getPion()->getPtCase()->getName() == "Case Depart"){
@@ -55,6 +54,19 @@ void Chance::arreterSur(Joueur* player){
                 }
             }
             cout << player->getNom() << " est desormais sur la case " << info << endl;}
+
+        else if(methode == "r"){
+            int deplacement(40-stoi(info));
+            for(int i = 0; i < deplacement; i++){
+                player->getPion()->deplacer();}
+            cout << player->getNom() << " est desormais sur la case " << player->getPion()->getPtCase()->getName() << endl;
+            player->getPion()->getPtCase()->arreterSur(player);}
+
+        else if(methode == "p"){
+            while(player->getPion()->getPtCase()->getName() != info){
+                player->getPion()->deplacer();
+                player->getPion()->getPtCase()->arreterSur(player);}
+            }
     }
 
 }
