@@ -36,7 +36,7 @@ int main() {
     Terrain t2("bleu foncé", "avenue_des_champs_elysees", &i1, 35000, loyer_t2, 20000);
     plateau.setcase(&t2,37);
 
-    Chance c1("chance 1", &t2);
+    Chance c1("chance_1", &t2);
     plateau.setcase(&c1,36);
 
     int loyer_g1[6]= {2500,5000,10000,20000,0,0};
@@ -89,7 +89,7 @@ int main() {
     Terrain t10("rouge", "boulevard_malesgerbes", &t9, 22000, loyer_t10, 15000);
     plateau.setcase(&t10,23);
 
-    Chance c2("Chance 2", &t10);
+    Chance c2("Chance_2", &t10);
     plateau.setcase(&c2,22);
 
     int loyer_t11[6] = {1800,9000,25000,70000,87500,105000};
@@ -146,7 +146,7 @@ int main() {
     Terrain t19("bleu clair", "rue_de_courcelles", &t18, 10000, loyer_t19, 5000);
     plateau.setcase(&t19,8);
 
-    Chance c3("Chance 3", &t19);
+    Chance c3("Chance_3", &t19);
     plateau.setcase(&c3,7);
 
     int loyer_t20[6] = {600,3000,9000,27000,40000,55000};
