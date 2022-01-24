@@ -26,7 +26,7 @@ class Pion{
         void  setNom(std::string&);
         void setPtCase(Case*);
 
-        void deplacer();
+        void operator++(int);
 
 };
 

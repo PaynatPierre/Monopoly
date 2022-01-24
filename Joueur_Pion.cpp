@@ -219,7 +219,8 @@ void Pion :: setNom(string& Nom){
     nom = Nom;
 }
 
-void Pion :: deplacer(){
+
+void Pion :: operator++(int j){
     setPtCase(ptCase->getSuivante());
 }
 

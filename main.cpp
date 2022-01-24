@@ -16,6 +16,17 @@
 
 using namespace std;
 
+template <typename T>
+bool in(T elmt, T *tab){
+    int arrSize = sizeof(tab)/sizeof(tab[0]);
+    for (int i = 0; i< arrSize; i++){
+        if (elmt == tab[i]){
+            return true;
+        }
+    }
+    return false;
+}
+
 bool goodpion(string pion, string tab[], int nbr_pion);
 
 int main() {
@@ -25,7 +36,7 @@ int main() {
     Depart dp(20000, NULL);
     plateau.setcase(&dp,0);
 
-        int loyer_t1[6]= {5000,20000,60000,140000,170000,200000};
+    int loyer_t1[6]= {5000,20000,60000,140000,170000,200000};
     Terrain t1("bleu fonce", "rue_de_la_paix", plateau.getcase(0), 40000, loyer_t1, 20000);
     plateau.setcase(&t1,39);
 
@@ -190,7 +201,6 @@ int main() {
         cout << "Combien y aura-t-il de joueur ?:\n";
         cin >> nbr_player;
     }
-
     cout << "Nous jouerons donc une partie avec " << nbr_player << " joueurs " <<endl;
 
     Jeu J(plateau, 0);
@@ -213,8 +223,8 @@ int main() {
     for(int i = 0; i < nbr_player; i++){
         J.create_joueur(player[i], pion[i]);
     }
-    
     J.schedule();
+    
 }
 
 bool goodpion(string pion, string tab[], int nbr_pion){

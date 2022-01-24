@@ -53,6 +53,7 @@ void Terrain::arreterSur(Joueur* player){
                     cout << "Il lui reste donc " << player->getSolde() << " francs" <<endl;
                 }else if(reponse == "non"){
                     cout << player->getNom() << " n'a pas achete " << m_name<< endl;
+                    
                 }else{
                     cout << "Veuillez repondre pas oui ou par non"<< endl;
                 }

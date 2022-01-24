@@ -44,7 +44,7 @@ void Jeu::jouer(){
             liste[joueurcourant].settourinprison(0);
 
             while(liste[joueurcourant].getPion()->getPtCase()->getName() != "prison"){
-                liste[joueurcourant].getPion()->deplacer();
+                (*liste[joueurcourant].getPion())++;
             }
             cout << liste[joueurcourant].getNom() << " a obtenu 3 doubles d'affile, il va donc directement en prison" <<endl;
             tourdejeu += 1;
@@ -75,7 +75,7 @@ void Jeu::jouer(){
                 }
             }else{
                 for(int i=0; i<(de1.getValeur()+de2.getValeur()); i++){
-                    liste[joueurcourant].getPion()->deplacer();
+                    (*liste[joueurcourant].getPion())++;
                     if(liste[joueurcourant].getPion()->getPtCase()->getName() == "Case Depart"){
                         liste[joueurcourant].crediter(20000);
                         cout << liste[joueurcourant].getNom() << " est passe par la case depart, il/elle recoit donc 20 000 francs" <<endl;
