@@ -15,7 +15,7 @@ void Gare::arreterSur(Joueur* player){
         cout << "Son prix d'achat est de " << m_prixAchat << " francs" << endl;
 
         if(m_prixAchat < player->getSolde()){
-            cout << player->getNom() << "Souhaitez-vous l'acheter ? (entrez oui ou non)" << endl;
+            cout << player->getNom() << " Souhaitez-vous l'acheter ? (entrez oui ou non)" << endl;
             string reponse = "init";
             while(reponse != "oui" && reponse != "non"){
                 cin >> reponse;
@@ -23,6 +23,7 @@ void Gare::arreterSur(Joueur* player){
                     player->debiter(m_prixAchat);
                     player->ajouterAcquisition(this);
                     player->addgare();
+                    m_proprietaire = player;
                     cout << player->getNom() << " a achete " << m_name << " pour " << m_prixAchat << " francs"<< endl;
                     cout << "Il lui reste donc " << player->getSolde() << " francs" <<endl;
 
@@ -35,6 +36,8 @@ void Gare::arreterSur(Joueur* player){
         }else{
             cout << player->getNom() << " n'a pas assez d'argent pour l'acheter"<< endl;
         }
+    }else if(m_proprietaire->getPion()->getNom() == player->getPion()->getNom()){
+        cout << player->getNom() << " s'est arrete.e sur " << m_name << " qui lui appartient " << endl;
     }else{
         cout << player->getNom() << " s'est arrete.e sur " << m_name << " qui appartient a " << m_proprietaire->getNom()<< endl;
         cout << "Le loyer est de " << getLoyer(m_proprietaire->getnbgare()) << " francs"<< endl;

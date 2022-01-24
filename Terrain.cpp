@@ -47,6 +47,7 @@ void Terrain::arreterSur(Joueur* player){
                 if(reponse == "oui"){
                     player->debiter(m_prixAchat);
                     player->ajouterAcquisition(this);
+                    m_proprietaire = player;
                     cout << player->getNom() << " a achete " << m_name << " pour " << m_prixAchat << " francs"<< endl;
                     cout << "il lui reste donc " << player->getSolde() << " francs" <<endl;
                 }else if(reponse == "non"){

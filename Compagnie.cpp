@@ -24,6 +24,7 @@ void Compagnie::arreterSur(Joueur* player){
                     player->debiter(m_prixAchat);
                     player->ajouterAcquisition(this);
                     player->addCompagnie();
+                    m_proprietaire = player;
                     cout << player->getNom() << " a achete " << m_name << " pour " << m_prixAchat << " francs" << endl;
                     cout << "Il lui reste donc " << player->getSolde() << " francs" <<endl;
                 }else if(reponse == "non"){
