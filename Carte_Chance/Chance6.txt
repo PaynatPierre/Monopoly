@@ -1,0 +1,3 @@
+Allez a la gare de Lyon. Si vous passez par la case "Depart" recevez F 20.000.
+d
+gare_de_lyon
