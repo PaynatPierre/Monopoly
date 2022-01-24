@@ -141,6 +141,46 @@ void Joueur :: debiter(int debit){
     solde -= debit;
 }
 
+void Joueur :: displayInfo(){
+    cout << "\n  ***** STATUT *****  \n"<< endl;
+    cout << "Nom du joueur: " << nom << endl;
+    if (status){
+        cout << "Vous etes encore en jeu"<< endl;
+        if (inprison){
+            cout << "Vous etes en prison !"<< "Et vous y etes depuis " << tourinprison << " tours." << endl;
+            cout << "Bon courage !" << endl;
+        }
+        else {
+            cout << "Votre solde est de: " << solde << endl;
+            cout << "Votre pion est le/la: " << pion.nom << endl;
+            cout << "Votre pion se situe a la case " << pion.ptCase ->getName() << endl;
+            cout <<  "Vous possedez " << nbPropriete << " proprietes"<<endl;
+            cout <<  "Vous possedez " << nbCompagnie << " compagnies"<<endl;
+            cout <<  "Vous possedez " << nbgare << " gares"<<endl;
+            cout <<  "Vous avez obtenu un score de " << valeurde << " au lancer de des"<<endl;
+            cout <<  "Vous avez fait " << nbDouble << " doubles"<<endl;
+            if (liste_acquisitions[0] == NULL){
+                cout <<  "Vous ne possedez actuellement rien ! " <<endl;
+            }
+            else {
+                cout <<  "Vous possedez actuellement :\n" <<endl;
+                for (int i=0; i <nbPropriete; i++)
+                    if (liste_acquisitions[i] != NULL){
+                        cout << "\t - " << liste_acquisitions[i]->getName() << endl;
+                    }
+                    else {
+                        cout << "Erreur" << endl;
+                    }
+                    cout << "" << endl;
+            }
+        }
+    }
+    else {
+        cout << "Vous etes elimine"<< endl;
+    }
+    cout << "  ***** FIN STATUT *****  \n"<< endl;
+}
+
 void Joueur :: perdre(){
     status =  false;
     solde = 0;

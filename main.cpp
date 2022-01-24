@@ -180,7 +180,7 @@ int main() {
     string pion[8];
 
 //  message de bienvenue
-    cout << "\n Bienvenue dans le jeu Monopoly ! \n";
+    cout << "\n\t\t Bienvenue dans le jeu Monopoly ! \n" << endl;
 
 //  choix du nombre de joueur
     cout << "Combien y aura-t-il de joueur ?:\n";

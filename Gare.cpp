@@ -15,7 +15,7 @@ void Gare::arreterSur(Joueur* player){
         cout << "Son prix d'achat est de " << m_prixAchat << " francs" << endl;
 
         if(m_prixAchat < player->getSolde()){
-            cout << player->getNom() << " , souhaitez-vous l'acheter ? (entrez oui ou non)" << endl;
+            cout << player->getNom() << " ,souhaitez-vous l'acheter ? (entrez oui ou non)" << endl;
             string reponse = "init";
             while(reponse != "oui" && reponse != "non"){
                 cin >> reponse;

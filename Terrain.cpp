@@ -48,7 +48,7 @@ void Terrain::arreterSur(Joueur* player){
                     player->debiter(m_prixAchat);
                     player->ajouterAcquisition(this);
                     cout << player->getNom() << " a achete " << m_name << " pour " << m_prixAchat << " francs"<< endl;
-                    cout << "il lui reste donc " << player->getSolde() << " francs" <<endl;
+                    cout << "Il lui reste donc " << player->getSolde() << " francs" <<endl;
                 }else if(reponse == "non"){
                     cout << player->getNom() << " n'a pas achete " << m_name<< endl;
                 }else{
@@ -60,13 +60,13 @@ void Terrain::arreterSur(Joueur* player){
         }
     }else{
         cout << player->getNom() << " s'est arreter sur " << m_name << " qui appartient a " << m_proprietaire->getNom()<< endl;
-        cout << "le loyer est de " << getLoyer(getnbrmaison()) << " francs"<< endl;
+        cout << "Le loyer est de " << getLoyer(getnbrmaison()) << " francs"<< endl;
 
         int payement = min(player->getSolde(),getLoyer(getnbrmaison()));
         player->debiter(payement);
         m_proprietaire->crediter(payement);
 
         cout << player->getNom() << " paie " << payement << " francs a " << m_proprietaire->getNom()<< endl;
-        cout << "il lui reste donc " << player->getSolde() << " francs" <<endl;
+        cout << "Il lui reste donc " << player->getSolde() << " francs" <<endl;
     }
 }

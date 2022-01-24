@@ -84,6 +84,7 @@ void Jeu::jouer(){
                     Prison* p = (Prison*)c;
                     p->arreterSurPrison(&liste[joueurcourant], de1.getValeur(), de2.getValeur());
                 }else{
+                    liste[joueurcourant].displayInfo();
                     liste[joueurcourant].getPion()->getPtCase()->arreterSur(&liste[joueurcourant]);
                 }
 
