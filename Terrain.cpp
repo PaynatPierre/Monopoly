@@ -6,9 +6,10 @@
 using namespace std;
 
 
-Terrain :: Terrain(const string& color, const string& name,  Case* ptsuivante, int prixAchat, int loyer[6],int prixm) : Propriete(name, ptsuivante, prixAchat, loyer){
+Terrain :: Terrain(const string& color, const string& name,  Case* ptsuivante, int prixAchat, int *loyer,int prixm) : Propriete(name, ptsuivante, prixAchat, loyer){
     couleur = color;
     prixmaison = prixm;
+    nbrmaison = 0;
 }
 
 void Terrain::setnbrmaison(int i) {
@@ -59,11 +60,13 @@ void Terrain::arreterSur(Joueur* player){
         }else{
             cout << player->getNom() << " n'a pas assez d'argent pour l'acheter"<< endl;
         }
+    }else if(m_proprietaire->getPion()->getNom() == player->getPion()->getNom()){
+        cout << player->getNom() << " s'est arrete.e sur " << m_name << " qui lui appartient " << endl;
     }else{
         cout << player->getNom() << " s'est arreter sur " << m_name << " qui appartient a " << m_proprietaire->getNom()<< endl;
-        cout << "Le loyer est de " << getLoyer(getnbrmaison()) << " francs"<< endl;
+        cout << "le loyer est de " << m_loyer[nbrmaison] << " francs"<< endl;
 
-        int payement = min(player->getSolde(),getLoyer(getnbrmaison()));
+        int payement = min(player->getSolde(),m_loyer[nbrmaison]);
         player->debiter(payement);
         m_proprietaire->crediter(payement);
 

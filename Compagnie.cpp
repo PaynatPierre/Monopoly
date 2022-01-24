@@ -33,6 +33,8 @@ void Compagnie::arreterSur(Joueur* player){
                     cout << "Veuillez repondre pas oui ou par non" << endl;
                 }
             }
+        }else if(m_proprietaire->getPion()->getNom() == player->getPion()->getNom()){
+            cout << player->getNom() << " s'est arrete.e sur " << m_name << " qui lui appartient " << endl;
         }else{
             cout << player->getNom() << " n'a pas assez d'argent pour l'acheter" << endl;
         }
