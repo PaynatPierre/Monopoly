@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -67,8 +68,9 @@ int De :: getValeur(){
 }
 
 void De :: lancerDe(){
+    srand((unsigned int)time(0));
     int val1;
-    int indice1 = rand() % (nbFaces -1)  + 0;
+    int indice1 = rand() % (nbFaces);
     val1 = valeurs[indice1];
     valeur_actuelle = val1;
 }
