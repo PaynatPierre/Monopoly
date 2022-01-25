@@ -56,18 +56,19 @@ void Chance::arreterSur(Joueur* player){
             cout << player->getNom() << " est desormais sur la case " << info << endl;}
 
         else if(methode == "r"){
-            int deplacement(40-stoi(info));
+            int deplacement(39-stoi(info));
             for(int i = 0; i < deplacement; i++){
                 (*player->getPion())++;}
             cout << player->getNom() << " est desormais sur la case " << player->getPion()->getPtCase()->getName() << endl;
             player->getPion()->getPtCase()->arreterSur(player);}
 
-        else if(methode == "go_prison"){
+        else if(methode == "x"){
             player->setinprison(true);
             player->settourinprison(0);
+            player->setNbDouble(0);
             while(player->getPion()->getPtCase()->getName() != info){
-                (*player->getPion())++;
-                player->getPion()->getPtCase()->arreterSur(player);}
+                (*player->getPion())++;}
+            cout <<   player->getNom() << " a donc ete emmene.e en prison, il/elle ne passe pas par la case depart et ne recoit pas 20 000 francs"<< endl;
             }
     }
 

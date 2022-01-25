@@ -177,7 +177,7 @@ void Jeu::jouer_maison(){
                         cout<< "combien de maison souhaitez vous acheter"<<endl;
                         cin>>reponse2;
 
-                        if(reponse2 >= 5 - ((Terrain*)(liste[joueurcourant].getListe_acquisitions()[terrain_id[indice_ville]]))->getnbrmaison()){
+                        if(reponse2 > 5 - ((Terrain*)(liste[joueurcourant].getListe_acquisitions()[terrain_id[indice_ville]]))->getnbrmaison()){
                             cout<<"une ville ne peut acceuillir que 5 maison"<<endl;
                         }else if(reponse2<1){
                             cout<<"veuillez entrer un nombre superieur ou egal a 1"<< endl;
