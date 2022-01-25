@@ -5,7 +5,14 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <thread>
+#include <chrono>
 
+
+using std::this_thread::sleep_for;
+using namespace std::chrono_literals;
 using namespace std;
 
 Chance::Chance(string nom, Case* ptsuivante) : Case(nom, ptsuivante){
@@ -13,7 +20,10 @@ Chance::Chance(string nom, Case* ptsuivante) : Case(nom, ptsuivante){
 
 void Chance::arreterSur(Joueur* player){
     cout << player->getNom() << " s'est arrete.e sur " << m_name << endl;
-    int i = 10;
+    cout << player->getNom() << " a tire la carte :  " <<  endl;
+    sleep_for(300ms);
+    srand((unsigned int)time(0));
+    int i = rand() % 10;
     ifstream liste_carte_chance("Carte_Chance/Chance" + to_string(i) + ".txt");
     if(liste_carte_chance){
         string descr;
