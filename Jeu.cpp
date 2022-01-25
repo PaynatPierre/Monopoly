@@ -77,7 +77,7 @@ void Jeu::jouer(){
                 for(int i=0; i<(de1.getValeur()+de2.getValeur()); i++){
                     (*liste[joueurcourant].getPion())++;
                     if(liste[joueurcourant].getPion()->getPtCase()->getName() == "Case Depart"){
-                        liste[joueurcourant].crediter(20000);
+                        liste[joueurcourant]+=20000;
                         cout << liste[joueurcourant].getNom() << " est passe par la case depart, il/elle recoit donc 20 000 francs" <<endl;
                     }
                 }
@@ -193,7 +193,7 @@ void Jeu::jouer_maison(){
                             int payement = reponse2*((Terrain*)(liste[joueurcourant].getListe_acquisitions()[terrain_id[indice_ville]]))->getprixm_h();
                             //cout<< payement << " test2" <<endl;
 
-                            liste[joueurcourant].debiter(payement);
+                            liste[joueurcourant]-=payement;
                             ((Terrain*)(liste[joueurcourant].getListe_acquisitions()[terrain_id[indice_ville]]))->setnbrmaison(reponse2 + ((Terrain*)(liste[joueurcourant].getListe_acquisitions()[terrain_id[indice_ville]]))->getnbrmaison());
                             cout<<liste[joueurcourant].getNom() << " a depense " << payement << " francs pour ajouter " << reponse2 << " maison sur " << ((Terrain*)(liste[joueurcourant].getListe_acquisitions()[terrain_id[indice_ville]]))->getName()<<endl;
                         }

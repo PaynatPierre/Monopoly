@@ -46,8 +46,8 @@ void Terrain::arreterSur(Joueur* player){
             while(reponse != "oui" && reponse != "non"){
                 cin >> reponse;
                 if(reponse == "oui"){
-                    player->debiter(m_prixAchat);
-                    player->ajouterAcquisition(this);
+                    (*player)-= m_prixAchat;
+                    (*player)+= this;
                     m_proprietaire = player;
                     cout << player->getNom() << " a achete " << m_name << " pour " << m_prixAchat << " francs"<< endl;
                     cout << "Il lui reste donc " << player->getSolde() << " francs" <<endl;
@@ -68,8 +68,8 @@ void Terrain::arreterSur(Joueur* player){
         cout << "le loyer est de " << m_loyer[nbrmaison] << " francs"<< endl;
 
         int payement = min(player->getSolde(),m_loyer[nbrmaison]);
-        player->debiter(payement);
-        m_proprietaire->crediter(payement);
+        (*player)-=payement;
+        (*m_proprietaire)+=payement;
 
         cout << player->getNom() << " paie " << payement << " francs a " << m_proprietaire->getNom()<< endl;
         cout << "Il lui reste donc " << player->getSolde() << " francs" <<endl;
