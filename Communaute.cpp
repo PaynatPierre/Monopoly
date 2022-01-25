@@ -32,7 +32,6 @@ void Communaute::arreterSur(Joueur* player){
         cout << descr << endl;
         string methode;
         getline(liste_carte_communaute, methode);
-        cout << methode << endl;
         string info;
         getline(liste_carte_communaute, info);
 
