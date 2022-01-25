@@ -164,7 +164,7 @@ void Jeu::jouer_maison(){
                         acceptable = true;
                     }
                     else {
-                        string error = "Error not a int given"; 
+                        string error = "Error not a int given or out of bound"; 
                         throw error;
                     }
                     

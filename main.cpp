@@ -258,7 +258,7 @@ int main() {
         J.schedule();
     }
     catch(string Error){
-        cout << "Error :" << Error << endl;
+        cout << "Error : " << Error << endl;
         cout << "Fin du jeu" << endl;
     }
     catch(...){
