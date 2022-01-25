@@ -47,7 +47,7 @@ void Chance::arreterSur(Joueur* player){
 
         else if(methode == "d"){
             while(player->getPion()->getPtCase()->getName() != info){
-                player->getPion()->deplacer();
+                (*player->getPion())++;
                 if(player->getPion()->getPtCase()->getName() == "Case Depart"){
                     player->crediter(20000);
                     cout << player->getNom() << " est passe par la case depart et gagne donc F 20.000 " << endl;   
@@ -58,13 +58,13 @@ void Chance::arreterSur(Joueur* player){
         else if(methode == "r"){
             int deplacement(40-stoi(info));
             for(int i = 0; i < deplacement; i++){
-                player->getPion()->deplacer();}
+                (*player->getPion())++;}
             cout << player->getNom() << " est desormais sur la case " << player->getPion()->getPtCase()->getName() << endl;
             player->getPion()->getPtCase()->arreterSur(player);}
 
         else if(methode == "p"){
             while(player->getPion()->getPtCase()->getName() != info){
-                player->getPion()->deplacer();
+                (*player->getPion())++;
                 player->getPion()->getPtCase()->arreterSur(player);}
             }
     }

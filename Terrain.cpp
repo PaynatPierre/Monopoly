@@ -64,7 +64,7 @@ void Terrain::arreterSur(Joueur* player){
     }else if(m_proprietaire->getPion()->getNom() == player->getPion()->getNom()){
         cout << player->getNom() << " s'est arrete.e sur " << m_name << " qui lui appartient " << endl;
     }else{
-        cout << player->getNom() << " s'est arreter sur " << m_name << " qui appartient a " << m_proprietaire->getNom()<< endl;
+        cout << player->getNom() << " s'est arrete.e sur " << m_name << " qui appartient a " << m_proprietaire->getNom()<< endl;
         cout << "le loyer est de " << m_loyer[nbrmaison] << " francs"<< endl;
 
         int payement = min(player->getSolde(),m_loyer[nbrmaison]);

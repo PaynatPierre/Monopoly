@@ -68,7 +68,7 @@ int De :: getValeur(){
 }
 
 void De :: lancerDe(){
-    srand((unsigned int)time(0));
+    //srand((unsigned int)time(0));
     int val1;
     int indice1 = rand() % (nbFaces);
     val1 = valeurs[indice1];
