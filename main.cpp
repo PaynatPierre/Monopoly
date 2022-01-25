@@ -18,9 +18,6 @@ using namespace std;
 
 template <typename T>
 bool is_in(T elmt, T *tab, int taille = 0){
-    if (!taille){
-        taille = sizeof(tab)/sizeof(tab[0]);
-    }
     for (int i = 0; i< taille; i++){
         if (elmt == tab[i]){
             return true;
@@ -204,7 +201,7 @@ int main() {
             cout << "Combien y aura-t-il de joueur ?:\n";
             cin >> nbr_player;
         }
-        if (!is_in(nbr_player,list_nb_joueurs)){
+        if (!is_in(nbr_player,list_nb_joueurs,7)){
             string error = "Error_entry_nb_player";
             throw error;
         }
@@ -269,5 +266,6 @@ int main() {
         cout << "Veuillez contacter le service client pour resoudre ce probleme" << endl;
         cout << "Fin du jeu" << endl;
     }
+    Jeu :: ~J();
     return 0;
 }

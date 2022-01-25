@@ -41,6 +41,8 @@ public:
 
     De getde1();
     De getde2();
+
+    ~Jeu();
 };
 
 
