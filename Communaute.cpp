@@ -24,7 +24,7 @@ void Communaute::arreterSur(Joueur* player){
     cout << player->getNom() << " a tire la carte :  " <<  endl;
     sleep_for(300ms);
     srand((unsigned int)time(0));
-    int i = 10;
+    int i = rand() % 10;
     ifstream liste_carte_communaute("Carte_Caisse_Communaute/Communaute" + to_string(i) + ".txt");
     if(liste_carte_communaute){
         string descr;

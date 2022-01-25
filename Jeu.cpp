@@ -98,10 +98,10 @@ void Jeu::jouer(){
                     Prison* p = (Prison*)c;
                     p->arreterSurPrison(&liste[joueurcourant], de1.getValeur(), de2.getValeur());
                 }else{
-                    string info = "Oui";
-                    cout << "Voulez-vous voir vos informations ? (Ecrire 'Oui')" << endl;
+                    string info = "oui";
+                    cout << "Voulez-vous voir vos informations ? (Ecrire 'oui')" << endl;
                     cin >> info;
-                    if (info == "Oui"){
+                    if (info == "oui"){
                         liste[joueurcourant].displayInfo();
                     }
                     else {
