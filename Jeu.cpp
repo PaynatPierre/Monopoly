@@ -104,7 +104,7 @@ void Jeu::jouer(){
                 }else{
                     jouer_maison();
 
-                    if(de1.getValeur() != de2.getValeur()){
+                    if(de1.getValeur() != de2.getValeur() || liste[joueurcourant].getinprison()){
                         if(joueurcourant == nbrdejoueur - 1){
                             liste[joueurcourant].setNbDouble(0);
                             joueurcourant = 0;
