@@ -9,11 +9,6 @@ Propriete::Propriete(string name, Case* ptsuivante, int prixAchat, int *loyer) :
     for (int i =0; i<6;i++)
         m_loyer[i] = loyer[i];
 	m_proprietaire = NULL;
-	cout<< name <<endl;
-	cout<< m_loyer[0] <<endl;
-	cout<< m_loyer[1] <<endl;
-	cout<< m_loyer[2] <<endl;
-	cout<< m_loyer[3] <<endl;
 }
 
 int Propriete::getPrixAchat(){

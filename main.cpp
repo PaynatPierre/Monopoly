@@ -16,16 +16,27 @@
 
 using namespace std;
 
-bool goodpion(string pion, string tab[], int nbr_pion);
+template <typename T>
+bool is_in(T elmt, T *tab, int taille = 0){
+    if (!taille){
+        taille = sizeof(tab)/sizeof(tab[0]);
+    }
+    for (int i = 0; i< taille; i++){
+        if (elmt == tab[i]){
+            return true;
+        }
+    }
+    return false;
+}
 
 int main() {
-    
+
     cout << "Creation du plateau..." << endl;
     Plateau plateau;
     Depart dp(20000, NULL);
     plateau.setcase(&dp,0);
 
-        int loyer_t1[6]= {5000,20000,60000,140000,170000,200000};
+    int loyer_t1[6]= {5000,20000,60000,140000,170000,200000};
     Terrain t1("bleu fonce", "rue_de_la_paix", plateau.getcase(0), 40000, loyer_t1, 20000);
     plateau.setcase(&t1,39);
 
@@ -36,7 +47,7 @@ int main() {
     Terrain t2("bleu foncé", "avenue_des_champs_elysees", &i1, 35000, loyer_t2, 20000);
     plateau.setcase(&t2,37);
 
-    Chance c1("chance 1", &t2);
+    Chance c1("chance_1", &t2);
     plateau.setcase(&c1,36);
 
     int loyer_g1[6]= {2500,5000,10000,20000,0,0};
@@ -89,7 +100,7 @@ int main() {
     Terrain t10("rouge", "boulevard_malesgerbes", &t9, 22000, loyer_t10, 15000);
     plateau.setcase(&t10,23);
 
-    Chance c2("Chance 2", &t10);
+    Chance c2("Chance_2", &t10);
     plateau.setcase(&c2,22);
 
     int loyer_t11[6] = {1800,9000,25000,70000,87500,105000};
@@ -146,7 +157,7 @@ int main() {
     Terrain t19("bleu clair", "rue_de_courcelles", &t18, 10000, loyer_t19, 5000);
     plateau.setcase(&t19,8);
 
-    Chance c3("Chance 3", &t19);
+    Chance c3("Chance_3", &t19);
     plateau.setcase(&c3,7);
 
     int loyer_t20[6] = {600,3000,9000,27000,40000,55000};
@@ -178,61 +189,85 @@ int main() {
     int nbr_player;
     string player[8];
     string pion[8];
+    int list_nb_joueurs[7] = {2,3,4,5,6,7,8};
+    string list_pions[8] = {"cheval", "chapeau", "tour_eiffel", "tour_de_pise", "colise", "sagrada_familia", "clef", "voiture"};
 
-//  message de bienvenue
-    cout << "\n\t\t Bienvenue dans le jeu Monopoly ! \n" << endl;
+    try {
+        //  message de bienvenue
+        cout << "\n\t\t Bienvenue dans le jeu Monopoly ! \n" << endl;
 
-//  choix du nombre de joueur
-    cout << "Combien y aura-t-il de joueur ?:\n";
-    cin >> nbr_player;
-    while(nbr_player > 8){
-        cout << "Impossible, le nombre maximum de joueur est de 8\n";
+    //  choix du nombre de joueur
         cout << "Combien y aura-t-il de joueur ?:\n";
         cin >> nbr_player;
-    }
-
-    cout << "Nous jouerons donc une partie avec " << nbr_player << " joueurs " <<endl;
-
-    Jeu J(plateau, 0);
-    cout << "Voici les pions disponibles : cheval, chapeau, tour_eiffel, tour_de_pise, sagrada_familia, clef et voiture"<<endl;
-//  choix du nom de chaque joueur et du pion qui lui sera associe
-    for(int i = 0; i < nbr_player; i++){
-        cout << "Qui sera le joueur " << i + 1 << " :\n";
-        cin >> player[i];
-        cout << "Bonjour " << player[i] << ". Avec quel pion souhaites-tu jouer ?\n";
-        string trypion;
-        cin >> trypion;
-        while (!(goodpion(trypion, pion, i))){
-            cout << "Avec quel pion souhaites-tu jouer " << player[i] << " ?\n";
-            cin >> trypion;
+        while(nbr_player > 8){
+            cout << "Impossible, le nombre maximum de joueur est de 8\n";
+            cout << "Combien y aura-t-il de joueur ?:\n";
+            cin >> nbr_player;
         }
-        pion[i] = trypion;
+        if (!is_in(nbr_player,list_nb_joueurs)){
+            string error = "Error_entry_nb_player";
+            throw error;
+        }
+        cout << "Nous jouerons donc une partie avec " << nbr_player << " joueurs " <<endl;
 
-    }
-
-    for(int i = 0; i < nbr_player; i++){
-        J.create_joueur(player[i], pion[i]);
-    }
-    
-    J.schedule();
-}
-
-bool goodpion(string pion, string tab[], int nbr_pion){
-    string goodpion[8] = {"cheval", "chapeau", "tour_eiffel", "tour_de_pise", "colise", "sagrada_familia", "clef", "voiture"};
-
-//  verification que le pion choisi soit valide
-    for(int i = 0; i<8; i++){
-        if(pion == goodpion[i]){
-//          verification que le pion ne soit pas deja utilise
-            for(int j = 0; i<nbr_pion; i++){
-                if(pion == tab[j]){
-                    cout << "Desole, ce pion a deja ete choisi par un autre joueur" << endl;
-                    return false;
+        Jeu J(plateau, 0);
+        cout << "Voici les pions disponibles : cheval, chapeau, tour_eiffel, tour_de_pise, sagrada_familia, clef et voiture"<<endl;
+    //  choix du nom de chaque joueur et du pion qui lui sera associe
+        for(int i = 0; i < nbr_player; i++){
+            cout << "Qui sera le joueur " << i + 1 << " :\n";
+            cin >> player[i];
+            cout << "Bonjour " << player[i] << ". Avec quel pion souhaites-tu jouer ?\n";
+            string trypion;
+            cin >> trypion;
+            bool goodpion = false;
+            if (i==0){
+                while (!goodpion){
+                    if (is_in(trypion,list_pions,8)){
+                        goodpion = true;
+                    }
+                    else {
+                        cout << "Desole ce pion n'existe pas, les pions possibles sont : cheval, chapeau, tour_eiffel, tour_de_pise, sagrada_familia, clef et voiture" << endl;
+                        cout << "Avec quel pion souhaites-tu jouer " << player[i] << " ?\n";
+                        cin >> trypion;
+                    }
                 }
             }
-            return true;
+            while (!goodpion){
+                if (is_in(trypion,list_pions,8) && !is_in(trypion,pion,i)){
+                    goodpion = true;
+                }
+                else if (!is_in(trypion,list_pions,8)){
+                    cout << "Desole ce pion n'existe pas, les pions possibles sont : cheval, chapeau, tour_eiffel, tour_de_pise, sagrada_familia, clef et voiture" << endl;
+                    cout << "Avec quel pion souhaites-tu jouer " << player[i] << " ?\n";
+                    cin >> trypion;
+                }
+                else if (is_in(trypion,pion,i)){
+                    cout << "Desole, ce pion a deja ete choisi par un autre joueur" << endl;
+                    cout << "Avec quel pion souhaites-tu jouer " << player[i] << " ?\n";
+                    cin >> trypion;
+                }
+                else {
+                    string error = "Error_config_pions_impossible";
+                    throw error;
+                }
+            }
+            pion[i] = trypion;
+            cout << "Attribution du pion reussie !\n" << endl;
         }
+
+        for(int i = 0; i < nbr_player; i++){
+            J.create_joueur(player[i], pion[i]);
+        }
+        J.schedule();
     }
-    cout << "Desole ce pion n'existe pas, les pions possibles sont : cheval, chapeau, tour_eiffel, tour_de_pise, sagrada_familia, clef et voiture" << endl;
-    return false;
+    catch(string Error){
+        cout << "Error :" << Error << endl;
+        cout << "Fin du jeu" << endl;
+    }
+    catch(...){
+        cout << "Erreur lors du lancement du jeu" << endl;
+        cout << "Veuillez contacter le service client pour resoudre ce probleme" << endl;
+        cout << "Fin du jeu" << endl;
+    }
+    return 0;
 }

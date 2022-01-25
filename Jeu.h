@@ -27,6 +27,8 @@ public:
     int gettourdejeu();
     void settourdejeu(int);
     void toursuivant();
+    void jouer_maison();
+    bool compare(std::string, std::string);
 
     int getnbrjoueur();
     void setnbrjoueur(int);
