@@ -7,6 +7,12 @@
 
 #include <string>
 #include <iostream>
+#include <thread>
+#include <chrono>
+
+using std::copy;
+using std::this_thread::sleep_for;
+using namespace std::chrono_literals;
 
 using namespace std;
 
@@ -28,10 +34,16 @@ void Jeu::create_joueur(std::string &nom, std::string &nom_pion){
 
 void Jeu::jouer(){
     if(liste[joueurcourant].getStatus()){
-
         cout << "C'est a " << liste[joueurcourant].getNom() << " de jouer" << endl;
+        cout << "\nLancement des des ";
+        sleep_for(300ms);
+        cout << ".";
         de1.lancerDe();
+        sleep_for(300ms);
+        cout << ".";
         de2.lancerDe();
+        cout << "." << endl;
+        sleep_for(300ms);
         cout << liste[joueurcourant].getNom() << " a obtenu " << de1.getValeur() << " et " << de2.getValeur() << " au lancer de des" <<endl;
 
         if(de1.getValeur() == de2.getValeur()){
@@ -86,7 +98,15 @@ void Jeu::jouer(){
                     Prison* p = (Prison*)c;
                     p->arreterSurPrison(&liste[joueurcourant], de1.getValeur(), de2.getValeur());
                 }else{
-                    liste[joueurcourant].displayInfo();
+                    string info = "Oui";
+                    cout << "Voulez-vous voir vos informations ? (Ecrire 'Oui')" << endl;
+                    cin >> info;
+                    if (info == "Oui"){
+                        liste[joueurcourant].displayInfo();
+                    }
+                    else {
+                        cout << "On continue, donc !" << endl;
+                    }
                     liste[joueurcourant].getPion()->getPtCase()->arreterSur(&liste[joueurcourant]);
                 }
 
