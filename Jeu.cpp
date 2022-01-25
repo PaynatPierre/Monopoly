@@ -7,6 +7,12 @@
 
 #include <string>
 #include <iostream>
+#include <thread>
+#include <chrono>
+
+using std::copy;
+using std::this_thread::sleep_for;
+using namespace std::chrono_literals;
 
 using namespace std;
 
@@ -28,10 +34,16 @@ void Jeu::create_joueur(std::string &nom, std::string &nom_pion){
 
 void Jeu::jouer(){
     if(liste[joueurcourant].getStatus()){
-
         cout << "C'est a " << liste[joueurcourant].getNom() << " de jouer" << endl;
+        cout << "\nLancement des des ";
+        sleep_for(300ms);
+        cout << ".";
         de1.lancerDe();
+        sleep_for(300ms);
+        cout << ".";
         de2.lancerDe();
+        cout << "." << endl;
+        sleep_for(300ms);
         cout << liste[joueurcourant].getNom() << " a obtenu " << de1.getValeur() << " et " << de2.getValeur() << " au lancer de des" <<endl;
 
         if(de1.getValeur() == de2.getValeur()){
@@ -77,7 +89,7 @@ void Jeu::jouer(){
                 for(int i=0; i<(de1.getValeur()+de2.getValeur()); i++){
                     (*liste[joueurcourant].getPion())++;
                     if(liste[joueurcourant].getPion()->getPtCase()->getName() == "Case Depart"){
-                        liste[joueurcourant].crediter(20000);
+                        liste[joueurcourant]+=20000;
                         cout << liste[joueurcourant].getNom() << " est passe par la case depart, il/elle recoit donc 20 000 francs" <<endl;
                     }
                 }
@@ -86,7 +98,15 @@ void Jeu::jouer(){
                     Prison* p = (Prison*)c;
                     p->arreterSurPrison(&liste[joueurcourant], de1.getValeur(), de2.getValeur());
                 }else{
-                    liste[joueurcourant].displayInfo();
+                    string info = "Oui";
+                    cout << "Voulez-vous voir vos informations ? (Ecrire 'Oui')" << endl;
+                    cin >> info;
+                    if (info == "Oui"){
+                        liste[joueurcourant].displayInfo();
+                    }
+                    else {
+                        cout << "On continue, donc !" << endl;
+                    }
                     liste[joueurcourant].getPion()->getPtCase()->arreterSur(&liste[joueurcourant]);
                 }
 
@@ -164,7 +184,7 @@ void Jeu::jouer_maison(){
                         acceptable = true;
                     }
                     else {
-                        string error = "Error not a int given"; 
+                        string error = "Error not a int given or out of bound"; 
                         throw error;
                     }
                     
@@ -193,7 +213,7 @@ void Jeu::jouer_maison(){
                             int payement = reponse2*((Terrain*)(liste[joueurcourant].getListe_acquisitions()[terrain_id[indice_ville]]))->getprixm_h();
                             //cout<< payement << " test2" <<endl;
 
-                            liste[joueurcourant].debiter(payement);
+                            liste[joueurcourant]-=payement;
                             ((Terrain*)(liste[joueurcourant].getListe_acquisitions()[terrain_id[indice_ville]]))->setnbrmaison(reponse2 + ((Terrain*)(liste[joueurcourant].getListe_acquisitions()[terrain_id[indice_ville]]))->getnbrmaison());
                             cout<<liste[joueurcourant].getNom() << " a depense " << payement << " francs pour ajouter " << reponse2 << " maison sur " << ((Terrain*)(liste[joueurcourant].getListe_acquisitions()[terrain_id[indice_ville]]))->getName()<<endl;
                         }

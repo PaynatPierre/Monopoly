@@ -20,8 +20,8 @@ void Gare::arreterSur(Joueur* player){
             while(reponse != "oui" && reponse != "non"){
                 cin >> reponse;
                 if(reponse == "oui"){
-                    player->debiter(m_prixAchat);
-                    player->ajouterAcquisition(this);
+                    (*player)-= m_prixAchat;
+                    (*player)+= this;
                     player->addgare();
                     m_proprietaire = player;
                     cout << player->getNom() << " a achete " << m_name << " pour " << m_prixAchat << " francs"<< endl;
@@ -42,8 +42,8 @@ void Gare::arreterSur(Joueur* player){
         cout << player->getNom() << " s'est arrete.e sur " << m_name << " qui appartient a " << m_proprietaire->getNom()<< endl;
         cout << "Le loyer est de " << getLoyer(m_proprietaire->getnbgare()) << " francs"<< endl;
         int payement = min(player->getSolde(),getLoyer(m_proprietaire->getnbgare()));
-        player->debiter(payement);
-        m_proprietaire->crediter(payement);
+        (*player)-=payement;
+        (*m_proprietaire)+=payement;
 
         cout << player->getNom() << " paie " << payement << " francs a " << m_proprietaire->getNom()<< endl;
     }

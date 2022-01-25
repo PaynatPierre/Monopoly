@@ -19,7 +19,7 @@ void Impot::arreterSur(Joueur* player){
 
     cout << player->getNom() << " s'est arrete.e sur " << m_name << ", la taxe est de " << taxe <<" francs"<< endl;
     int payement = min(player->getSolde(), taxe);
-    player->debiter(payement);
+    (*player)-=payement;
     cout << player->getNom() << " paie " << payement << " francs de taxe"<< endl;
     cout << "Il lui reste donc " << player->getSolde() << " francs" <<endl;
 

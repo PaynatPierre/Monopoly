@@ -25,7 +25,6 @@ class Pion{
 
         void  setNom(std::string&);
         void setPtCase(Case*);
-
         void operator++(int);
 
 };
@@ -78,9 +77,10 @@ class Joueur{
         void setPion(const Pion&);
         void setNbDouble(int);
 
-        void ajouterAcquisition(Propriete*);
-        void crediter(int);
-        void debiter(int);
+        void operator+=(Propriete*);
+        void operator+=(int);
+        void operator-=(int);
+
         void displayInfo();
         void perdre();
     

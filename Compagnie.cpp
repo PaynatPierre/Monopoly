@@ -21,8 +21,8 @@ void Compagnie::arreterSur(Joueur* player){
             while(reponse != "oui" && reponse != "non"){
                 cin >> reponse;
                 if(reponse == "oui"){
-                    player->debiter(m_prixAchat);
-                    player->ajouterAcquisition(this);
+                    (*player)-= m_prixAchat;
+                    (*player)+= this;
                     player->addCompagnie();
                     m_proprietaire = player;
                     cout << player->getNom() << " a achete " << m_name << " pour " << m_prixAchat << " francs" << endl;
@@ -43,15 +43,15 @@ void Compagnie::arreterSur(Joueur* player){
         if (m_proprietaire->getNbCompagnie() == 1){
         cout << "Le loyer est de " << 400  << " francs" << endl;
         int payement = min(player->getSolde(), 400);
-        player->debiter(payement);
-        m_proprietaire->crediter(payement);
+        (*player)-=payement;
+        (*m_proprietaire)+=payement;
 
         cout << player->getNom() << " paie " << payement << " francs a " << m_proprietaire->getNom() << endl;
         }else{
          cout << "le loyer est de " << 1000  << " francs" << endl;  
         int payement = min(player->getSolde(), 1000);
-        player->debiter(payement);
-        m_proprietaire->crediter(payement);
+        (*player)-=payement;
+        (*m_proprietaire)+=payement;
         cout << player->getNom() << " paie " << payement << " francs a " << m_proprietaire->getNom() << endl;                  
         }
 

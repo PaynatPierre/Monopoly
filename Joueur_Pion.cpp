@@ -114,7 +114,7 @@ void Joueur :: setNbDouble(int NbDouble){
     nbDouble = NbDouble;
 }
 
-void Joueur :: ajouterAcquisition(Propriete* Prop){
+void Joueur :: operator+=(Propriete* Prop){
     if (liste_acquisitions[nbPropriete-1] == NULL){
         liste_acquisitions[nbPropriete] = Prop;
         nbPropriete +=1;
@@ -133,11 +133,11 @@ void Joueur :: ajouterAcquisition(Propriete* Prop){
     }
 }
 
-void Joueur :: crediter(int credit){
+void Joueur :: operator+=(int credit){
     solde += credit;
 }
 
-void Joueur :: debiter(int debit){
+void Joueur :: operator-=(int debit){
     solde -= debit;
 }
 

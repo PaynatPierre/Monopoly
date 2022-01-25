@@ -39,7 +39,7 @@ void Chance::arreterSur(Joueur* player){
             somme_due = stoi(info);
             int paiement = min(player->getSolde(), somme_due);
             cout << player->getNom() << " perd F. " << paiement << endl;
-            player->debiter(paiement);
+            (*player)-=paiement;
 
             Case * c = this;
             while(c->getName() != "parck_gratuit"){
@@ -53,13 +53,13 @@ void Chance::arreterSur(Joueur* player){
             int somme_percue;
             somme_percue = stoi(info);
             cout << player->getNom() << " gagne F. " << somme_percue << endl;            
-            player->crediter(somme_percue);}
+            (*player)+=somme_percue;}
 
         else if(methode == "d"){
             while(player->getPion()->getPtCase()->getName() != info){
                 (*player->getPion())++;
                 if(player->getPion()->getPtCase()->getName() == "Case Depart"){
-                    player->crediter(20000);
+                    (*player)+=20000;
                     cout << player->getNom() << " est passe par la case depart et gagne donc F 20.000 " << endl;   
                 }
             }

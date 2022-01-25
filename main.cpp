@@ -13,6 +13,12 @@
 
 #include <iostream>
 #include <string>
+#include <thread>
+#include <chrono>
+
+using std::copy;
+using std::this_thread::sleep_for;
+using namespace std::chrono_literals;
 
 using namespace std;
 
@@ -258,7 +264,7 @@ int main() {
         J.schedule();
     }
     catch(string Error){
-        cout << "Error :" << Error << endl;
+        cout << "Error : " << Error << endl;
         cout << "Fin du jeu" << endl;
     }
     catch(...){

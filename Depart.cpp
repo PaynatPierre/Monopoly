@@ -20,5 +20,5 @@ int Depart::getprime() {
 void Depart::arreterSur(Joueur* player){
     cout << player->getNom() << " s'est arrete.e sur " << m_name << ", il/elle recoit donc 20 000 francs" << endl;
     cout << "Son solde est donc de" << player->getSolde() << " francs"<<endl;
-    player->crediter(20000);
+    (*player)+=20000;
 }
