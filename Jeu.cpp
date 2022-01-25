@@ -177,10 +177,10 @@ void Jeu::jouer_maison(){
                 bool acceptable = false;
 
                 while(acceptable == false){
-                    cout<<"si vous souhaitez mettre des maisons sur une de ces proprietes entrez son indice, dans le cas contraire entrez 42"<<endl;
+                    cout<<"si vous souhaitez mettre des maisons sur une de ces proprietes entrez son indice, dans le cas contraire entrez 0"<<endl;
                     cin>>reponse;
 
-                    if(reponse==42 || (reponse>0 && reponse<=nbterrain)){
+                    if(reponse==0 || (reponse>0 && reponse<=nbterrain)){
                         acceptable = true;
                     }
                     else {
@@ -190,7 +190,7 @@ void Jeu::jouer_maison(){
                     
                 }
 
-                if(reponse == 42){
+                if(reponse == 0){
                     cout<< liste[joueurcourant].getNom() << " ne souhaite pas mettre de maison"<<endl;
                 }else{
                     int indice_ville = reponse -1 ;
