@@ -4,6 +4,12 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
+#include <thread>
+#include <chrono>
+
+
+using std::this_thread::sleep_for;
+using namespace std::chrono_literals;
 
 using namespace std;
 
@@ -68,7 +74,9 @@ int De :: getValeur(){
 }
 
 void De :: lancerDe(){
-    //srand((unsigned int)time(0));
+    cout << "Lancement des des" << endl;
+    sleep_for(300ms);
+    srand((unsigned int)time(0));
     int val1;
     int indice1 = rand() % (nbFaces);
     val1 = valeurs[indice1];
