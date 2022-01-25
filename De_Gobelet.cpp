@@ -74,7 +74,6 @@ int De :: getValeur(){
 }
 
 void De :: lancerDe(){
-    cout << "Lancement des des" << endl;
     sleep_for(300ms);
     srand((unsigned int)time(0));
     int val1;
