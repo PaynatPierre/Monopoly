@@ -74,7 +74,8 @@ int De :: getValeur(){
 }
 
 void De :: lancerDe(){
-    sleep_for(300ms);
+
+    sleep_for(1000ms);
     srand((unsigned int)time(0));
     int val1;
     int indice1 = rand() % (nbFaces);
