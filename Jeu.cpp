@@ -163,6 +163,10 @@ void Jeu::jouer_maison(){
                     if(reponse==42 || (reponse>0 && reponse<=nbterrain)){
                         acceptable = true;
                     }
+                    else {
+                        string error = "Error not a int given"; 
+                        throw error;
+                    }
                     
                 }
 
@@ -183,7 +187,7 @@ void Jeu::jouer_maison(){
                             cout<<"veuillez entrer un nombre superieur ou egal a 1"<< endl;
                         }else if(reponse2*((Terrain*)(liste[joueurcourant].getListe_acquisitions()[terrain_id[indice_ville]]))->getprixm_h() > liste[joueurcourant].getSolde()){
                             cout<<"vous n avez pas assez d argent pour acheter autant de maison"<<endl;
-                        }else{
+                        }else if(reponse2 <= 5){
                             acceptable2 = true;
                             //cout<<((Terrain*)(liste[joueurcourant].getListe_acquisitions()[terrain_id[indice_ville]]))->getprixm_h() << " test1" <<endl;
                             int payement = reponse2*((Terrain*)(liste[joueurcourant].getListe_acquisitions()[terrain_id[indice_ville]]))->getprixm_h();
@@ -192,6 +196,10 @@ void Jeu::jouer_maison(){
                             liste[joueurcourant].debiter(payement);
                             ((Terrain*)(liste[joueurcourant].getListe_acquisitions()[terrain_id[indice_ville]]))->setnbrmaison(reponse2 + ((Terrain*)(liste[joueurcourant].getListe_acquisitions()[terrain_id[indice_ville]]))->getnbrmaison());
                             cout<<liste[joueurcourant].getNom() << " a depense " << payement << " francs pour ajouter " << reponse2 << " maison sur " << ((Terrain*)(liste[joueurcourant].getListe_acquisitions()[terrain_id[indice_ville]]))->getName()<<endl;
+                        }
+                        else {
+                            string error = "Error not a int given"; 
+                            throw error;
                         }
                     }
                 }
