@@ -253,10 +253,6 @@ De Jeu :: getde2(){
     return de2;
 }
 
-Jeu :: ~Jeu(){
-    
-}
-
 void Jeu::schedule(){
     cout << "Lancement du jeu" << endl;
     while(nbelimine < nbrdejoueur-1){

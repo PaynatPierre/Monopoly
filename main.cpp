@@ -266,6 +266,5 @@ int main() {
         cout << "Veuillez contacter le service client pour resoudre ce probleme" << endl;
         cout << "Fin du jeu" << endl;
     }
-    Jeu :: ~J();
     return 0;
 }
