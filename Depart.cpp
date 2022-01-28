@@ -1,8 +1,6 @@
 #include "Depart.h"
-
 #include <iostream>
 #include <string>
-
 using namespace std;
 
 Depart::Depart(int prime, Case* ptsuivante) : Case("Case Depart", ptsuivante){

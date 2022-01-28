@@ -1,8 +1,6 @@
 #include "Plateau.h"
-
 #include <string>
 #include <iostream>
-
 using namespace std;
 
 Plateau:: Plateau() {
@@ -26,4 +24,3 @@ void Plateau :: arreterSur(int i,Joueur *J){
 void Plateau::setcase(Case* c, int i) {
     cases[i] = c;
 }
-

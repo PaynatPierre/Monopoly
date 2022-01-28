@@ -1,9 +1,7 @@
 #include "Impot.h"
 #include "ParckGratuit.h"
-
 #include <string>
 #include <iostream>
-
 using namespace std;
 
 Impot::Impot(string Nom, Case *Ptsuivante, int Taxe) : Case(Nom, Ptsuivante){

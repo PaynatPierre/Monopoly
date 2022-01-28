@@ -1,8 +1,6 @@
 #include "Gare.h"
-
 #include <iostream>
 #include <string>
-
 using namespace std;
 
 Gare::Gare(std::string nom, Case* ptsuivant, int prixachat, int loyer[]) : Propriete(nom, ptsuivant, prixachat, loyer){

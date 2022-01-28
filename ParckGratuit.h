@@ -16,5 +16,4 @@ public:
     int getcagnotte();
 };
 
-
 #endif

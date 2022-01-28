@@ -5,7 +5,6 @@
 #include "Case.h"
 #include "Joueur_Pion.h"
 
-
 class Impot : public Case{
 private:
     int taxe;
@@ -17,6 +16,5 @@ public:
     void arreterSur(Joueur*);
 
 };
-
 
 #endif

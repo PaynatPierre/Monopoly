@@ -1,7 +1,6 @@
 #ifndef De_h
 #define De_h
 
-
 class De {
 
     private:

@@ -1,10 +1,8 @@
 #include "Joueur_Pion.h"
 #include "De_Gobelet.h"
-
 #include <iostream>
 #include <string>
 #include <cstdlib>
-
 using namespace std;
 
 Joueur::Joueur(){

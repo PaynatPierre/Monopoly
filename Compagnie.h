@@ -1,7 +1,6 @@
 #ifndef CODEPROJET4_COMPAGNIE_H
 #define CODEPROJET4_COMPAGNIE_H
 
-
 #include <string>
 #include "Case.h"
 #include "Joueur_Pion.h"
@@ -13,6 +12,5 @@ public:
     Compagnie(const std::string&,  Case*, int, int*);
     void arreterSur(Joueur* player);
 };
-
 
 #endif

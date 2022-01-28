@@ -1,9 +1,7 @@
 #ifndef CODEPROJET4_TERRAIN_H
 #define CODEPROJET4_TERRAIN_H
 
-
 #include <string>
-
 #include "Case.h"
 #include "Propriete.h"
 #include "Joueur_Pion.h"
@@ -26,6 +24,5 @@ public:
     void setprixm_h(int);
     void arreterSur(Joueur*);
 };
-
 
 #endif

@@ -1,10 +1,7 @@
 #include "Terrain.h"
-
 #include <string>
 #include <iostream>
-
 using namespace std;
-
 
 Terrain :: Terrain(const string& color, const string& name,  Case* ptsuivante, int prixAchat, int *loyer,int prixm) : Propriete(name, ptsuivante, prixAchat, loyer){
     couleur = color;

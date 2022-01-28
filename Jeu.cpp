@@ -4,18 +4,14 @@
 #include "Prison.h"
 #include "Joueur_Pion.h"
 #include "Terrain.h"
-
 #include <string>
 #include <iostream>
 #include <thread>
 #include <chrono>
-
 using std::copy;
 using std::this_thread::sleep_for;
 using namespace std::chrono_literals;
-
 using namespace std;
-
 
 Jeu :: Jeu (Plateau& p,int t = 0) : de1(), de2(), plateau(p){
     nbrdejoueur = 0;

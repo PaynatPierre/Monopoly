@@ -4,7 +4,6 @@
 #include "Case.h"
 #include "Joueur_Pion.h"
 
-
 class Prison: public Case {
 private: 
 
@@ -14,6 +13,5 @@ public:
     void arreterSur(Joueur*);
 
 };
-
 
 #endif

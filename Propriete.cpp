@@ -1,8 +1,6 @@
 #include "Propriete.h"
-
 #include <iostream>
 #include <string>
-
 using namespace std;
 
 Propriete::Propriete(string name, Case* ptsuivante, int prixAchat, int *loyer) : Case(name, ptsuivante), m_prixAchat(prixAchat) {
@@ -34,5 +32,3 @@ void Propriete::setProprietaire(Joueur* proprietaire) {
 void Propriete::setLoyer(int i, int loyer) {
 	m_loyer[i] = loyer;
 }
-
-

@@ -10,16 +10,13 @@
 #include "Chance.h"
 #include "Depart.h"
 #include "Plateau.h"
-
 #include <iostream>
 #include <string>
 #include <thread>
 #include <chrono>
-
 using std::copy;
 using std::this_thread::sleep_for;
 using namespace std::chrono_literals;
-
 using namespace std;
 
 template <typename T>

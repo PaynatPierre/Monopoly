@@ -11,5 +11,4 @@ public:
     void arreterSur(Joueur* player);
 };
 
-
 #endif 

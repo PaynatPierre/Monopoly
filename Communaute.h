@@ -5,7 +5,6 @@
 #include "Case.h"
 #include "Joueur_Pion.h"
 
-
 class Communaute: public Case {
 private: 
 	std::string m_carteCommunaute[16];
@@ -16,9 +15,5 @@ public:
     void setCarteCommunaute(int, std::string);
 
 };
-
-
-
-
 
 #endif

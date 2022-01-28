@@ -1,8 +1,6 @@
 #include "ParckGratuit.h"
-
 #include <iostream>
 #include <string>
-
 using namespace std;
 
 ParckGratuit::ParckGratuit(Case *ptsuivante, int cagnotte) : Case("parck_gratuit", ptsuivante){

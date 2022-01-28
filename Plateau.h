@@ -3,7 +3,6 @@
 
 #include "Case.h"
 
-
 class Plateau {
 private:
     Case* cases[40];
@@ -15,5 +14,4 @@ public:
     void setcase(Case*, int);
 };
 
-
-#endif 
+#endif

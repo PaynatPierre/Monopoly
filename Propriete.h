@@ -1,13 +1,10 @@
 #ifndef PROPRIETE_H
 #define PROPRIETE_H
 
-
 #include <string>
-
 #include "Case.h"
 
 class Joueur;
-
 
 class Propriete : public Case {
 protected: 

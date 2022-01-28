@@ -1,7 +1,6 @@
 #ifndef CODEPROJET4_JEU_H
 #define CODEPROJET4_JEU_H
 
-
 #include "Plateau.h"
 #include "Joueur_Pion.h"
 #include "De_Gobelet.h"

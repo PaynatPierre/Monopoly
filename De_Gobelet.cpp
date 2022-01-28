@@ -1,12 +1,10 @@
 #include "De_Gobelet.h"
-
 #include <iostream>
 #include <string>
 #include <cstdlib>
 #include <ctime>
 #include <thread>
 #include <chrono>
-
 
 using std::this_thread::sleep_for;
 using namespace std::chrono_literals;

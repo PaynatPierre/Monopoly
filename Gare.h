@@ -2,7 +2,6 @@
 #define CODEPROJET5_GARE_H
 
 #include <string>
-
 #include "Case.h"
 #include "Propriete.h"
 #include "Joueur_Pion.h"

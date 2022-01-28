@@ -1,10 +1,7 @@
 #include "Compagnie.h"
-
 #include <iostream>
 #include <string>
-
 using namespace std;
-
 
 Compagnie :: Compagnie(const string& name,  Case* ptsuivante, int prixAchat, int loyer[6]) : Propriete(name, ptsuivante, prixAchat, loyer){
 }

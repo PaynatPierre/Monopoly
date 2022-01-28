@@ -1,7 +1,6 @@
 #ifndef Joueur_Pion_h
 #define Joueur_Pion_h
 
-
 #include <string>
 #include "Case.h"
 #include "Propriete.h"

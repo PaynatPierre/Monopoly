@@ -2,10 +2,8 @@
 #define DEPART_H
 
 #include <string>
-
 #include "Case.h"
 #include "Joueur_Pion.h"
-
 
 class Depart: public Case {
 private: 
@@ -16,8 +14,5 @@ public:
     void setprime(int);
     int getprime();
 };
-
-
-
 
 #endif

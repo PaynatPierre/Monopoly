@@ -10,7 +10,6 @@
 #include <thread>
 #include <chrono>
 
-
 using std::this_thread::sleep_for;
 using namespace std::chrono_literals;
 using namespace std;
@@ -91,7 +90,3 @@ string Chance::getCarteChance(int i){
 void Chance::setCarteChance(int i, string name){
     m_carteChance[i] = name;
 }
-
-
-
-
